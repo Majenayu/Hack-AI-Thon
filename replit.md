@@ -205,6 +205,15 @@ finalScore = (overallScore / (checks * 25)) * 100
 - Efficient skeleton connection algorithm
 
 ### Recent Changes (November 5, 2025)
+- **Side-by-Side Reference Pose Display**: Added reference pose images alongside user's camera feed in AR correction mode
+  - Users now see correct pose reference image next to their live camera feed
+  - Reference images for all 4 poses (Tadasana, Downward Dog, Warrior III, Namaste)
+  - Responsive grid layout: side-by-side on desktop, stacked on mobile
+  - Reference images stored in `assets/poses/` directory
+- **Camera Optimization**: Enhanced camera settings for smooth pose tracking
+  - Resolution increased to 1280x720 for better pose detection accuracy
+  - Frame rate optimized: 30fps ideal, 60fps maximum for smooth tracking
+  - Improved video quality reduces false positives in pose validation
 - Fixed scoring normalization to properly scale to 0-100%
 - Each pose now correctly reaches 100% when all checks pass
 - Color thresholds now attainable across all accuracy levels
