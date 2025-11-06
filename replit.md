@@ -58,3 +58,25 @@ The AR correction system provides real-time visual feedback on yoga pose accurac
 ### API Integrations
 -   **Google Speech Recognition API**: Used via the `speech_recognition` library.
 -   **Gemini API (via `javascript_gemini` integration)**: For the Virtual Assistant feature (AI-powered yoga guidance).
+
+## Project Structure
+
+### Core Files
+- `server.py` - HTTP server for the web platform (port 5000)
+- `assistant.py` - Python voice assistant with wake word detection, connects to http://127.0.0.1:5000
+- `index.html` - Complete web application with AR correction, dashboard, asana library, and virtual assistant
+- `assets/poses/` - Reference images for yoga poses (tadasana.jpg, vrikshasana.jpg, namaste.png)
+- `replit.md` - Technical documentation and project architecture
+
+### Recent Cleanup (November 6, 2025)
+Removed unnecessary files to streamline the project:
+- **README.md** - Removed redundant documentation (replit.md contains all necessary info)
+- **package.json / package-lock.json** - Removed unused Node.js package files (Python-only project)
+- **attached_assets/** - Removed entire folder containing temporary files:
+  - Old conversation logs, HTML backups, test Python scripts
+  - Stock images and generated images (not used in production)
+  - Temporary screenshots and development artifacts
+- **Runtime files** - conversation_log.txt and sunday_status.json are generated when assistant.py runs
+
+### Workflow
+- `sunday-yoga-server` - Runs `python server.py` on port 5000
