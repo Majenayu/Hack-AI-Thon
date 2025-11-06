@@ -1553,8 +1553,8 @@
                         </div>
 
                         <div id="ar-session" style="display: none;">
-                            <div class="flex flex-col items-center">
-                                <div id="video-container" style="display: none; width: 50%; max-width: 640px;">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div id="video-container" style="display: none;">
                                     <video id="video-feed" autoplay playsinline class="rounded-xl"></video>
                                     <canvas id="ar-canvas"></canvas>
                                     <div id="camera-status" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/90 text-gray-400 rounded-xl">
@@ -1564,7 +1564,7 @@
                                     </div>
                                 </div>
                                 
-                                <div id="reference-container" style="display: none;" class="bg-card rounded-xl border border-gray-700 shadow-md p-4 mt-4 w-full max-w-md">
+                                <div id="reference-container" style="display: none;" class="bg-card rounded-xl border border-gray-700 shadow-md p-4">
                                     <h3 class="text-lg font-bold text-primary mb-3">Reference Guide</h3>
                                     
                                     <!-- Reference Image -->
