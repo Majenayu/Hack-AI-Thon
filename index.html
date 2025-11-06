@@ -508,6 +508,26 @@
                 if (poseSelection) poseSelection.style.display = 'none';
                 if (arSession) arSession.style.display = 'block';
                 
+                // Find the asana data
+                const asana = asanaData.find(a => a.name === poseName);
+                
+                // Show and populate reference container
+                const referenceContainer = document.getElementById('reference-container');
+                if (referenceContainer && asana) {
+                    referenceContainer.style.display = 'block';
+                    document.getElementById('reference-pose-name').textContent = `${asana.name} ${asana.sanskrit}`;
+                    document.getElementById('reference-targeted').textContent = asana.targeted;
+                    document.getElementById('reference-benefits').textContent = asana.benefits;
+                    document.getElementById('reference-precaution').textContent = asana.precaution;
+                }
+                
+                // Initialize correction log
+                const correctionLog = document.getElementById('correction-log');
+                if (correctionLog) {
+                    correctionLog.innerHTML = '<p class="text-xs text-gray-500 font-semibold mb-2">Correction Log & Suggestions:</p>';
+                    this.correctionHistory = [];
+                }
+                
                 this.startARAssessment();
             },
             
@@ -907,6 +927,9 @@
                                 feedbackText.classList.remove('text-red-400', 'text-yellow-400');
                                 feedbackText.classList.add('text-green-400');
                             }
+                            
+                            // Log all corrections to the correction log panel
+                            this.logCorrections(corrections);
 
                         } else {
                             feedbackText.textContent = "Select a pose to begin tracking!";
@@ -922,11 +945,69 @@
                     }
                 }
             },
+            
+            /**
+             * Logs corrections to the correction log panel (max 5 recent corrections displayed).
+             */
+            logCorrections(corrections) {
+                if (!this.correctionHistory) this.correctionHistory = [];
+                
+                const correctionLog = document.getElementById('correction-log');
+                if (!correctionLog) return;
+                
+                // Add only non-duplicate corrections to history (avoid spamming same message)
+                corrections.forEach(corr => {
+                    const corrText = corr.message;
+                    const lastCorr = this.correctionHistory[this.correctionHistory.length - 1];
+                    
+                    // Only add if it's different from the last logged correction
+                    if (!lastCorr || lastCorr !== corrText) {
+                        this.correctionHistory.push(corrText);
+                        
+                        // Keep only last 5 corrections
+                        if (this.correctionHistory.length > 5) {
+                            this.correctionHistory.shift();
+                        }
+                        
+                        // Update the log display
+                        const logHtml = '<p class="text-xs text-gray-500 font-semibold mb-2">Correction Log & Suggestions:</p>' +
+                            this.correctionHistory.map((msg, idx) => {
+                                let icon = '•';
+                                let colorClass = 'text-gray-400';
+                                
+                                if (msg.includes('well') || msg.includes('perfect') || msg.includes('breath')) {
+                                    icon = '✓';
+                                    colorClass = 'text-green-400';
+                                } else if (msg.toLowerCase().includes('cannot')) {
+                                    icon = '⚠';
+                                    colorClass = 'text-yellow-400';
+                                } else if (corrections.find(c => c.message === msg && c.color === 'red')) {
+                                    icon = '✗';
+                                    colorClass = 'text-red-400';
+                                } else if (corrections.find(c => c.message === msg && c.color === 'yellow')) {
+                                    icon = '⚠';
+                                    colorClass = 'text-yellow-400';
+                                }
+                                
+                                return `<p class="text-xs ${colorClass} pl-2"><span class="font-bold">${icon}</span> ${msg}</p>`;
+                            }).join('');
+                        
+                        correctionLog.innerHTML = logHtml;
+                        
+                        // Auto-scroll to latest correction
+                        correctionLog.scrollTop = correctionLog.scrollHeight;
+                    }
+                });
+            },
 
             /**
              * Draws circles on the keypoints detected by MoveNet with color coding.
              */
             drawKeypoints(video, keypoints, ctx, affectedKeypoints, corrections) {
+                if (!keypoints || !ctx) return;
+                affectedKeypoints = affectedKeypoints || new Set();
+                corrections = corrections || [];
+                
                 keypoints.forEach((keypoint, index) => {
                     if (keypoint.score > MIN_CONFIDENCE) {
                         // Coordinates need to be adjusted for the mirrored video feed
@@ -935,9 +1016,9 @@
 
                         // Determine color: red for error, yellow for warning, green for good, default blue/white
                         let fillColor = '#42A5F5'; // Default blue
-                        const keypointName = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === index);
+                        const keypointName = Object.keys(keypointIndices).find(name => keypointIndices[name] === index);
 
-                        if (affectedKeypoints.has(keypointName)) {
+                        if (keypointName && affectedKeypoints.has(keypointName)) {
                             // Check if it's marked as error or warning
                             const corr = corrections.find(c => c.affected && c.affected.includes(keypointName));
                             if (corr && corr.color === 'red') {
@@ -968,16 +1049,20 @@
              * Draws lines connecting the keypoints detected by MoveNet with color coding.
              */
             drawSkeleton(video, keypoints, ctx, affectedKeypoints, corrections) {
+                if (!keypoints || !ctx) return;
+                affectedKeypoints = affectedKeypoints || new Set();
+                corrections = corrections || [];
+                
                 ctx.lineWidth = 3;
 
-                this.SKELETON_CONNECTIONS.forEach(([i, j]) => {
-                    const kp1 = keypoints.find(k => k.id === i);
-                    const kp2 = keypoints.find(k => k.id === j);
+                SKELETON_CONNECTIONS.forEach(([i, j]) => {
+                    const kp1 = keypoints[i];
+                    const kp2 = keypoints[j];
 
                     if (kp1 && kp2 && kp1.score > MIN_CONFIDENCE && kp2.score > MIN_CONFIDENCE) {
                         
-                        const kp1Name = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === i);
-                        const kp2Name = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === j);
+                        const kp1Name = Object.keys(keypointIndices).find(name => keypointIndices[name] === i);
+                        const kp2Name = Object.keys(keypointIndices).find(name => keypointIndices[name] === j);
 
                         let lineColor = '#1E88E5'; // Default line color (Secondary Blue)
                         let corrColor = null;
@@ -1039,13 +1124,16 @@
                 const poseSelection = document.getElementById('pose-selection');
                 const arSession = document.getElementById('ar-session');
                 const feedbackArea = document.getElementById('feedback-area');
+                const referenceContainer = document.getElementById('reference-container');
 
                 if (videoContainer) videoContainer.style.display = 'none';
                 if (poseSelection) poseSelection.style.display = 'grid';
                 if (arSession) arSession.style.display = 'block';
                 if (feedbackArea) feedbackArea.style.display = 'none';
+                if (referenceContainer) referenceContainer.style.display = 'none';
 
                 this.currentPose = null;
+                this.correctionHistory = [];
                 console.log("AR assessment stopped.");
             },
             
@@ -1354,7 +1442,7 @@
             },
             
             renderARCorrection() {
-                // AR Correction View with pose selection and video feed
+                // AR Correction View with pose selection, video feed, reference image, and correction log
                 return `
                     <div class="space-y-6">
                         <div class="p-4 bg-accent/20 border-l-4 border-accent rounded-xl shadow-sm">
@@ -1373,19 +1461,41 @@
                         </div>
 
                         <div id="ar-session" style="display: none;">
-                            <div id="video-container" style="display: none;">
-                                <video id="video-feed" autoplay playsinline class="rounded-xl"></video>
-                                <canvas id="ar-canvas"></canvas>
-                                <div id="camera-status" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/90 text-gray-400 rounded-xl">
-                                    <div class="loading-animation mb-3"></div>
-                                    <p id="status-text">Loading...</p>
-                                    <p id="error-message" class="text-red-500 mt-2 text-sm hidden"></p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div id="video-container" style="display: none;">
+                                    <video id="video-feed" autoplay playsinline class="rounded-xl"></video>
+                                    <canvas id="ar-canvas"></canvas>
+                                    <div id="camera-status" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/90 text-gray-400 rounded-xl">
+                                        <div class="loading-animation mb-3"></div>
+                                        <p id="status-text">Loading...</p>
+                                        <p id="error-message" class="text-red-500 mt-2 text-sm hidden"></p>
+                                    </div>
+                                </div>
+                                
+                                <div id="reference-container" style="display: none;" class="bg-card rounded-xl border border-gray-700 shadow-md p-4">
+                                    <h3 class="text-lg font-bold text-primary mb-3">Reference Pose</h3>
+                                    <div class="flex items-center justify-center bg-gray-900 rounded-xl p-6 mb-3" style="min-height: 200px;">
+                                        <div class="text-center">
+                                            <span id="reference-emoji" class="text-8xl">🧘</span>
+                                            <p id="reference-pose-name" class="text-gray-400 mt-3 text-sm font-medium">Pose Name</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs text-gray-500 space-y-1">
+                                        <p><strong class="text-gray-400">Target:</strong> <span id="reference-targeted">Body parts</span></p>
+                                        <p><strong class="text-gray-400">Benefits:</strong> <span id="reference-benefits">Benefits</span></p>
+                                        <p><strong class="text-gray-400">Precaution:</strong> <span id="reference-precaution">Precautions</span></p>
+                                    </div>
                                 </div>
                             </div>
 
                             <div id="feedback-area" style="display: none;" class="mt-4 p-4 bg-card rounded-xl border border-gray-700 shadow-md">
                                 <p class="text-sm font-bold text-primary mb-1">Real-Time Feedback:</p>
                                 <p id="current-feedback-text" class="text-lg text-gray-400 font-medium transition-colors">Select a pose to begin.</p>
+                                
+                                <div id="correction-log" class="mt-4 space-y-2 max-h-48 overflow-y-auto scrollable-content">
+                                    <p class="text-xs text-gray-500 font-semibold mb-2">Correction Log & Suggestions:</p>
+                                </div>
+                                
                                 <button onclick="app.stopARAssessment()" class="mt-4 py-2 px-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition">
                                     Stop AR Tracking
                                 </button>
@@ -1394,6 +1504,7 @@
                     </div>
                 `;
             },
+
             
             renderVirtualAssistant() {
                 // The chat interface HTML
