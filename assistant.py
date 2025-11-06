@@ -19,9 +19,10 @@ class AIVoiceAssistant:
         self.conv_log_file = "conversation_log.txt"
         self.listening = True
         self.wake_word = "sunday"
+        self.failed_recognitions = 0
         
         self.setup_tts()
-        self.log_conversation("System", "Sunday AI starting")
+        self.log_conversation("System", "Sunday AI starting with simple TTS system")
 
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
@@ -51,7 +52,8 @@ class AIVoiceAssistant:
         listen_thread.start()
 
         self.write_status('ready', '', '')
-        self.speak("Hello! I'm Sunday, your yoga assistant. Ready to help you with your wellness journey!")
+        self.speak("I'm listening for you. Just say 'Sunday' when you need me!")
+        self.speak("Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!")
 
     def setup_tts(self):
         try:
@@ -96,10 +98,10 @@ class AIVoiceAssistant:
 
     def calibrate_microphone(self):
         try:
-            self.log_conversation("System", "Calibrating microphone...")
+            self.log_conversation("System", "Calibrating microphone... Please wait.")
             with self.microphone as source:
                 self.recognizer.adjust_for_ambient_noise(source, duration=3)
-            self.log_conversation("System", "Microphone calibrated")
+            self.log_conversation("System", "Microphone calibrated successfully")
         except Exception as e:
             self.log_conversation("System", f"Microphone calibration failed: {e}")
 
@@ -154,7 +156,7 @@ class AIVoiceAssistant:
                 time.sleep(4)
                 
                 self.log_conversation("System", f"Browser ready on attempt {attempt + 1}")
-                self.speak("Browser connected and ready!")
+                self.speak("Perfect! I'm all connected and ready to help you with your yoga practice.")
                 return
                 
             except Exception as e:
@@ -184,9 +186,16 @@ class AIVoiceAssistant:
             text = self.recognizer.recognize_google(audio, language="en-US").lower().strip()
             if len(text) > 1:
                 self.log_conversation("System", f"Recognized: {text}")
+                self.failed_recognitions = 0
                 return text
             return None
         except sr.UnknownValueError:
+            self.log_conversation("System", "Speech recognition could not understand audio")
+            self.failed_recognitions += 1
+            if self.failed_recognitions >= 5:
+                self.log_conversation("System", "Multiple recognition failures, recalibrating microphone")
+                self.calibrate_microphone()
+                self.failed_recognitions = 0
             return None
         except sr.RequestError as e:
             self.log_conversation("System", f"Speech recognition error: {e}")
@@ -253,35 +262,35 @@ class AIVoiceAssistant:
         if any(word in command for word in ['home', 'dashboard', 'main']):
             success = self.navigate_section('dashboard')
             if success:
-                self.speak(f"{acknowledgement} Taking you to the home screen.")
+                self.speak(f"{acknowledgement} Taking you to the home screen where you can see your progress and daily insights.")
             else:
                 self.speak("Navigating to home...")
 
         elif any(word in command for word in ['asana', 'pose', 'library', 'poses']):
             success = self.navigate_section('asana')
             if success:
-                self.speak(f"{acknowledgement} Opening the yoga pose library.")
+                self.speak(f"{acknowledgement} Opening the yoga pose library. You can explore different poses and their benefits.")
             else:
                 self.speak("Opening pose library...")
 
         elif any(word in command for word in ['ar', 'correction', 'camera', 'tracking', 'posture']):
             success = self.navigate_section('ar_correction')
             if success:
-                self.speak(f"{acknowledgement} Starting AR posture correction. Stand about 6 feet from your camera!")
+                self.speak(f"{acknowledgement} Starting AR posture correction. Stand about 6 feet from your camera for best results!")
             else:
                 self.speak("Setting up camera correction...")
 
         elif any(word in command for word in ['routine', 'plan', 'workout', 'schedule']):
             success = self.navigate_section('routine')
             if success:
-                self.speak(f"{acknowledgement} Opening your personalized routine.")
+                self.speak(f"{acknowledgement} Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.")
             else:
                 self.speak("Loading your routine...")
 
-        elif any(word in command for word in ['assistant', 'chat', 'help', 'ai']):
+        elif any(word in command for word in ['assistant', 'chat', 'help', 'ai', 'virtual assistant']):
             success = self.navigate_section('assistant')
             if success:
-                self.speak(f"{acknowledgement} I'm here to help! What would you like to know?")
+                self.speak(f"{acknowledgement} I'm here to help! What would you like to know about yoga and wellness?")
             else:
                 self.speak("Opening chat interface...")
 
@@ -310,28 +319,51 @@ class AIVoiceAssistant:
         elif any(word in command for word in ['hello', 'hi', 'hey']):
             self.speak("Hello! I'm Sunday, your yoga assistant. How can I help you today?")
 
-        elif any(word in command for word in ['stop', 'quit', 'exit', 'shutdown', 'goodbye']):
-            self.speak("Thank you for your practice today! Goodbye!")
+        elif any(word in command for word in ['read', 'tell', 'show']):
+            if 'routine' in command:
+                success = self.navigate_section('routine')
+                if success:
+                    self.speak(f"{acknowledgement} Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.")
+            else:
+                self.speak("I didn't catch that clearly. Feel free to try again when you're ready.")
+
+        elif any(word in command for word in ['stop', 'quit', 'exit', 'shutdown', 'goodbye', 'deactivate']):
+            self.speak("Thank you for your practice today! Namaste!")
+            self.log_conversation("System", "Shutting down")
             time.sleep(2)
+            self.log_conversation("System", "Shutdown complete")
             self.stop()
 
         else:
-            self.speak("You can ask me to open the pose library, start posture correction, or show your routine.")
+            self.speak("I didn't catch that clearly. Feel free to try again when you're ready.")
 
     def listen_loop(self):
         self.log_conversation("System", "Listening for wake word 'Sunday'...")
+        
+        wake_responses = [
+            "Yes, I'm listening! What would you like to do?",
+            "I'm here! How can I assist your practice?",
+            "Yes, tell me how I can help!",
+            "Hello! What shall we work on together?"
+        ]
+        
+        similar_words = ['sundae', 'sundays', 'sunday\'s', 'someday']
         
         while self.listening:
             try:
                 audio = self.listen_for_speech()
                 if audio:
                     text = self.recognize_audio(audio)
-                    if text and self.wake_word in text:
-                        command = text.replace(self.wake_word, '').strip()
-                        if command:
-                            self.process_command(command)
-                        else:
-                            self.speak("Yes, I'm listening. What would you like me to do?")
+                    if text:
+                        if self.wake_word in text:
+                            self.log_conversation("System", f"Wake word detected: {text}")
+                            command = text.replace(self.wake_word, '').strip()
+                            if command:
+                                self.process_command(command)
+                            else:
+                                self.speak(random.choice(wake_responses))
+                        elif any(word in text for word in similar_words):
+                            self.speak("Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.")
                             
             except Exception as e:
                 self.log_conversation("System", f"Listen loop error: {e}")

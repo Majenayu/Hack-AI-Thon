@@ -1,0 +1,1721 @@
+[2025-10-04 00:09:33] System: TTS engine configured successfully
+[2025-10-04 00:09:33] System: Sunday AI starting with simple TTS system
+[2025-10-04 00:09:33] System: Calibrating microphone... Please wait.
+[2025-10-04 00:09:36] System: Microphone calibrated successfully
+[2025-10-04 00:09:39] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-04 00:09:39] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-04 00:09:43] System: Browser ready on attempt 1
+[2025-10-04 00:09:43] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-10-04 00:09:46] System: Speech recognition could not understand audio
+[2025-10-04 00:09:50] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-10-04 00:09:52] System: Speech recognition could not understand audio
+[2025-10-04 00:09:59] System: Recognized: sunday
+[2025-10-04 00:09:59] System: Wake word detected: sunday
+[2025-10-04 00:09:59] AI: Yes, I'm listening! What would you like to do?
+[2025-10-04 00:10:04] System: Speech recognition could not understand audio
+[2025-10-04 00:10:04] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-10-04 00:10:10] System: Speech recognition could not understand audio
+[2025-10-04 00:10:18] System: Recognized: go to virtual assistant
+[2025-10-04 00:10:18] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-04 00:10:24] System: Speech recognition could not understand audio
+[2025-10-04 00:10:29] System: Recognized: open home
+[2025-10-04 00:10:36] System: Speech recognition could not understand audio
+[2025-10-04 00:10:43] System: Recognized: sunday open home
+[2025-10-04 00:10:43] System: Wake word detected: sunday open home
+[2025-10-04 00:10:43] AI: Yes, tell me how I can help!
+[2025-10-04 00:10:49] System: Recognized: open home
+[2025-10-04 00:10:49] User: Command: open home
+[2025-10-04 00:10:49] System: Navigation to dashboard: success_button_click
+[2025-10-04 00:10:51] AI: Okay, let's do that! Taking you to the home screen where you can see your progress and daily insights.
+[2025-10-04 00:10:56] System: Speech recognition could not understand audio
+[2025-10-04 00:11:01] System: Speech recognition could not understand audio
+[2025-10-04 00:11:06] System: Recognized: sunday open chrome team
+[2025-10-04 00:11:06] System: Wake word detected: sunday open chrome team
+[2025-10-04 00:11:06] AI: I'm here! How can I assist your practice?
+[2025-10-04 00:11:12] System: Recognized: open routine
+[2025-10-04 00:11:12] User: Command: open routine
+[2025-10-04 00:11:12] System: Navigation to routine: success_button_click
+[2025-10-04 00:11:14] AI: Okay, let's do that! Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.
+[2025-10-04 00:11:21] System: Speech recognition could not understand audio
+[2025-10-04 00:11:28] System: Speech recognition could not understand audio
+[2025-10-04 00:11:33] System: Speech recognition could not understand audio
+[2025-10-04 00:11:38] System: Recognized: sunday
+[2025-10-04 00:11:38] System: Wake word detected: sunday
+[2025-10-04 00:11:38] AI: I'm here! How can I assist your practice?
+[2025-10-04 00:11:46] System: Recognized: read routine
+[2025-10-04 00:11:46] User: Command: read routine
+[2025-10-04 00:11:46] System: Navigation to routine: success_button_click
+[2025-10-04 00:11:48] AI: No problem! Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.
+[2025-10-04 00:11:53] System: Speech recognition could not understand audio
+[2025-10-04 00:11:59] System: Speech recognition could not understand audio
+[2025-10-04 00:12:02] System: Speech recognition could not understand audio
+[2025-10-04 00:12:07] System: Speech recognition could not understand audio
+[2025-10-04 00:12:14] System: Recognized: sunday
+[2025-10-04 00:12:14] System: Wake word detected: sunday
+[2025-10-04 00:12:14] AI: Yes, tell me how I can help!
+[2025-10-04 00:12:19] System: Speech recognition could not understand audio
+[2025-10-04 00:12:19] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-10-04 00:12:24] System: Speech recognition could not understand audio
+[2025-10-04 00:12:28] System: Recognized: open virtual assistant
+[2025-10-04 00:12:28] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-04 00:12:36] System: Recognized: open virtual
+[2025-10-04 00:12:42] System: Recognized: open virtual assistant
+[2025-10-04 00:12:42] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-04 00:12:47] System: Speech recognition could not understand audio
+[2025-10-04 00:12:53] System: Recognized: sunday sleep
+[2025-10-04 00:12:53] System: Wake word detected: sunday sleep
+[2025-10-04 00:12:53] AI: Hello! What shall we work on together?
+[2025-10-04 00:12:58] System: Speech recognition could not understand audio
+[2025-10-04 00:12:58] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-10-04 00:13:03] System: Speech recognition could not understand audio
+[2025-10-04 00:13:07] System: Recognized: open virtual assistant
+[2025-10-04 00:13:07] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-04 00:13:11] System: Speech recognition could not understand audio
+[2025-10-04 00:13:14] System: Speech recognition could not understand audio
+[2025-10-04 00:13:22] System: Recognized: sunday open virtual assistant
+[2025-10-04 00:13:22] System: Wake word detected: sunday open virtual assistant
+[2025-10-04 00:13:22] AI: Yes, I'm listening! What would you like to do?
+[2025-10-04 00:13:25] System: Speech recognition could not understand audio
+[2025-10-04 00:13:25] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-10-04 00:13:30] System: Recognized: open open
+[2025-10-04 00:13:37] System: Recognized: open virtual assistant
+[2025-10-04 00:13:37] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-04 00:13:41] System: Speech recognition could not understand audio
+[2025-10-04 00:13:49] System: Speech recognition could not understand audio
+[2025-10-04 00:13:52] System: Speech recognition could not understand audio
+[2025-10-04 00:13:57] System: Shutting down
+[2025-10-04 00:13:57] System: Recognized: sunday deactivate whatsapp
+[2025-10-04 00:13:57] System: Wake word detected: sunday deactivate whatsapp
+[2025-10-04 00:14:09] System: Shutdown complete
+[2025-10-26 11:15:36] System: TTS engine configured successfully
+[2025-10-26 11:15:36] System: Sunday AI starting with simple TTS system
+[2025-10-26 11:15:36] System: Calibrating microphone... Please wait.
+[2025-10-26 11:15:40] System: Microphone calibrated successfully
+[2025-10-26 11:15:43] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-26 11:15:43] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-26 11:15:52] System: Speech recognition could not understand audio
+[2025-10-26 11:15:53] System: Browser ready on attempt 1
+[2025-10-26 11:15:53] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-10-26 11:15:59] System: Speech recognition could not understand audio
+[2025-10-26 11:16:09] System: Speech recognition could not understand audio
+[2025-10-26 11:16:16] System: Speech recognition could not understand audio
+[2025-10-26 11:16:20] System: Speech recognition could not understand audio
+[2025-10-26 11:16:20] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:16:20] System: Calibrating microphone... Please wait.
+[2025-10-26 11:16:23] System: Microphone calibrated successfully
+[2025-10-26 11:16:27] System: Speech recognition could not understand audio
+[2025-10-26 11:17:04] System: Speech recognition could not understand audio
+[2025-10-26 11:17:14] System: Speech recognition could not understand audio
+[2025-10-26 11:17:23] System: Recognized: surendra poster
+[2025-10-26 11:17:29] System: Speech recognition could not understand audio
+[2025-10-26 11:17:36] System: Speech recognition could not understand audio
+[2025-10-26 11:17:46] System: Recognized: highest qualification
+[2025-10-26 11:17:58] System: Recognized: mujhe aapko bhenchod
+[2025-10-26 11:18:08] System: Speech recognition could not understand audio
+[2025-10-26 11:18:16] System: Speech recognition could not understand audio
+[2025-10-26 11:18:21] System: Speech recognition could not understand audio
+[2025-10-26 11:18:27] System: Speech recognition could not understand audio
+[2025-10-26 11:18:39] System: Speech recognition could not understand audio
+[2025-10-26 11:18:39] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:18:39] System: Calibrating microphone... Please wait.
+[2025-10-26 11:18:43] System: Microphone calibrated successfully
+[2025-10-26 11:18:52] System: Recognized: write
+[2025-10-26 11:18:57] System: Speech recognition could not understand audio
+[2025-10-26 11:19:05] System: Recognized: what is the complete
+[2025-10-26 11:19:14] System: Speech recognition could not understand audio
+[2025-10-26 11:19:25] System: Speech recognition could not understand audio
+[2025-10-26 11:19:36] System: Recognized: smart devices automation and data given
+[2025-10-26 11:19:41] System: Speech recognition could not understand audio
+[2025-10-26 11:20:00] System: Speech recognition could not understand audio
+[2025-10-26 11:20:08] System: Speech recognition could not understand audio
+[2025-10-26 11:22:26] System: Speech recognition could not understand audio
+[2025-10-26 11:22:35] System: Speech recognition could not understand audio
+[2025-10-26 11:22:35] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:22:35] System: Calibrating microphone... Please wait.
+[2025-10-26 11:22:39] System: Microphone calibrated successfully
+[2025-10-26 11:22:48] System: Recognized: certificate
+[2025-10-26 11:22:56] System: Recognized: last movement
+[2025-10-26 11:23:01] System: Speech recognition could not understand audio
+[2025-10-26 11:23:10] System: Speech recognition could not understand audio
+[2025-10-26 11:23:20] System: Recognized: continuous messages
+[2025-10-26 11:23:30] System: Speech recognition could not understand audio
+[2025-10-26 11:23:39] System: Speech recognition could not understand audio
+[2025-10-26 11:23:50] System: Recognized: first of all
+[2025-10-26 11:23:54] System: Speech recognition could not understand audio
+[2025-10-26 11:24:06] System: Recognized: didi ki rajdhani 2.0
+[2025-10-26 11:24:11] System: Speech recognition could not understand audio
+[2025-10-26 11:24:19] System: Speech recognition could not understand audio
+[2025-10-26 11:24:25] System: Speech recognition could not understand audio
+[2025-10-26 11:24:34] System: Recognized: nokia adityanath
+[2025-10-26 11:24:39] System: Recognized: sikhana
+[2025-10-26 11:24:46] System: Speech recognition could not understand audio
+[2025-10-26 11:24:56] System: Speech recognition could not understand audio
+[2025-10-26 11:25:02] System: Recognized: lakshya
+[2025-10-26 11:25:12] System: Recognized: aadhar card
+[2025-10-26 11:25:18] System: Speech recognition could not understand audio
+[2025-10-26 11:25:26] System: Speech recognition could not understand audio
+[2025-10-26 11:25:37] System: Speech recognition could not understand audio
+[2025-10-26 11:25:47] System: Speech recognition could not understand audio
+[2025-10-26 11:25:56] System: Speech recognition could not understand audio
+[2025-10-26 11:25:56] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:25:56] System: Calibrating microphone... Please wait.
+[2025-10-26 11:25:59] System: Microphone calibrated successfully
+[2025-10-26 11:26:04] System: Recognized: education
+[2025-10-26 11:26:08] System: Speech recognition could not understand audio
+[2025-10-26 11:26:13] System: Speech recognition could not understand audio
+[2025-10-26 11:26:20] System: Speech recognition could not understand audio
+[2025-10-26 11:26:25] System: Speech recognition could not understand audio
+[2025-10-26 11:26:47] System: Speech recognition could not understand audio
+[2025-10-26 11:26:47] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:26:47] System: Calibrating microphone... Please wait.
+[2025-10-26 11:26:51] System: Microphone calibrated successfully
+[2025-10-26 11:26:55] System: Speech recognition could not understand audio
+[2025-10-26 11:27:05] System: Speech recognition could not understand audio
+[2025-10-26 11:27:14] System: Speech recognition could not understand audio
+[2025-10-26 11:27:23] System: Speech recognition could not understand audio
+[2025-10-26 11:27:30] System: Speech recognition could not understand audio
+[2025-10-26 11:27:30] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:27:30] System: Calibrating microphone... Please wait.
+[2025-10-26 11:27:33] System: Microphone calibrated successfully
+[2025-10-26 11:27:41] System: Speech recognition could not understand audio
+[2025-10-26 11:27:45] System: Speech recognition could not understand audio
+[2025-10-26 11:27:49] System: Recognized: call breakers
+[2025-10-26 11:27:59] System: Recognized: ppt calculation
+[2025-10-26 11:28:03] System: Speech recognition could not understand audio
+[2025-10-26 11:28:19] System: Speech recognition could not understand audio
+[2025-10-26 11:28:26] System: Recognized: teri aankhon ki dava
+[2025-10-26 11:28:32] System: Recognized: phase 1 phase 3 phase
+[2025-10-26 11:28:43] System: Speech recognition could not understand audio
+[2025-10-26 11:28:49] System: Speech recognition could not understand audio
+[2025-10-26 11:28:54] System: Speech recognition could not understand audio
+[2025-10-26 11:29:03] System: Recognized: 789 910 11
+[2025-10-26 11:29:14] System: Recognized: font correct size or mention
+[2025-10-26 11:29:22] System: Speech recognition could not understand audio
+[2025-10-26 11:29:30] System: Speech recognition could not understand audio
+[2025-10-26 11:29:37] System: Recognized: kotkoti first adhik reference
+[2025-10-26 11:29:45] System: Speech recognition could not understand audio
+[2025-10-26 11:29:55] System: Recognized: sorry
+[2025-10-26 11:30:04] System: Speech recognition could not understand audio
+[2025-10-26 11:30:14] System: Speech recognition could not understand audio
+[2025-10-26 11:30:26] System: Speech recognition could not understand audio
+[2025-10-26 11:30:41] System: Speech recognition could not understand audio
+[2025-10-26 11:30:51] System: Speech recognition could not understand audio
+[2025-10-26 11:30:51] System: Multiple recognition failures, recalibrating microphone
+[2025-10-26 11:30:51] System: Calibrating microphone... Please wait.
+[2025-10-26 11:30:54] System: Microphone calibrated successfully
+[2025-10-26 11:30:55] System: Shutting down
+[2025-10-26 11:30:58] System: Speech recognition could not understand audio
+[2025-10-27 12:27:18] System: TTS engine configured successfully
+[2025-10-27 12:27:18] System: Sunday AI starting with simple TTS system
+[2025-10-27 12:27:18] System: Calibrating microphone... Please wait.
+[2025-10-27 12:27:22] System: Microphone calibrated successfully
+[2025-10-27 12:27:25] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-27 12:27:25] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-27 12:27:31] System: Speech recognition could not understand audio
+[2025-10-27 12:27:31] System: Browser ready on attempt 1
+[2025-10-27 12:27:31] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-10-27 12:27:36] System: Recognized: navigate to a
+[2025-10-27 12:27:39] System: Speech recognition could not understand audio
+[2025-10-27 12:27:42] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-10-27 12:27:42] System: Speech recognition could not understand audio
+[2025-10-27 12:27:48] System: Recognized: hassan library
+[2025-10-27 12:27:54] System: Recognized: virtual assistant
+[2025-10-27 12:27:54] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-10-27 12:28:03] System: Speech recognition could not understand audio
+[2025-10-27 12:28:07] System: Recognized: routine
+[2025-10-27 12:28:14] System: Speech recognition could not understand audio
+[2025-10-27 12:28:20] System: Speech recognition could not understand audio
+[2025-10-27 12:28:24] System: Speech recognition could not understand audio
+[2025-10-27 12:28:32] System: Speech recognition could not understand audio
+[2025-10-27 12:28:40] System: Recognized: following
+[2025-10-27 12:28:49] System: Speech recognition could not understand audio
+[2025-10-27 12:28:56] System: Speech recognition could not understand audio
+[2025-10-27 12:29:04] System: Speech recognition could not understand audio
+[2025-10-27 12:29:08] System: Recognized: rashtra
+[2025-10-27 12:29:14] System: Speech recognition could not understand audio
+[2025-10-27 12:29:18] System: Speech recognition could not understand audio
+[2025-10-27 12:29:26] System: Speech recognition could not understand audio
+[2025-10-27 12:29:35] System: Speech recognition could not understand audio
+[2025-10-27 12:29:44] System: Speech recognition could not understand audio
+[2025-10-27 12:29:44] System: Multiple recognition failures, recalibrating microphone
+[2025-10-27 12:29:44] System: Calibrating microphone... Please wait.
+[2025-10-27 12:29:47] System: Microphone calibrated successfully
+[2025-10-27 12:29:56] System: Speech recognition could not understand audio
+[2025-10-27 12:30:00] System: Speech recognition could not understand audio
+[2025-10-27 12:30:08] System: Speech recognition could not understand audio
+[2025-10-27 12:30:20] System: Speech recognition could not understand audio
+[2025-10-27 12:30:28] System: Speech recognition could not understand audio
+[2025-10-27 12:30:28] System: Multiple recognition failures, recalibrating microphone
+[2025-10-27 12:30:28] System: Calibrating microphone... Please wait.
+[2025-10-27 12:30:31] System: Microphone calibrated successfully
+[2025-10-27 12:30:37] System: Speech recognition could not understand audio
+[2025-10-27 12:30:43] System: Speech recognition could not understand audio
+[2025-10-27 12:30:52] System: Speech recognition could not understand audio
+[2025-10-27 12:35:55] System: TTS engine configured successfully
+[2025-10-27 12:35:55] System: Sunday AI starting with simple TTS system
+[2025-10-27 12:35:55] System: Calibrating microphone... Please wait.
+[2025-10-27 12:35:58] System: Microphone calibrated successfully
+[2025-10-27 12:36:01] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-27 12:36:01] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-27 12:36:05] System: Speech recognition could not understand audio
+[2025-10-27 12:36:07] System: Browser ready on attempt 1
+[2025-10-27 12:36:07] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-10-27 12:36:12] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-10-27 12:36:12] System: Speech recognition could not understand audio
+[2025-10-27 12:36:19] System: Speech recognition could not understand audio
+[2025-10-27 12:36:32] System: Recognized: sunday go to hassan library
+[2025-10-27 12:36:32] System: Wake word detected: sunday go to hassan library
+[2025-10-27 12:36:32] AI: Yes, tell me how I can help!
+[2025-10-27 12:36:39] System: Recognized: ok who is the current prime minister of india
+[2025-10-27 12:36:39] User: Command: ok who is the current prime minister of india
+[2025-10-27 12:36:39] AI: I want to make sure I understand correctly. You can ask me to: open the pose library, start posture correction, show your routine, or chat with the assistant. What would you like to try?
+[2025-10-27 12:37:10] System: Shutting down
+[2025-10-27 12:37:25] System: TTS engine configured successfully
+[2025-10-27 12:37:25] System: Sunday AI starting with simple TTS system
+[2025-10-27 12:37:25] System: Calibrating microphone... Please wait.
+[2025-10-27 12:37:28] System: Microphone calibrated successfully
+[2025-10-27 12:37:31] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-27 12:37:31] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-27 12:38:04] System: TTS engine configured successfully
+[2025-10-27 12:38:04] System: Sunday AI starting with simple TTS system
+[2025-10-27 12:38:04] System: Calibrating microphone... Please wait.
+[2025-10-27 12:38:07] System: Microphone calibrated successfully
+[2025-10-27 12:38:10] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-27 12:38:10] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-27 12:38:21] System: Browser error attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+[2025-10-27 12:38:52] System: TTS engine configured successfully
+[2025-10-27 12:38:52] System: Sunday AI starting with simple TTS system
+[2025-10-27 12:38:52] System: Calibrating microphone... Please wait.
+[2025-10-27 12:38:56] System: Microphone calibrated successfully
+[2025-10-27 12:38:59] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-10-27 12:38:59] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-10-27 12:39:46] System: Speech recognition error: recognition connection failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+[2025-10-27 12:40:09] System: Browser ready on attempt 1
+[2025-10-27 12:40:09] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 22:31:53] System: TTS engine configured successfully
+[2025-11-05 22:31:53] System: Sunday AI starting with simple TTS system
+[2025-11-05 22:31:54] System: Calibrating microphone... Please wait.
+[2025-11-05 22:31:57] System: Microphone calibrated successfully
+[2025-11-05 22:32:00] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 22:32:00] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 22:32:05] System: Browser ready on attempt 1
+[2025-11-05 22:32:05] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 22:32:06] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-05 22:32:10] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 22:32:12] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-05 22:36:19] System: Shutting down
+[2025-11-05 22:36:49] System: TTS engine configured successfully
+[2025-11-05 22:36:49] System: Sunday AI starting with simple TTS system
+[2025-11-05 22:36:50] System: Calibrating microphone... Please wait.
+[2025-11-05 22:36:53] System: Microphone calibrated successfully
+[2025-11-05 22:36:56] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 22:36:56] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 22:37:17] System: Speech recognition could not understand audio
+[2025-11-05 22:37:22] System: Browser ready on attempt 1
+[2025-11-05 22:37:22] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 22:37:23] System: Recognized: sunday
+[2025-11-05 22:37:23] System: Wake word detected: sunday
+[2025-11-05 22:37:23] AI: Yes, tell me how I can help!
+[2025-11-05 22:37:35] System: Recognized: sunday go to assistant
+[2025-11-05 22:37:35] User: Command: sunday go to assistant
+[2025-11-05 22:37:35] System: Navigation to assistant: success_button_click
+[2025-11-05 22:37:37] AI: Sure thing! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-05 22:37:46] System: Speech recognition could not understand audio
+[2025-11-05 22:37:50] System: Speech recognition could not understand audio
+[2025-11-05 22:37:54] System: Recognized: go to air post
+[2025-11-05 22:38:20] System: Speech recognition error: recognition connection failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+[2025-11-05 22:38:26] System: Recognized: sunday open routine
+[2025-11-05 22:38:26] System: Wake word detected: sunday open routine
+[2025-11-05 22:38:26] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 22:38:31] System: Speech recognition could not understand audio
+[2025-11-05 22:38:31] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-05 22:38:52] System: Speech recognition could not understand audio
+[2025-11-05 22:39:00] System: Recognized: sunday what can you do
+[2025-11-05 22:39:00] System: Wake word detected: sunday what can you do
+[2025-11-05 22:39:00] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 22:39:08] System: Recognized: open routine
+[2025-11-05 22:39:08] User: Command: open routine
+[2025-11-05 22:39:08] System: Navigation to routine: success_button_click
+[2025-11-05 22:39:10] AI: Right away! Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.
+[2025-11-05 22:39:29] System: Recognized: go to routine i said go to routine
+[2025-11-05 22:39:37] System: Recognized: sunday
+[2025-11-05 22:39:37] System: Wake word detected: sunday
+[2025-11-05 22:39:37] AI: Yes, tell me how I can help!
+[2025-11-05 22:39:42] System: Recognized: go to routine
+[2025-11-05 22:39:42] User: Command: go to routine
+[2025-11-05 22:39:43] System: Navigation to routine: success_button_click
+[2025-11-05 22:39:45] AI: You got it! Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.
+[2025-11-05 22:41:03] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-05 22:41:10] System: Recognized: sunday
+[2025-11-05 22:41:10] System: Wake word detected: sunday
+[2025-11-05 22:41:10] AI: Yes, tell me how I can help!
+[2025-11-05 22:41:16] System: Recognized: read what are there in
+[2025-11-05 22:41:16] User: Command: read what are there in
+[2025-11-05 22:41:17] System: Navigation to ar_correction: success_button_click
+[2025-11-05 22:41:19] AI: Got it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-05 22:41:48] System: Recognized: sunday read meal suggestion
+[2025-11-05 22:41:48] System: Wake word detected: sunday read meal suggestion
+[2025-11-05 22:41:48] AI: I'm here! How can I assist your practice?
+[2025-11-05 22:41:56] System: Recognized: read meal suggestion
+[2025-11-05 22:41:56] User: Command: read meal suggestion
+[2025-11-05 22:41:56] AI: I'd be happy to describe any section! Just tell me which one - like 'describe the pose library' or 'tell me about the dashboard'.
+[2025-11-05 22:42:10] System: Recognized: tell me about dash
+[2025-11-05 22:42:20] System: Speech recognition could not understand audio
+[2025-11-05 22:42:53] System: Recognized: sunday
+[2025-11-05 22:42:53] System: Wake word detected: sunday
+[2025-11-05 22:42:53] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 22:43:20] System: Recognized: tell me about dashboard
+[2025-11-05 22:43:20] User: Command: tell me about dashboard
+[2025-11-05 22:43:20] System: Navigation to dashboard: success_button_click
+[2025-11-05 22:43:22] AI: Okay, let's do that! Taking you to the home screen where you can see your progress and daily insights.
+[2025-11-05 22:43:50] System: Speech recognition could not understand audio
+[2025-11-05 22:43:56] System: Recognized: koi sunday
+[2025-11-05 22:43:56] System: Wake word detected: koi sunday
+[2025-11-05 22:43:56] AI: Yes, tell me how I can help!
+[2025-11-05 22:44:15] System: Recognized: what is veerabhadra
+[2025-11-05 22:44:15] User: Command: what is veerabhadra
+[2025-11-05 22:44:15] AI: I want to make sure I understand correctly. You can ask me to: open the pose library, start posture correction, show your routine, or chat with the assistant. What would you like to try?
+[2025-11-05 22:44:22] System: Shutting down
+[2025-11-05 22:44:44] System: TTS engine configured successfully
+[2025-11-05 22:44:44] System: Sunday AI starting with robust TTS system
+[2025-11-05 22:44:44] System: Calibrating microphone... Please wait.
+[2025-11-05 22:44:48] System: Microphone calibrated successfully
+[2025-11-05 22:44:51] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 22:44:51] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 22:45:08] System: Speech recognition error: recognition connection failed: timed out
+[2025-11-05 22:45:26] System: Recognition error: timed out
+[2025-11-05 22:45:39] System: Browser error attempt 1: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff66572e8e5+80021]
+	GetHandleVerifier [0x0x7ff66572e940+80112]
+	(No symbol) [0x0x7ff6654b060f]
+	(No symbol) [0x0x7ff665508854]
+	(No symbol) [0x0x7ff665508b1c]
+	(No symbol) [0x0x7ff66555c927]
+	(No symbol) [0x0x7ff66553126f]
+	(No symbol) [0x0x7ff66555968a]
+	(No symbol) [0x0x7ff665531003]
+	(No symbol) [0x0x7ff6654f95d1]
+	(No symbol) [0x0x7ff6654fa3f3]
+	GetHandleVerifier [0x0x7ff6659edc7d+2960429]
+	GetHandleVerifier [0x0x7ff6659e7f3a+2936554]
+	GetHandleVerifier [0x0x7ff665a08977+3070247]
+	GetHandleVerifier [0x0x7ff6657483ce+185214]
+	GetHandleVerifier [0x0x7ff66574fe1f+216527]
+	GetHandleVerifier [0x0x7ff665737b24+117460]
+	GetHandleVerifier [0x0x7ff665737cdf+117903]
+	GetHandleVerifier [0x0x7ff66571dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 22:45:40] System: Speech recognition error: recognition connection failed: timed out
+[2025-11-05 22:45:44] System: Browser error attempt 2: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff66572e8e5+80021]
+	GetHandleVerifier [0x0x7ff66572e940+80112]
+	(No symbol) [0x0x7ff6654b060f]
+	(No symbol) [0x0x7ff6654882f1]
+	(No symbol) [0x0x7ff6655388be]
+	(No symbol) [0x0x7ff665558fa2]
+	(No symbol) [0x0x7ff665531003]
+	(No symbol) [0x0x7ff6654f95d1]
+	(No symbol) [0x0x7ff6654fa3f3]
+	GetHandleVerifier [0x0x7ff6659edc7d+2960429]
+	GetHandleVerifier [0x0x7ff6659e7f3a+2936554]
+	GetHandleVerifier [0x0x7ff665a08977+3070247]
+	GetHandleVerifier [0x0x7ff6657483ce+185214]
+	GetHandleVerifier [0x0x7ff66574fe1f+216527]
+	GetHandleVerifier [0x0x7ff665737b24+117460]
+	GetHandleVerifier [0x0x7ff665737cdf+117903]
+	GetHandleVerifier [0x0x7ff66571dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 22:45:52] System: TTS engine configured successfully
+[2025-11-05 22:45:52] System: Sunday AI starting with robust TTS system
+[2025-11-05 22:45:53] System: Calibrating microphone... Please wait.
+[2025-11-05 22:45:56] System: Microphone calibrated successfully
+[2025-11-05 22:45:59] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 22:45:59] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 22:46:07] System: Browser error attempt 1: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff66572e8e5+80021]
+	GetHandleVerifier [0x0x7ff66572e940+80112]
+	(No symbol) [0x0x7ff6654b060f]
+	(No symbol) [0x0x7ff6654882f1]
+	(No symbol) [0x0x7ff6655388be]
+	(No symbol) [0x0x7ff665558fa2]
+	(No symbol) [0x0x7ff665531003]
+	(No symbol) [0x0x7ff6654f95d1]
+	(No symbol) [0x0x7ff6654fa3f3]
+	GetHandleVerifier [0x0x7ff6659edc7d+2960429]
+	GetHandleVerifier [0x0x7ff6659e7f3a+2936554]
+	GetHandleVerifier [0x0x7ff665a08977+3070247]
+	GetHandleVerifier [0x0x7ff6657483ce+185214]
+	GetHandleVerifier [0x0x7ff66574fe1f+216527]
+	GetHandleVerifier [0x0x7ff665737b24+117460]
+	GetHandleVerifier [0x0x7ff665737cdf+117903]
+	GetHandleVerifier [0x0x7ff66571dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 22:46:09] System: Shutting down
+[2025-11-05 22:46:11] System: Browser error attempt 2: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff66572e8e5+80021]
+	GetHandleVerifier [0x0x7ff66572e940+80112]
+	(No symbol) [0x0x7ff6654b060f]
+	(No symbol) [0x0x7ff6654882f1]
+	(No symbol) [0x0x7ff6655388be]
+	(No symbol) [0x0x7ff665558fa2]
+	(No symbol) [0x0x7ff665531003]
+	(No symbol) [0x0x7ff6654f95d1]
+	(No symbol) [0x0x7ff6654fa3f3]
+	GetHandleVerifier [0x0x7ff6659edc7d+2960429]
+	GetHandleVerifier [0x0x7ff6659e7f3a+2936554]
+	GetHandleVerifier [0x0x7ff665a08977+3070247]
+	GetHandleVerifier [0x0x7ff6657483ce+185214]
+	GetHandleVerifier [0x0x7ff66574fe1f+216527]
+	GetHandleVerifier [0x0x7ff665737b24+117460]
+	GetHandleVerifier [0x0x7ff665737cdf+117903]
+	GetHandleVerifier [0x0x7ff66571dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 23:26:02] System: Sunday voice assistant starting.
+[2025-11-05 23:26:09] System: Browser opened and page loaded.
+[2025-11-05 23:26:09] AI: Hello! I'm Sunday, your yoga assistant. Say 'Sunday' and then your command.
+[2025-11-05 23:26:20] UserRaw: sunday
+[2025-11-05 23:26:20] AI: Yes? How can I help you?
+[2025-11-05 23:26:26] UserRaw: go to hasan library
+[2025-11-05 23:26:34] UserRaw: go to hassan library
+[2025-11-05 23:26:38] UserRaw: go to air connection
+[2025-11-05 23:26:42] UserRaw: go to assistant
+[2025-11-05 23:27:57] System: TTS engine configured successfully
+[2025-11-05 23:27:57] System: Sunday AI starting with simple TTS system
+[2025-11-05 23:27:57] System: Calibrating microphone... Please wait.
+[2025-11-05 23:28:01] System: Microphone calibrated successfully
+[2025-11-05 23:28:04] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:28:04] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:28:07] System: Browser ready on attempt 1
+[2025-11-05 23:28:07] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:28:11] System: Speech recognition could not understand audio
+[2025-11-05 23:28:14] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 23:28:19] System: Recognized: sunday
+[2025-11-05 23:28:19] System: Wake word detected: sunday
+[2025-11-05 23:28:19] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:28:24] System: Speech recognition could not understand audio
+[2025-11-05 23:28:24] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-05 23:28:31] System: Speech recognition could not understand audio
+[2025-11-05 23:28:38] System: Recognized: sunday
+[2025-11-05 23:28:38] System: Wake word detected: sunday
+[2025-11-05 23:28:38] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:28:43] System: Recognized: open action
+[2025-11-05 23:28:43] User: Command: open action
+[2025-11-05 23:28:43] AI: I want to make sure I understand correctly. You can ask me to: open the pose library, start posture correction, show your routine, or chat with the assistant. What would you like to try?
+[2025-11-05 23:29:01] System: Recognized: sunday
+[2025-11-05 23:29:01] System: Wake word detected: sunday
+[2025-11-05 23:29:01] AI: Hello! What shall we work on together?
+[2025-11-05 23:29:08] System: Recognized: open hassan libra
+[2025-11-05 23:29:08] User: Command: open hassan libra
+[2025-11-05 23:29:08] System: Navigation to asana: success_button_click
+[2025-11-05 23:29:10] AI: No problem! Opening our yoga pose library. You'll find detailed instructions for Tadasana, Downward Dog, Warrior poses, and many more!
+[2025-11-05 23:29:26] System: Recognized: sunday
+[2025-11-05 23:29:26] System: Wake word detected: sunday
+[2025-11-05 23:29:26] AI: I'm here! How can I assist your practice?
+[2025-11-05 23:29:29] System: Recognized: open
+[2025-11-05 23:29:29] User: Command: open
+[2025-11-05 23:29:29] AI: I want to make sure I understand correctly. You can ask me to: open the pose library, start posture correction, show your routine, or chat with the assistant. What would you like to try?
+[2025-11-05 23:29:50] System: Recognized: sunday
+[2025-11-05 23:29:50] System: Wake word detected: sunday
+[2025-11-05 23:29:50] AI: Hello! What shall we work on together?
+[2025-11-05 23:29:57] System: Recognized: open routine
+[2025-11-05 23:29:57] User: Command: open routine
+[2025-11-05 23:29:57] System: Navigation to routine: success_button_click
+[2025-11-05 23:29:59] AI: You got it! Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.
+[2025-11-05 23:30:08] System: Speech recognition could not understand audio
+[2025-11-05 23:30:13] System: Speech recognition could not understand audio
+[2025-11-05 23:30:19] System: Speech recognition could not understand audio
+[2025-11-05 23:30:23] System: Recognized: sunday
+[2025-11-05 23:30:23] System: Wake word detected: sunday
+[2025-11-05 23:30:23] AI: Yes, tell me how I can help!
+[2025-11-05 23:30:30] System: Recognized: open assistant
+[2025-11-05 23:30:30] User: Command: open assistant
+[2025-11-05 23:30:30] System: Navigation to assistant: success_button_click
+[2025-11-05 23:30:32] AI: Absolutely! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-05 23:30:55] System: Recognized: sunday
+[2025-11-05 23:30:55] System: Wake word detected: sunday
+[2025-11-05 23:30:55] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:31:12] System: Recognized: search for yoga history
+[2025-11-05 23:31:12] User: Command: search for yoga history
+[2025-11-05 23:31:12] System: Navigation to ar_correction: success_button_click
+[2025-11-05 23:31:14] AI: Okay, let's do that! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-05 23:31:50] System: Speech recognition could not understand audio
+[2025-11-05 23:31:54] System: Speech recognition could not understand audio
+[2025-11-05 23:31:57] System: Speech recognition could not understand audio
+[2025-11-05 23:32:00] System: Speech recognition could not understand audio
+[2025-11-05 23:32:10] System: Speech recognition could not understand audio
+[2025-11-05 23:32:10] System: Multiple recognition failures, recalibrating microphone
+[2025-11-05 23:32:10] System: Calibrating microphone... Please wait.
+[2025-11-05 23:32:13] System: Microphone calibrated successfully
+[2025-11-05 23:32:23] System: Speech recognition could not understand audio
+[2025-11-05 23:33:29] System: Speech recognition could not understand audio
+[2025-11-05 23:33:33] System: Speech recognition could not understand audio
+[2025-11-05 23:33:34] System: Shutting down
+[2025-11-05 23:33:50] System: Shutdown complete
+[2025-11-05 23:36:06] System: TTS engine configured successfully
+[2025-11-05 23:36:06] System: Sunday AI starting with simple TTS system
+[2025-11-05 23:36:06] System: Calibrating microphone... Please wait.
+[2025-11-05 23:36:09] System: Microphone calibrated successfully
+[2025-11-05 23:36:12] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:36:12] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:36:16] System: Browser ready on attempt 1
+[2025-11-05 23:36:16] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:36:22] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 23:36:31] System: Speech recognition could not understand audio
+[2025-11-05 23:36:35] System: Recognized: sunday
+[2025-11-05 23:36:35] System: Wake word detected: sunday
+[2025-11-05 23:36:35] AI: Yes, tell me how I can help!
+[2025-11-05 23:36:43] System: Recognized: search for yoga
+[2025-11-05 23:36:43] User: Command: search for yoga
+[2025-11-05 23:36:43] AI: Okay, let's do that! Searching for yoga for you.
+[2025-11-05 23:36:43] System: Navigation to assistant: success_button_click
+[2025-11-05 23:36:46] AI: Here are the results for for yoga.
+[2025-11-05 23:37:03] System: Recognized: search for yoga history
+[2025-11-05 23:37:08] System: Speech recognition could not understand audio
+[2025-11-05 23:37:13] System: Recognized: sunday
+[2025-11-05 23:37:13] System: Wake word detected: sunday
+[2025-11-05 23:37:13] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:37:23] System: Recognized: search for yoga
+[2025-11-05 23:37:23] User: Command: search for yoga
+[2025-11-05 23:37:23] AI: Okay, let's do that! Searching for yoga for you.
+[2025-11-05 23:37:23] System: Navigation to assistant: success_button_click
+[2025-11-05 23:37:26] AI: Here are the results for for yoga.
+[2025-11-05 23:37:43] System: Speech recognition could not understand audio
+[2025-11-05 23:38:07] System: Speech recognition could not understand audio
+[2025-11-05 23:38:11] System: Speech recognition could not understand audio
+[2025-11-05 23:38:29] System: Speech recognition could not understand audio
+[2025-11-05 23:40:54] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-05 23:40:54] System: Multiple recognition failures, recalibrating microphone
+[2025-11-05 23:40:54] System: Calibrating microphone... Please wait.
+[2025-11-05 23:40:57] System: Microphone calibrated successfully
+[2025-11-05 23:41:08] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-05 23:41:13] System: Shutting down
+[2025-11-05 23:45:12] System: TTS engine configured successfully
+[2025-11-05 23:45:12] System: Sunday AI starting with robust TTS system
+[2025-11-05 23:45:12] System: Calibrating microphone... Please wait.
+[2025-11-05 23:45:15] System: Microphone calibrated successfully
+[2025-11-05 23:45:18] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:45:18] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:45:23] System: Browser ready on attempt 1
+[2025-11-05 23:45:23] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:45:35] System: Recognized: sunday
+[2025-11-05 23:45:35] System: Wake word detected: sunday
+[2025-11-05 23:45:35] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:45:42] System: Recognized: search for assistant
+[2025-11-05 23:45:42] User: Command: search for assistant
+[2025-11-05 23:45:42] AI: I'll take care of that! Searching for assistant.
+[2025-11-05 23:45:47] System: Navigation to assistant: success_text_match
+[2025-11-05 23:45:57] System: Search interaction error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75148e8e5+80021]
+	GetHandleVerifier [0x0x7ff75148e940+80112]
+	(No symbol) [0x0x7ff75121060f]
+	(No symbol) [0x0x7ff751268854]
+	(No symbol) [0x0x7ff751268b1c]
+	(No symbol) [0x0x7ff7512bc927]
+	(No symbol) [0x0x7ff75129126f]
+	(No symbol) [0x0x7ff7512b968a]
+	(No symbol) [0x0x7ff751291003]
+	(No symbol) [0x0x7ff7512595d1]
+	(No symbol) [0x0x7ff75125a3f3]
+	GetHandleVerifier [0x0x7ff75174dc7d+2960429]
+	GetHandleVerifier [0x0x7ff751747f3a+2936554]
+	GetHandleVerifier [0x0x7ff751768977+3070247]
+	GetHandleVerifier [0x0x7ff7514a83ce+185214]
+	GetHandleVerifier [0x0x7ff7514afe1f+216527]
+	GetHandleVerifier [0x0x7ff751497b24+117460]
+	GetHandleVerifier [0x0x7ff751497cdf+117903]
+	GetHandleVerifier [0x0x7ff75147dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 23:45:57] AI: I encountered an issue while searching. Please try again.
+[2025-11-05 23:46:11] System: Recognized: sunday
+[2025-11-05 23:46:11] System: Wake word detected: sunday
+[2025-11-05 23:46:11] AI: Hello! What shall we work on together?
+[2025-11-05 23:46:17] System: Recognized: search for yoga history
+[2025-11-05 23:46:17] User: Command: search for yoga history
+[2025-11-05 23:46:17] AI: Right away! Searching for yoga history.
+[2025-11-05 23:46:22] System: Navigation to assistant: success_text_match
+[2025-11-05 23:46:32] System: Search interaction error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75148e8e5+80021]
+	GetHandleVerifier [0x0x7ff75148e940+80112]
+	(No symbol) [0x0x7ff75121060f]
+	(No symbol) [0x0x7ff751268854]
+	(No symbol) [0x0x7ff751268b1c]
+	(No symbol) [0x0x7ff7512bc927]
+	(No symbol) [0x0x7ff75129126f]
+	(No symbol) [0x0x7ff7512b968a]
+	(No symbol) [0x0x7ff751291003]
+	(No symbol) [0x0x7ff7512595d1]
+	(No symbol) [0x0x7ff75125a3f3]
+	GetHandleVerifier [0x0x7ff75174dc7d+2960429]
+	GetHandleVerifier [0x0x7ff751747f3a+2936554]
+	GetHandleVerifier [0x0x7ff751768977+3070247]
+	GetHandleVerifier [0x0x7ff7514a83ce+185214]
+	GetHandleVerifier [0x0x7ff7514afe1f+216527]
+	GetHandleVerifier [0x0x7ff751497b24+117460]
+	GetHandleVerifier [0x0x7ff751497cdf+117903]
+	GetHandleVerifier [0x0x7ff75147dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 23:46:32] AI: I encountered an issue while searching. Please try again.
+[2025-11-05 23:46:39] System: Shutting down
+[2025-11-05 23:46:52] System: Shutdown complete
+[2025-11-05 23:50:41] System: TTS engine configured successfully
+[2025-11-05 23:50:41] System: Sunday AI starting with robust TTS system
+[2025-11-05 23:50:41] System: Calibrating microphone... Please wait.
+[2025-11-05 23:50:45] System: Microphone calibrated successfully
+[2025-11-05 23:50:48] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:50:48] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:50:50] System: Browser ready on attempt 1
+[2025-11-05 23:50:50] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:50:58] System: Speech recognition could not understand audio
+[2025-11-05 23:51:02] System: Recognized: sunday
+[2025-11-05 23:51:02] System: Wake word detected: sunday
+[2025-11-05 23:51:02] AI: Hello! What shall we work on together?
+[2025-11-05 23:51:08] System: Recognized: search for yoga
+[2025-11-05 23:51:08] User: Command: search for yoga
+[2025-11-05 23:51:08] AI: Okay, let's do that! Searching for yoga.
+[2025-11-05 23:51:13] System: Navigation to assistant: success_text_match
+[2025-11-05 23:51:35] System: Search interaction error: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff75148e8e5+80021]
+	GetHandleVerifier [0x0x7ff75148e940+80112]
+	(No symbol) [0x0x7ff75121060f]
+	(No symbol) [0x0x7ff751268854]
+	(No symbol) [0x0x7ff751268b1c]
+	(No symbol) [0x0x7ff7512bc927]
+	(No symbol) [0x0x7ff75129126f]
+	(No symbol) [0x0x7ff7512b968a]
+	(No symbol) [0x0x7ff751291003]
+	(No symbol) [0x0x7ff7512595d1]
+	(No symbol) [0x0x7ff75125a3f3]
+	GetHandleVerifier [0x0x7ff75174dc7d+2960429]
+	GetHandleVerifier [0x0x7ff751747f3a+2936554]
+	GetHandleVerifier [0x0x7ff751768977+3070247]
+	GetHandleVerifier [0x0x7ff7514a83ce+185214]
+	GetHandleVerifier [0x0x7ff7514afe1f+216527]
+	GetHandleVerifier [0x0x7ff751497b24+117460]
+	GetHandleVerifier [0x0x7ff751497cdf+117903]
+	GetHandleVerifier [0x0x7ff75147dbb8+11112]
+	BaseThreadInitThunk [0x0x7ffdd33ce8d7+23]
+	RtlUserThreadStart [0x0x7ffdd518c53c+44]
+
+[2025-11-05 23:51:35] AI: I encountered an issue while searching. Please try again or ensure your Chrome and ChromeDriver versions are compatible.
+[2025-11-05 23:51:48] System: Shutting down
+[2025-11-05 23:51:59] System: TTS engine configured successfully
+[2025-11-05 23:51:59] System: Sunday AI starting with simple TTS system
+[2025-11-05 23:51:59] System: Calibrating microphone... Please wait.
+[2025-11-05 23:52:02] System: Microphone calibrated successfully
+[2025-11-05 23:52:05] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:52:05] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:52:09] System: Browser ready on attempt 1
+[2025-11-05 23:52:09] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:52:19] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 23:52:25] System: Recognized: sunday
+[2025-11-05 23:52:25] System: Wake word detected: sunday
+[2025-11-05 23:52:25] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:52:33] System: Recognized: search for yoga
+[2025-11-05 23:52:33] User: Command: search for yoga
+[2025-11-05 23:52:33] System: Navigation to ar_correction: success_button_click
+[2025-11-05 23:52:35] AI: Sure thing! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-05 23:52:44] System: Shutting down
+[2025-11-05 23:52:46] System: Speech recognition could not understand audio
+[2025-11-05 23:52:58] System: TTS engine configured successfully
+[2025-11-05 23:52:58] System: Sunday AI starting with simple TTS system
+[2025-11-05 23:52:58] System: Calibrating microphone... Please wait.
+[2025-11-05 23:53:01] System: Microphone calibrated successfully
+[2025-11-05 23:53:04] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:53:04] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:53:07] System: Browser ready on attempt 1
+[2025-11-05 23:53:07] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:53:17] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 23:53:18] System: Speech recognition could not understand audio
+[2025-11-05 23:53:21] System: Speech recognition could not understand audio
+[2025-11-05 23:53:27] System: Recognized: sunday
+[2025-11-05 23:53:27] System: Wake word detected: sunday
+[2025-11-05 23:53:27] AI: Hello! What shall we work on together?
+[2025-11-05 23:53:38] AI: I'm here when you need me. Just say 'Sunday' followed by your request.
+[2025-11-05 23:56:43] System: TTS engine configured successfully
+[2025-11-05 23:56:43] System: Sunday AI starting with simple TTS system
+[2025-11-05 23:56:44] System: Calibrating microphone... Please wait.
+[2025-11-05 23:56:47] System: Microphone calibrated successfully
+[2025-11-05 23:56:50] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-05 23:56:50] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-05 23:56:55] System: Browser ready on attempt 1
+[2025-11-05 23:56:55] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-05 23:56:55] System: Speech recognition could not understand audio
+[2025-11-05 23:57:01] System: Speech recognition could not understand audio
+[2025-11-05 23:57:05] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-05 23:57:06] System: Speech recognition could not understand audio
+[2025-11-05 23:57:09] System: Speech recognition could not understand audio
+[2025-11-05 23:57:14] System: Recognized: sunday
+[2025-11-05 23:57:14] System: Wake word detected: sunday
+[2025-11-05 23:57:14] AI: Yes, I'm listening! What would you like to do?
+[2025-11-05 23:57:22] System: Recognized: search for assistant
+[2025-11-05 23:57:22] User: Command: search for assistant
+[2025-11-05 23:57:22] System: Navigation to ar_correction: success_button_click
+[2025-11-05 23:57:24] AI: Got it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-05 23:57:33] System: Speech recognition could not understand audio
+[2025-11-05 23:58:07] System: Speech recognition could not understand audio
+[2025-11-05 23:58:38] System: Speech recognition could not understand audio
+[2025-11-05 23:59:08] System: Speech recognition could not understand audio
+[2025-11-05 23:59:20] System: Speech recognition could not understand audio
+[2025-11-05 23:59:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-05 23:59:20] System: Calibrating microphone... Please wait.
+[2025-11-05 23:59:23] System: Microphone calibrated successfully
+[2025-11-05 23:59:27] System: Speech recognition could not understand audio
+[2025-11-05 23:59:31] System: Speech recognition could not understand audio
+[2025-11-05 23:59:35] System: Speech recognition could not understand audio
+[2025-11-05 23:59:46] System: Speech recognition could not understand audio
+[2025-11-06 00:01:24] System: Speech recognition could not understand audio
+[2025-11-06 00:01:24] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 00:01:24] System: Calibrating microphone... Please wait.
+[2025-11-06 00:01:27] System: Microphone calibrated successfully
+[2025-11-06 00:02:27] System: Speech recognition could not understand audio
+[2025-11-06 00:02:41] System: TTS engine configured successfully
+[2025-11-06 00:02:41] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:02:41] System: Calibrating microphone... Please wait.
+[2025-11-06 00:02:44] System: Microphone calibrated successfully
+[2025-11-06 00:02:47] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:02:47] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:02:50] System: Browser ready on attempt 1
+[2025-11-06 00:02:50] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:02:50] System: Speech recognition could not understand audio
+[2025-11-06 00:02:58] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:03:03] System: Recognized: sunday
+[2025-11-06 00:03:03] System: Wake word detected: sunday
+[2025-11-06 00:03:03] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:03:08] System: Recognized: open assistant
+[2025-11-06 00:03:08] User: Command: open assistant
+[2025-11-06 00:03:08] System: Navigation to assistant: success_button_click
+[2025-11-06 00:03:10] AI: I'll take care of that! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 00:03:20] System: Speech recognition could not understand audio
+[2025-11-06 00:03:24] System: Speech recognition could not understand audio
+[2025-11-06 00:03:31] System: Recognized: sunday
+[2025-11-06 00:03:31] System: Wake word detected: sunday
+[2025-11-06 00:03:31] AI: Hello! What shall we work on together?
+[2025-11-06 00:03:37] System: Recognized: search for yoga
+[2025-11-06 00:03:37] User: Command: search for yoga
+[2025-11-06 00:03:37] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:03:39] AI: I'll take care of that! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:03:46] System: Speech recognition could not understand audio
+[2025-11-06 00:03:50] System: Speech recognition could not understand audio
+[2025-11-06 00:03:54] System: Recognized: sunday
+[2025-11-06 00:03:54] System: Wake word detected: sunday
+[2025-11-06 00:03:54] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:04:00] System: Speech recognition could not understand audio
+[2025-11-06 00:04:00] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-06 00:04:03] System: Speech recognition could not understand audio
+[2025-11-06 00:04:07] System: Recognized: sunday
+[2025-11-06 00:04:07] System: Wake word detected: sunday
+[2025-11-06 00:04:07] AI: Hello! What shall we work on together?
+[2025-11-06 00:04:14] System: Recognized: search for yoga history
+[2025-11-06 00:04:14] User: Command: search for yoga history
+[2025-11-06 00:04:14] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:04:16] AI: I'll take care of that! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:04:22] System: Speech recognition could not understand audio
+[2025-11-06 00:04:27] System: Speech recognition could not understand audio
+[2025-11-06 00:05:40] System: Shutting down
+[2025-11-06 00:05:50] System: TTS engine configured successfully with queue
+[2025-11-06 00:05:50] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:05:50] System: Calibrating microphone... Please wait.
+[2025-11-06 00:05:53] System: Microphone calibrated successfully
+[2025-11-06 00:05:56] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:05:56] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:05:59] System: Browser ready on attempt 1
+[2025-11-06 00:05:59] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:06:03] System: Speech recognition could not understand audio
+[2025-11-06 00:06:10] System: Recognized: sunday
+[2025-11-06 00:06:10] System: Wake word detected: sunday
+[2025-11-06 00:06:10] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:06:19] System: Recognized: search for yoga
+[2025-11-06 00:06:19] User: Command: search for yoga
+[2025-11-06 00:06:19] AI: Right away! Switching to the assistant.
+[2025-11-06 00:06:19] System: Navigation to assistant: success_button_click
+[2025-11-06 00:06:24] System: Typed query: search for yoga
+[2025-11-06 00:06:24] AI: Asking the assistant...
+[2025-11-06 00:06:31] AI: Yoga is a holistic mind and body practice that originated in ancient India. The word "yoga" comes from the Sanskrit root "yuj," meaning "to unite" or "to join," signifying the union of body, mind, and spirit. It typically involves physical postures (asanas), breathing exercises (pranayama), and meditation (dhyana).
+
+Key Benefits of Practicing Yoga:
+
+Improved Flexibility, Strength, and Balance: Yoga poses help stretch muscles and build strength.
+
+Stress Reduction and Mental Well-being: Regular practice can decrease stress hormones, reduce anxiety and depression, and promote mental clarity and calmness.
+
+Enhanced Physical Health: Benefits include relief from back pain and arthritis symptoms, improved heart health, better sleep quality, increased energy, and a boosted immune system.
+
+
+Common Types of Yoga:
+
+There are many styles of yoga, each with its own focus:
+
+Hatha Yoga: A general term for any yoga that teaches physical postures, often a gentle introduction to basic poses.
+
+Vinyasa Yoga: Known as "flow" yoga, it links movement to breath in a dynamic sequence of postures.
+
+Ashtanga Yoga: A rigorous and physically demanding style that follows a specific sequence of poses.
+
+Restorative Yoga: Focuses on relaxation and uses props to support the body in passive, held poses.
+
+ 
+[2025-11-06 00:06:31] Assistant: Yoga is a holistic mind and body practice that originated in ancient India. The word "yoga" comes from the Sanskrit root "yuj," meaning "to unite" or "to join," signifying the union of body, mind, and spirit. It typically involves physical postures (asanas), breathing exercises (pranayama), and meditation (dhyana).
+
+Key Benefits of Practicing Yoga:
+
+Improved Flexibility, Strength, and Balance: Yoga poses help stretch muscles and build strength.
+
+Stress Reduction and Mental Well-being: Regular practice can decrease stress hormones, reduce anxiety and depression, and promote mental clarity and calmness.
+
+Enhanced Physical Health: Benefits include relief from back pain and arthritis symptoms, improved heart health, better sleep quality, increased energy, and a boosted immune system.
+
+
+Common Types of Yoga:
+
+There are many styles of yoga, each with its own focus:
+
+Hatha Yoga: A general term for any yoga that teaches physical postures, often a gentle introduction to basic poses.
+
+Vinyasa Yoga: Known as "flow" yoga, it links movement to breath in a dynamic sequence of postures.
+
+Ashtanga Yoga: A rigorous and physically demanding style that follows a specific sequence of poses.
+
+Restorative Yoga: Focuses on relaxation and uses props to support the body in passive, held poses.
+
+ 
+[2025-11-06 00:06:42] System: Speech recognition could not understand audio
+[2025-11-06 00:06:45] System: Speech recognition could not understand audio
+[2025-11-06 00:06:50] System: Speech recognition could not understand audio
+[2025-11-06 00:07:39] System: TTS engine configured successfully
+[2025-11-06 00:07:39] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:07:39] System: Calibrating microphone... Please wait.
+[2025-11-06 00:07:42] System: Microphone calibrated successfully
+[2025-11-06 00:07:45] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:07:45] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:07:48] System: Browser ready on attempt 1
+[2025-11-06 00:07:48] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:07:51] System: Speech recognition could not understand audio
+[2025-11-06 00:08:05] System: TTS engine configured successfully with queue
+[2025-11-06 00:08:05] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:08:06] System: Calibrating microphone... Please wait.
+[2025-11-06 00:08:09] System: Microphone calibrated successfully
+[2025-11-06 00:08:12] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:08:12] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:08:12] System: Queued TTS: I'm listening for you. Just say 'Sunday' when you ...
+[2025-11-06 00:08:12] System: Queued TTS: Hello! I'm Sunday, your yoga assistant. I'm here a...
+[2025-11-06 00:08:15] System: Browser ready on attempt 1
+[2025-11-06 00:08:15] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:08:15] System: Queued TTS: Perfect! I'm all connected and ready to help you w...
+[2025-11-06 00:08:15] System: Speech recognition could not understand audio
+[2025-11-06 00:08:20] System: Recognized: sunday
+[2025-11-06 00:08:20] System: Wake word detected: sunday
+[2025-11-06 00:08:20] AI: Hello! What shall we work on together?
+[2025-11-06 00:08:20] System: Queued TTS: Hello! What shall we work on together?...
+[2025-11-06 00:08:24] System: Speech recognition could not understand audio
+[2025-11-06 00:08:24] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-06 00:08:24] System: Queued TTS: I didn't catch that clearly. Feel free to try agai...
+[2025-11-06 00:08:30] System: Speech recognition could not understand audio
+[2025-11-06 00:10:56] System: TTS engine configured successfully
+[2025-11-06 00:10:56] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:10:56] System: Calibrating microphone... Please wait.
+[2025-11-06 00:10:59] System: Microphone calibrated successfully
+[2025-11-06 00:11:02] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:11:02] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:11:02] System: Speak error: run loop already started
+[2025-11-06 00:11:05] System: Browser ready on attempt 1
+[2025-11-06 00:11:05] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:11:05] System: Speak error: run loop already started
+[2025-11-06 00:11:15] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:15:28] System: TTS engine configured successfully
+[2025-11-06 00:15:28] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:15:28] System: Calibrating microphone... Please wait.
+[2025-11-06 00:15:32] System: Microphone calibrated successfully
+[2025-11-06 00:15:35] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:15:35] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:15:38] System: Speech recognition could not understand audio
+[2025-11-06 00:15:38] System: Browser ready on attempt 1
+[2025-11-06 00:15:38] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:15:48] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:15:49] System: Speech recognition could not understand audio
+[2025-11-06 00:15:52] System: Speech recognition could not understand audio
+[2025-11-06 00:16:00] System: Recognized: sunday
+[2025-11-06 00:16:00] System: Wake word detected: sunday
+[2025-11-06 00:16:00] AI: I'm here! How can I assist your practice?
+[2025-11-06 00:16:08] System: Recognized: open routine
+[2025-11-06 00:16:08] User: Command: open routine
+[2025-11-06 00:16:08] System: Navigation failed: Message: javascript error: Invalid or unexpected token
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff69b9fe8e5+80021]
+	GetHandleVerifier [0x0x7ff69b9fe940+80112]
+	(No symbol) [0x0x7ff69b78060f]
+	(No symbol) [0x0x7ff69b78816a]
+	(No symbol) [0x0x7ff69b78b5b2]
+	(No symbol) [0x0x7ff69b82aa1b]
+	(No symbol) [0x0x7ff69b80122a]
+	(No symbol) [0x0x7ff69b82968a]
+	(No symbol) [0x0x7ff69b801003]
+	(No symbol) [0x0x7ff69b7c95d1]
+	(No symbol) [0x0x7ff69b7ca3f3]
+	GetHandleVerifier [0x0x7ff69bcbdc7d+2960429]
+	GetHandleVerifier [0x0x7ff69bcb7f3a+2936554]
+	GetHandleVerifier [0x0x7ff69bcd8977+3070247]
+	GetHandleVerifier [0x0x7ff69ba183ce+185214]
+	GetHandleVerifier [0x0x7ff69ba1fe1f+216527]
+	GetHandleVerifier [0x0x7ff69ba07b24+117460]
+	GetHandleVerifier [0x0x7ff69ba07cdf+117903]
+	GetHandleVerifier [0x0x7ff69b9edbb8+11112]
+	BaseThreadInitThunk [0x0x7ffa4b01e8d7+23]
+	RtlUserThreadStart [0x0x7ffa4c58c53c+44]
+
+[2025-11-06 00:16:08] AI: Let me load your personalized routine. I'm checking your latest activity and stress levels to give you the best recommendations.
+[2025-11-06 00:16:15] System: Speech recognition could not understand audio
+[2025-11-06 00:16:31] System: Speech recognition could not understand audio
+[2025-11-06 00:17:16] System: TTS engine configured successfully
+[2025-11-06 00:17:16] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:17:16] System: Calibrating microphone... Please wait.
+[2025-11-06 00:17:19] System: Microphone calibrated successfully
+[2025-11-06 00:17:22] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:17:25] System: Speech recognition could not understand audio
+[2025-11-06 00:17:25] System: Browser ready on attempt 1
+[2025-11-06 00:17:30] System: Recognized: sunday
+[2025-11-06 00:17:30] System: Wake word detected: sunday
+[2025-11-06 00:17:43] System: Speech recognition could not understand audio
+[2025-11-06 00:17:48] System: Speech recognition could not understand audio
+[2025-11-06 00:17:53] System: Speech recognition could not understand audio
+[2025-11-06 00:17:56] System: Recognized: sunday
+[2025-11-06 00:17:56] System: Wake word detected: sunday
+[2025-11-06 00:18:03] System: Recognized: search for routine
+[2025-11-06 00:18:03] User: Command: search for routine
+[2025-11-06 00:18:03] System: Performing AI search for: routineine
+[2025-11-06 00:18:06] AI: Search Result: I've searched for information regarding routineine, and here is a brief summary: It is commonly believed that the average adult needs about seven to nine hours of sleep per night for optimal health and cognitive function.
+[2025-11-06 00:30:23] System: TTS engine configured successfully
+[2025-11-06 00:30:23] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:30:23] System: Calibrating microphone... Please wait.
+[2025-11-06 00:30:26] System: Microphone calibrated successfully
+[2025-11-06 00:30:29] System: Browser opened successfully
+[2025-11-06 00:30:29] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:30:59] User (Wake): sunday
+[2025-11-06 00:30:59] AI: Yes?
+[2025-11-06 00:31:05] User (Command): open hasan library
+[2025-11-06 00:31:06] AI: I'm happy to help! Opening the Asana Library. You can ask me to guide you through a specific pose, like Mountain Pose.
+[2025-11-06 00:31:34] User (Wake): sunday
+[2025-11-06 00:31:34] AI: Yes?
+[2025-11-06 00:31:41] User (Command): open assistant
+[2025-11-06 00:31:42] AI: I'm on it! You're now in the Virtual Assistant chat. You can type or continue speaking your questions here!
+[2025-11-06 00:32:00] User (Wake): sunday
+[2025-11-06 00:32:00] AI: Yes?
+[2025-11-06 00:32:06] User (Command): search for yoga history
+[2025-11-06 00:32:06] System: Voice Search detected with query: for yoga history
+[2025-11-06 00:32:06] AI: Right away! Searching the web for for yoga history and I'll read the answer for you.
+[2025-11-06 00:32:06] System: Executing voice search script in browser for: for yoga history
+[2025-11-06 00:32:06] System: AI Search/Speak error: Message: javascript error: app.handleVoiceSearch is not a function
+  (Session info: chrome=141.0.7390.123)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff69b9fe8e5+80021]
+	GetHandleVerifier [0x0x7ff69b9fe940+80112]
+	(No symbol) [0x0x7ff69b78060f]
+	(No symbol) [0x0x7ff69b78816a]
+	(No symbol) [0x0x7ff69b78b5b2]
+	(No symbol) [0x0x7ff69b82aa1b]
+	(No symbol) [0x0x7ff69b80122a]
+	(No symbol) [0x0x7ff69b82968a]
+	(No symbol) [0x0x7ff69b801003]
+	(No symbol) [0x0x7ff69b7c95d1]
+	(No symbol) [0x0x7ff69b7ca3f3]
+	GetHandleVerifier [0x0x7ff69bcbdc7d+2960429]
+	GetHandleVerifier [0x0x7ff69bcb7f3a+2936554]
+	GetHandleVerifier [0x0x7ff69bcd8977+3070247]
+	GetHandleVerifier [0x0x7ff69ba183ce+185214]
+	GetHandleVerifier [0x0x7ff69ba1fe1f+216527]
+	GetHandleVerifier [0x0x7ff69ba07b24+117460]
+	GetHandleVerifier [0x0x7ff69ba07cdf+117903]
+	GetHandleVerifier [0x0x7ff69b9edbb8+11112]
+	BaseThreadInitThunk [0x0x7ffa4b01e8d7+23]
+	RtlUserThreadStart [0x0x7ffa4c58c53c+44]
+
+[2025-11-06 00:32:06] AI: I apologize, but I encountered an error while trying to perform the search and read the answer. Please check the console for details.
+[2025-11-06 00:35:19] System: TTS engine configured successfully
+[2025-11-06 00:35:19] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:35:19] System: Calibrating microphone... Please wait.
+[2025-11-06 00:35:22] System: Microphone calibrated successfully
+[2025-11-06 00:35:25] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:35:25] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:35:28] System: Speech recognition could not understand audio
+[2025-11-06 00:35:31] System: Browser ready on attempt 1
+[2025-11-06 00:35:31] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:35:40] System: Speech recognition could not understand audio
+[2025-11-06 00:35:42] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:35:48] System: Speech recognition could not understand audio
+[2025-11-06 00:35:52] System: Recognized: sunday
+[2025-11-06 00:35:52] System: Wake word detected: sunday
+[2025-11-06 00:35:52] AI: Hello! What shall we work on together?
+[2025-11-06 00:35:59] System: Recognized: open hasan library
+[2025-11-06 00:35:59] User: Command: open hasan library
+[2025-11-06 00:35:59] System: Navigation to asana: success_button_click
+[2025-11-06 00:36:01] AI: Got it! Opening our yoga pose library. You'll find detailed instructions for Tadasana, Downward Dog, Warrior poses, and many more!
+[2025-11-06 00:36:12] System: Speech recognition could not understand audio
+[2025-11-06 00:36:16] System: Recognized: sunday
+[2025-11-06 00:36:16] System: Wake word detected: sunday
+[2025-11-06 00:36:16] AI: Hello! What shall we work on together?
+[2025-11-06 00:36:22] System: Recognized: open air correction
+[2025-11-06 00:36:22] User: Command: open air correction
+[2025-11-06 00:36:22] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:36:24] AI: You got it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:36:30] System: Speech recognition could not understand audio
+[2025-11-06 00:36:35] System: Speech recognition could not understand audio
+[2025-11-06 00:36:41] System: Recognized: sunday
+[2025-11-06 00:36:41] System: Wake word detected: sunday
+[2025-11-06 00:36:41] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:36:49] System: Recognized: search for yoga history
+[2025-11-06 00:36:49] User: Command: search for yoga history
+[2025-11-06 00:36:49] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:36:51] AI: I'm on it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:36:58] System: Speech recognition could not understand audio
+[2025-11-06 00:37:01] System: Speech recognition could not understand audio
+[2025-11-06 00:37:09] System: Speech recognition could not understand audio
+[2025-11-06 00:37:16] System: Recognized: sunday
+[2025-11-06 00:37:16] System: Wake word detected: sunday
+[2025-11-06 00:37:16] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:37:21] System: Recognized: open assistant
+[2025-11-06 00:37:21] User: Command: open assistant
+[2025-11-06 00:37:21] System: Navigation to assistant: success_button_click
+[2025-11-06 00:37:23] AI: Sure thing! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 00:37:28] System: Speech recognition could not understand audio
+[2025-11-06 00:37:34] System: Speech recognition could not understand audio
+[2025-11-06 00:37:40] System: Recognized: sunday
+[2025-11-06 00:37:40] System: Wake word detected: sunday
+[2025-11-06 00:37:40] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:37:46] System: Speech recognition could not understand audio
+[2025-11-06 00:37:46] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-06 00:37:49] System: Speech recognition could not understand audio
+[2025-11-06 00:37:54] System: Recognized: sunday
+[2025-11-06 00:37:54] System: Wake word detected: sunday
+[2025-11-06 00:37:54] AI: Hello! What shall we work on together?
+[2025-11-06 00:38:00] System: Recognized: search for yoga history
+[2025-11-06 00:38:00] User: Command: search for yoga history
+[2025-11-06 00:38:00] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:38:02] AI: You got it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:38:10] System: Speech recognition could not understand audio
+[2025-11-06 00:38:37] System: Recognized: sunday
+[2025-11-06 00:38:37] System: Wake word detected: sunday
+[2025-11-06 00:38:37] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:38:42] System: Recognized: search for yoga
+[2025-11-06 00:38:42] User: Command: search for yoga
+[2025-11-06 00:38:42] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:38:44] AI: No problem! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:38:49] System: Speech recognition could not understand audio
+[2025-11-06 00:38:53] System: Speech recognition could not understand audio
+[2025-11-06 00:38:56] System: Recognized: open assistant
+[2025-11-06 00:38:56] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-11-06 00:39:03] System: Recognized: sunday
+[2025-11-06 00:39:03] System: Wake word detected: sunday
+[2025-11-06 00:39:03] AI: Hello! What shall we work on together?
+[2025-11-06 00:39:11] System: Recognized: open search assistant
+[2025-11-06 00:39:11] User: Command: open search assistant
+[2025-11-06 00:39:11] System: Navigation to ar_correction: success_button_click
+[2025-11-06 00:39:13] AI: I'm on it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 00:39:20] System: Speech recognition could not understand audio
+[2025-11-06 00:39:23] System: Speech recognition could not understand audio
+[2025-11-06 00:39:39] System: Speech recognition could not understand audio
+[2025-11-06 00:39:42] System: Speech recognition could not understand audio
+[2025-11-06 00:40:24] System: Speech recognition could not understand audio
+[2025-11-06 00:40:24] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 00:40:24] System: Calibrating microphone... Please wait.
+[2025-11-06 00:40:27] System: Microphone calibrated successfully
+[2025-11-06 00:41:01] System: Speech recognition could not understand audio
+[2025-11-06 00:41:11] System: Speech recognition could not understand audio
+[2025-11-06 00:42:04] System: Speech recognition could not understand audio
+[2025-11-06 00:44:11] System: Speech recognition could not understand audio
+[2025-11-06 00:44:14] System: Speech recognition could not understand audio
+[2025-11-06 00:44:14] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 00:44:14] System: Calibrating microphone... Please wait.
+[2025-11-06 00:44:17] System: Microphone calibrated successfully
+[2025-11-06 00:45:32] System: Shutting down
+[2025-11-06 00:45:43] System: TTS engine configured successfully
+[2025-11-06 00:45:43] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:45:43] System: Calibrating microphone... Please wait.
+[2025-11-06 00:45:46] System: Microphone calibrated successfully
+[2025-11-06 00:45:49] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:45:49] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:45:52] System: Speech recognition could not understand audio
+[2025-11-06 00:45:53] System: Browser ready on attempt 1
+[2025-11-06 00:45:53] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:45:57] System: Speech recognition could not understand audio
+[2025-11-06 00:46:00] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:46:01] System: Speech recognition could not understand audio
+[2025-11-06 00:46:05] System: Recognized: sunday
+[2025-11-06 00:46:05] System: Wake word detected: sunday
+[2025-11-06 00:46:05] AI: Yes, tell me how I can help!
+[2025-11-06 00:46:10] System: Recognized: open air correction
+[2025-11-06 00:46:10] User: Command: open air correction
+[2025-11-06 00:46:10] System: Navigation to assistant: success_button_click
+[2025-11-06 00:46:12] AI: I'll take care of that! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 00:46:18] System: Recognized: sunday open hasan library
+[2025-11-06 00:46:18] System: Wake word detected: sunday open hasan library
+[2025-11-06 00:46:18] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:46:26] System: Recognized: open open asha library
+[2025-11-06 00:46:26] User: Command: open open asha library
+[2025-11-06 00:46:26] System: Navigation to asana: success_button_click
+[2025-11-06 00:46:28] AI: No problem! Opening our yoga pose library. You'll find detailed instructions for Tadasana, Downward Dog, Warrior poses, and many more!
+[2025-11-06 00:46:40] System: Speech recognition could not understand audio
+[2025-11-06 00:46:45] System: Recognized: sunday
+[2025-11-06 00:46:45] System: Wake word detected: sunday
+[2025-11-06 00:46:45] AI: Yes, tell me how I can help!
+[2025-11-06 00:46:50] System: Recognized: search for yoga
+[2025-11-06 00:46:50] User: Command: search for yoga
+[2025-11-06 00:46:50] System: Navigation to assistant: success_button_click
+[2025-11-06 00:46:52] AI: I'm on it! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 00:46:58] System: Speech recognition could not understand audio
+[2025-11-06 00:47:05] System: Recognized: search for yoga
+[2025-11-06 00:47:25] System: Speech recognition error: recognition request failed: Connection refused
+[2025-11-06 00:47:29] System: Recognized: sunday
+[2025-11-06 00:47:29] System: Wake word detected: sunday
+[2025-11-06 00:47:29] AI: I'm here! How can I assist your practice?
+[2025-11-06 00:47:35] System: Recognized: search for yoga history
+[2025-11-06 00:47:35] User: Command: search for yoga history
+[2025-11-06 00:47:35] System: Navigation to assistant: success_button_click
+[2025-11-06 00:47:37] AI: Sure thing! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 00:47:47] System: Speech recognition could not understand audio
+[2025-11-06 00:47:51] System: Speech recognition could not understand audio
+[2025-11-06 00:50:10] System: Speech recognition could not understand audio
+[2025-11-06 00:50:38] System: Speech recognition could not understand audio
+[2025-11-06 00:50:42] System: Speech recognition could not understand audio
+[2025-11-06 00:50:42] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 00:50:42] System: Calibrating microphone... Please wait.
+[2025-11-06 00:50:45] System: Microphone calibrated successfully
+[2025-11-06 00:50:55] System: Speech recognition could not understand audio
+[2025-11-06 00:51:49] System: Recognized: daya group per message
+[2025-11-06 00:51:54] System: Speech recognition could not understand audio
+[2025-11-06 00:51:59] System: Speech recognition could not understand audio
+[2025-11-06 00:52:06] System: Recognized: name project exercise
+[2025-11-06 00:56:56] System: TTS engine configured successfully
+[2025-11-06 00:56:56] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:56:56] System: Calibrating microphone... Please wait.
+[2025-11-06 00:56:59] System: Microphone calibrated successfully
+[2025-11-06 00:57:02] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:57:02] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:57:05] System: Speech recognition could not understand audio
+[2025-11-06 00:57:05] System: Browser ready on attempt 1
+[2025-11-06 00:57:05] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:57:13] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:57:13] System: Speech recognition could not understand audio
+[2025-11-06 00:57:20] System: Speech recognition could not understand audio
+[2025-11-06 00:57:23] System: Speech recognition could not understand audio
+[2025-11-06 00:57:27] System: Recognized: sunday
+[2025-11-06 00:57:27] System: Wake word detected: sunday
+[2025-11-06 00:57:27] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:57:33] System: Recognized: open air correction
+[2025-11-06 00:57:33] User: Command: open air correction
+[2025-11-06 00:57:33] AI: I'm opening the chat interface where we can talk about anything related to yoga and wellness.
+[2025-11-06 00:57:40] System: Speech recognition could not understand audio
+[2025-11-06 00:57:44] System: Recognized: sunday
+[2025-11-06 00:57:44] System: Wake word detected: sunday
+[2025-11-06 00:57:44] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:57:50] System: Recognized: open hassan library
+[2025-11-06 00:57:50] User: Command: open hassan library
+[2025-11-06 00:57:50] AI: Let me try to open the pose library another way. Sometimes the connection needs a moment.
+[2025-11-06 00:57:57] System: Speech recognition could not understand audio
+[2025-11-06 00:58:20] System: TTS engine configured successfully
+[2025-11-06 00:58:20] System: Sunday AI starting with simple TTS system
+[2025-11-06 00:58:20] System: Calibrating microphone... Please wait.
+[2025-11-06 00:58:23] System: Microphone calibrated successfully
+[2025-11-06 00:58:26] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 00:58:26] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 00:58:29] System: Speech recognition could not understand audio
+[2025-11-06 00:58:29] System: Browser ready on attempt 1
+[2025-11-06 00:58:29] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 00:58:36] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 00:58:37] System: Recognized: sunday
+[2025-11-06 00:58:37] System: Wake word detected: sunday
+[2025-11-06 00:58:37] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:58:42] System: Recognized: open hassan library
+[2025-11-06 00:58:42] User: Command: open hassan library
+[2025-11-06 00:58:42] AI: Let me try to open the pose library another way. Sometimes the connection needs a moment.
+[2025-11-06 00:58:49] System: Speech recognition could not understand audio
+[2025-11-06 00:58:54] System: Recognized: sunday
+[2025-11-06 00:58:54] System: Wake word detected: sunday
+[2025-11-06 00:58:54] AI: Hello! What shall we work on together?
+[2025-11-06 00:59:00] System: Recognized: open assistant
+[2025-11-06 00:59:00] User: Command: open assistant
+[2025-11-06 00:59:00] AI: I'm opening the chat interface where we can talk about anything related to yoga and wellness.
+[2025-11-06 00:59:04] System: Speech recognition could not understand audio
+[2025-11-06 00:59:09] System: Speech recognition could not understand audio
+[2025-11-06 00:59:13] System: Speech recognition could not understand audio
+[2025-11-06 00:59:17] System: Speech recognition could not understand audio
+[2025-11-06 00:59:20] System: Speech recognition could not understand audio
+[2025-11-06 00:59:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 00:59:20] System: Calibrating microphone... Please wait.
+[2025-11-06 00:59:24] System: Microphone calibrated successfully
+[2025-11-06 00:59:28] System: Speech recognition could not understand audio
+[2025-11-06 00:59:32] System: Speech recognition could not understand audio
+[2025-11-06 00:59:37] System: Recognized: sunday sunday sunday sunday sunday sunday
+[2025-11-06 00:59:37] System: Wake word detected: sunday sunday sunday sunday sunday sunday
+[2025-11-06 00:59:37] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 00:59:45] System: Recognized: search for history of yoga
+[2025-11-06 00:59:45] User: Command: search for history of yoga
+[2025-11-06 00:59:45] AI: I'm opening the chat interface where we can talk about anything related to yoga and wellness.
+[2025-11-06 00:59:51] System: Speech recognition could not understand audio
+[2025-11-06 01:00:01] System: Speech recognition could not understand audio
+[2025-11-06 01:00:12] System: Speech recognition could not understand audio
+[2025-11-06 01:00:16] System: Speech recognition could not understand audio
+[2025-11-06 01:00:20] System: Speech recognition could not understand audio
+[2025-11-06 01:00:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:00:20] System: Calibrating microphone... Please wait.
+[2025-11-06 01:00:23] System: Microphone calibrated successfully
+[2025-11-06 01:04:22] System: TTS engine configured successfully
+[2025-11-06 01:04:22] System: Sunday AI starting with simple TTS system
+[2025-11-06 01:04:22] System: Calibrating microphone... Please wait.
+[2025-11-06 01:04:25] System: Microphone calibrated successfully
+[2025-11-06 01:04:28] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 01:04:28] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 01:04:31] System: Browser ready on attempt 1
+[2025-11-06 01:04:31] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 01:04:38] System: Recognized: sunday
+[2025-11-06 01:04:38] System: Wake word detected: sunday
+[2025-11-06 01:04:38] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 01:04:41] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 01:04:44] System: Recognized: open airtel
+[2025-11-06 01:04:44] User: Command: open airtel
+[2025-11-06 01:04:44] AI: I'm opening the chat interface where we can talk about anything related to yoga and wellness.
+[2025-11-06 01:04:50] System: Speech recognition could not understand audio
+[2025-11-06 01:04:54] System: Speech recognition could not understand audio
+[2025-11-06 01:04:57] System: Speech recognition could not understand audio
+[2025-11-06 01:05:01] System: Recognized: open hassan library
+[2025-11-06 01:05:14] System: Speech recognition could not understand audio
+[2025-11-06 01:05:17] System: Speech recognition could not understand audio
+[2025-11-06 01:05:21] System: Speech recognition could not understand audio
+[2025-11-06 01:05:27] System: Recognized: sunday
+[2025-11-06 01:05:27] System: Wake word detected: sunday
+[2025-11-06 01:05:27] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 01:05:32] System: Recognized: open asa library
+[2025-11-06 01:05:32] User: Command: open asa library
+[2025-11-06 01:05:32] AI: I'm having trouble loading the pose library right now. Please try a specific pose name instead.
+[2025-11-06 01:05:40] System: Speech recognition could not understand audio
+[2025-11-06 01:05:44] System: Recognized: sunday
+[2025-11-06 01:05:44] System: Wake word detected: sunday
+[2025-11-06 01:05:44] AI: Hello! What shall we work on together?
+[2025-11-06 01:05:48] System: Speech recognition could not understand audio
+[2025-11-06 01:05:48] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-06 01:05:51] System: Speech recognition could not understand audio
+[2025-11-06 01:05:54] System: Speech recognition could not understand audio
+[2025-11-06 01:05:58] System: Speech recognition could not understand audio
+[2025-11-06 01:06:02] System: Recognized: sunday
+[2025-11-06 01:06:02] System: Wake word detected: sunday
+[2025-11-06 01:06:02] AI: Hello! What shall we work on together?
+[2025-11-06 01:06:08] System: Recognized: search for yoga
+[2025-11-06 01:06:08] User: Command: search for yoga
+[2025-11-06 01:06:08] AI: I'm opening the chat interface where we can talk about anything related to yoga and wellness.
+[2025-11-06 01:06:15] System: Speech recognition could not understand audio
+[2025-11-06 01:06:51] System: TTS engine configured successfully
+[2025-11-06 01:06:51] System: Sunday AI starting with simple TTS system
+[2025-11-06 01:06:51] System: Calibrating microphone... Please wait.
+[2025-11-06 01:06:54] System: Microphone calibrated successfully
+[2025-11-06 01:06:57] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 01:06:57] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 01:07:00] System: Speech recognition could not understand audio
+[2025-11-06 01:07:00] System: Browser ready on attempt 1
+[2025-11-06 01:07:00] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 01:07:07] System: Speech recognition could not understand audio
+[2025-11-06 01:07:07] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 01:07:16] System: Recognized: open assistant
+[2025-11-06 01:07:16] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-11-06 01:07:25] System: Speech recognition could not understand audio
+[2025-11-06 01:07:32] System: Recognized: sunday
+[2025-11-06 01:07:32] System: Wake word detected: sunday
+[2025-11-06 01:07:32] AI: Hello! What shall we work on together?
+[2025-11-06 01:07:37] System: Recognized: open air correction
+[2025-11-06 01:07:37] User: Command: open air correction
+[2025-11-06 01:07:37] System: Navigation to ar_correction: success_button_click
+[2025-11-06 01:07:39] AI: No problem! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 01:07:46] System: Recognized: sunday
+[2025-11-06 01:07:46] System: Wake word detected: sunday
+[2025-11-06 01:07:46] AI: Hello! What shall we work on together?
+[2025-11-06 01:07:53] System: Recognized: open assistant
+[2025-11-06 01:07:53] User: Command: open assistant
+[2025-11-06 01:07:53] System: Navigation to assistant: success_button_click
+[2025-11-06 01:07:55] AI: You got it! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 01:07:59] System: Speech recognition could not understand audio
+[2025-11-06 01:08:05] System: Recognized: sunday
+[2025-11-06 01:08:05] System: Wake word detected: sunday
+[2025-11-06 01:08:05] AI: Yes, I'm listening! What would you like to do?
+[2025-11-06 01:08:09] System: Recognized: sarkari result
+[2025-11-06 01:08:09] User: Command: sarkari result
+[2025-11-06 01:08:09] System: Navigation to ar_correction: success_button_click
+[2025-11-06 01:08:11] AI: Got it! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-06 01:08:18] System: Speech recognition could not understand audio
+[2025-11-06 01:08:23] System: Speech recognition could not understand audio
+[2025-11-06 01:09:10] System: Speech recognition could not understand audio
+[2025-11-06 01:09:15] System: Speech recognition could not understand audio
+[2025-11-06 01:10:39] System: Speech recognition could not understand audio
+[2025-11-06 01:10:39] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:10:39] System: Calibrating microphone... Please wait.
+[2025-11-06 01:10:42] System: Microphone calibrated successfully
+[2025-11-06 01:10:47] System: Speech recognition could not understand audio
+[2025-11-06 01:12:05] System: Speech recognition could not understand audio
+[2025-11-06 01:12:40] System: Speech recognition could not understand audio
+[2025-11-06 01:12:43] System: Speech recognition could not understand audio
+[2025-11-06 01:12:50] System: Speech recognition could not understand audio
+[2025-11-06 01:12:50] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:12:50] System: Calibrating microphone... Please wait.
+[2025-11-06 01:12:53] System: Microphone calibrated successfully
+[2025-11-06 01:13:21] System: Speech recognition could not understand audio
+[2025-11-06 01:19:17] System: Speech recognition could not understand audio
+[2025-11-06 01:19:44] System: Speech recognition could not understand audio
+[2025-11-06 01:19:47] System: Speech recognition could not understand audio
+[2025-11-06 01:19:50] System: Speech recognition could not understand audio
+[2025-11-06 01:19:50] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:19:50] System: Calibrating microphone... Please wait.
+[2025-11-06 01:19:53] System: Microphone calibrated successfully
+[2025-11-06 01:22:31] System: Speech recognition could not understand audio
+[2025-11-06 01:23:24] System: Speech recognition could not understand audio
+[2025-11-06 01:23:45] System: Speech recognition could not understand audio
+[2025-11-06 01:24:01] System: Speech recognition could not understand audio
+[2025-11-06 01:24:59] System: Speech recognition error: recognition connection failed: [WinError 10053] An established connection was aborted by the software in your host machine
+[2025-11-06 01:24:59] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:24:59] System: Calibrating microphone... Please wait.
+[2025-11-06 01:25:03] System: Microphone calibrated successfully
+[2025-11-06 01:25:18] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-06 01:25:40] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-06 01:25:50] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-06 01:25:59] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-06 01:29:09] System: Speech recognition could not understand audio
+[2025-11-06 01:29:09] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 01:29:09] System: Calibrating microphone... Please wait.
+[2025-11-06 01:29:12] System: Microphone calibrated successfully
+[2025-11-06 01:29:16] System: Shutting down
+[2025-11-06 01:29:28] System: Shutdown complete
+[2025-11-06 09:56:18] System: TTS engine configured successfully
+[2025-11-06 09:56:18] System: Sunday AI starting with simple TTS system
+[2025-11-06 09:56:18] System: Calibrating microphone... Please wait.
+[2025-11-06 09:56:21] System: Microphone calibrated successfully
+[2025-11-06 09:56:24] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-06 09:56:24] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-06 09:56:27] System: Speech recognition could not understand audio
+[2025-11-06 09:56:32] System: Browser ready on attempt 1
+[2025-11-06 09:56:32] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-06 09:56:34] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-06 09:56:35] System: Recognized: application sunday
+[2025-11-06 09:56:35] System: Wake word detected: application sunday
+[2025-11-06 09:56:35] AI: I'm here! How can I assist your practice?
+[2025-11-06 09:56:41] System: Recognized: open assistant
+[2025-11-06 09:56:41] User: Command: open assistant
+[2025-11-06 09:56:41] System: Navigation to assistant: success_button_click
+[2025-11-06 09:56:43] AI: I'll take care of that! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-06 09:56:54] System: Recognized: i will explain
+[2025-11-06 09:57:09] System: Recognized: sunday
+[2025-11-06 09:57:09] System: Wake word detected: sunday
+[2025-11-06 09:57:09] AI: I'm here! How can I assist your practice?
+[2025-11-06 09:57:14] System: Recognized: open hassan library
+[2025-11-06 09:57:14] User: Command: open hassan library
+[2025-11-06 09:57:14] System: Navigation to asana: success_button_click
+[2025-11-06 09:57:16] AI: Sure thing! Opening our yoga pose library. You'll find detailed instructions for Tadasana, Downward Dog, Warrior poses, and many more!
+[2025-11-06 09:57:33] System: Speech recognition could not understand audio
+[2025-11-06 09:57:47] System: Speech recognition could not understand audio
+[2025-11-06 09:57:56] System: Speech recognition could not understand audio
+[2025-11-06 09:58:05] System: Speech recognition could not understand audio
+[2025-11-06 09:58:18] System: Speech recognition could not understand audio
+[2025-11-06 09:58:18] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 09:58:18] System: Calibrating microphone... Please wait.
+[2025-11-06 09:58:21] System: Microphone calibrated successfully
+[2025-11-06 09:58:26] System: Speech recognition could not understand audio
+[2025-11-06 09:59:01] System: Speech recognition could not understand audio
+[2025-11-06 09:59:13] System: Speech recognition could not understand audio
+[2025-11-06 09:59:27] System: Recognized: show that
+[2025-11-06 09:59:40] System: Recognized: nearest
+[2025-11-06 09:59:50] System: Speech recognition could not understand audio
+[2025-11-06 10:00:00] System: Speech recognition could not understand audio
+[2025-11-06 10:00:12] System: Recognized: unable to access camera please check permissions please close your laptop
+[2025-11-06 10:00:19] System: Speech recognition could not understand audio
+[2025-11-06 10:00:24] System: Speech recognition could not understand audio
+[2025-11-06 10:00:30] System: Speech recognition could not understand audio
+[2025-11-06 10:00:38] System: Speech recognition could not understand audio
+[2025-11-06 10:00:47] System: Speech recognition could not understand audio
+[2025-11-06 10:00:47] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:00:47] System: Calibrating microphone... Please wait.
+[2025-11-06 10:00:50] System: Microphone calibrated successfully
+[2025-11-06 10:01:03] System: Speech recognition could not understand audio
+[2025-11-06 10:01:13] System: Speech recognition could not understand audio
+[2025-11-06 10:01:21] System: Speech recognition could not understand audio
+[2025-11-06 10:01:27] System: Speech recognition could not understand audio
+[2025-11-06 10:01:39] System: Recognized: transformer protection of intense learning collaboration
+[2025-11-06 10:01:43] System: Speech recognition could not understand audio
+[2025-11-06 10:01:53] System: Speech recognition could not understand audio
+[2025-11-06 10:02:03] System: Recognized: google assistant
+[2025-11-06 10:02:03] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-11-06 10:02:11] System: Speech recognition could not understand audio
+[2025-11-06 10:02:20] System: Speech recognition could not understand audio
+[2025-11-06 10:02:29] System: Speech recognition could not understand audio
+[2025-11-06 10:02:38] System: Speech recognition could not understand audio
+[2025-11-06 10:02:46] System: Speech recognition could not understand audio
+[2025-11-06 10:02:46] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:02:46] System: Calibrating microphone... Please wait.
+[2025-11-06 10:02:50] System: Microphone calibrated successfully
+[2025-11-06 10:03:01] System: Recognized: instagram video
+[2025-11-06 10:03:13] System: Speech recognition could not understand audio
+[2025-11-06 10:03:24] System: Speech recognition could not understand audio
+[2025-11-06 10:03:53] System: Speech recognition could not understand audio
+[2025-11-06 10:04:02] System: Speech recognition could not understand audio
+[2025-11-06 10:04:13] System: Speech recognition could not understand audio
+[2025-11-06 10:04:13] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:04:13] System: Calibrating microphone... Please wait.
+[2025-11-06 10:04:16] System: Microphone calibrated successfully
+[2025-11-06 10:04:27] System: Speech recognition could not understand audio
+[2025-11-06 10:04:31] System: Speech recognition could not understand audio
+[2025-11-06 10:04:40] System: Recognized: it's
+[2025-11-06 10:04:46] System: Speech recognition could not understand audio
+[2025-11-06 10:04:54] System: Recognized: the students
+[2025-11-06 10:05:05] System: Recognized: indus river department of organised
+[2025-11-06 10:05:11] System: Speech recognition could not understand audio
+[2025-11-06 10:05:21] System: Recognized: 81 product and then the pitching of those codes
+[2025-11-06 10:05:26] System: Speech recognition could not understand audio
+[2025-11-06 10:05:32] System: Speech recognition could not understand audio
+[2025-11-06 10:05:38] System: Speech recognition could not understand audio
+[2025-11-06 10:05:47] System: Recognized: delivery manager technology services
+[2025-11-06 10:06:02] System: Speech recognition could not understand audio
+[2025-11-06 10:06:17] System: Recognized: this event
+[2025-11-06 10:06:21] System: Speech recognition could not understand audio
+[2025-11-06 10:06:31] System: Recognized: i welcome
+[2025-11-06 10:06:42] System: Recognized: insta followers
+[2025-11-06 10:06:51] System: Recognized: the last period of which of the following engineering
+[2025-11-06 10:06:59] System: Recognized: polytechnic education
+[2025-11-06 10:07:04] System: Speech recognition could not understand audio
+[2025-11-06 10:07:13] System: Speech recognition could not understand audio
+[2025-11-06 10:07:19] System: Speech recognition could not understand audio
+[2025-11-06 10:07:35] System: Recognized: we have discussed from venus information and aluminium
+[2025-11-06 10:07:43] System: Speech recognition could not understand audio
+[2025-11-06 10:07:52] System: Recognized: today members
+[2025-11-06 10:07:56] System: Speech recognition could not understand audio
+[2025-11-06 10:08:05] System: Speech recognition could not understand audio
+[2025-11-06 10:08:17] System: Recognized: show the degree of business environment
+[2025-11-06 10:08:27] System: Speech recognition could not understand audio
+[2025-11-06 10:08:34] System: Speech recognition could not understand audio
+[2025-11-06 10:08:44] System: Recognized: wooden coordinators and all the participation of
+[2025-11-06 10:08:53] System: Speech recognition could not understand audio
+[2025-11-06 10:08:59] System: Speech recognition could not understand audio
+[2025-11-06 10:09:12] System: Recognized: official inauguration
+[2025-11-06 10:09:21] System: Recognized: purity and spelling of
+[2025-11-06 10:09:31] System: Speech recognition could not understand audio
+[2025-11-06 10:09:41] System: Speech recognition could not understand audio
+[2025-11-06 10:09:44] System: Speech recognition could not understand audio
+[2025-11-06 10:09:56] System: Speech recognition could not understand audio
+[2025-11-06 10:10:07] System: Speech recognition could not understand audio
+[2025-11-06 10:10:07] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:10:07] System: Calibrating microphone... Please wait.
+[2025-11-06 10:10:11] System: Microphone calibrated successfully
+[2025-11-06 10:10:17] System: Speech recognition could not understand audio
+[2025-11-06 10:10:21] System: Speech recognition could not understand audio
+[2025-11-06 10:10:30] System: Speech recognition could not understand audio
+[2025-11-06 10:10:36] System: Speech recognition could not understand audio
+[2025-11-06 10:10:40] System: Speech recognition could not understand audio
+[2025-11-06 10:10:40] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:10:40] System: Calibrating microphone... Please wait.
+[2025-11-06 10:10:43] System: Microphone calibrated successfully
+[2025-11-06 10:10:55] System: Speech recognition could not understand audio
+[2025-11-06 10:11:06] System: Speech recognition could not understand audio
+[2025-11-06 10:11:16] System: Speech recognition could not understand audio
+[2025-11-06 10:11:20] System: Speech recognition could not understand audio
+[2025-11-06 10:11:26] System: Speech recognition could not understand audio
+[2025-11-06 10:11:26] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:11:26] System: Calibrating microphone... Please wait.
+[2025-11-06 10:11:29] System: Microphone calibrated successfully
+[2025-11-06 10:11:37] System: Speech recognition could not understand audio
+[2025-11-06 10:11:44] System: Speech recognition could not understand audio
+[2025-11-06 10:11:53] System: Speech recognition could not understand audio
+[2025-11-06 10:12:00] System: Speech recognition could not understand audio
+[2025-11-06 10:12:08] System: Speech recognition could not understand audio
+[2025-11-06 10:12:08] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:12:08] System: Calibrating microphone... Please wait.
+[2025-11-06 10:12:11] System: Microphone calibrated successfully
+[2025-11-06 10:12:17] System: Speech recognition could not understand audio
+[2025-11-06 10:12:23] System: Speech recognition could not understand audio
+[2025-11-06 10:12:31] System: Speech recognition could not understand audio
+[2025-11-06 10:12:36] System: Speech recognition could not understand audio
+[2025-11-06 10:12:41] System: Speech recognition could not understand audio
+[2025-11-06 10:12:41] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:12:41] System: Calibrating microphone... Please wait.
+[2025-11-06 10:12:44] System: Microphone calibrated successfully
+[2025-11-06 10:12:48] System: Speech recognition could not understand audio
+[2025-11-06 10:12:57] System: Speech recognition could not understand audio
+[2025-11-06 10:13:05] System: Speech recognition could not understand audio
+[2025-11-06 10:13:14] System: Speech recognition could not understand audio
+[2025-11-06 10:13:19] System: Speech recognition could not understand audio
+[2025-11-06 10:13:19] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:13:19] System: Calibrating microphone... Please wait.
+[2025-11-06 10:13:22] System: Microphone calibrated successfully
+[2025-11-06 10:13:32] System: Speech recognition could not understand audio
+[2025-11-06 10:13:44] System: Speech recognition could not understand audio
+[2025-11-06 10:13:53] System: Speech recognition could not understand audio
+[2025-11-06 10:13:57] System: Speech recognition could not understand audio
+[2025-11-06 10:14:02] System: Speech recognition could not understand audio
+[2025-11-06 10:14:02] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:14:02] System: Calibrating microphone... Please wait.
+[2025-11-06 10:14:06] System: Microphone calibrated successfully
+[2025-11-06 10:14:11] System: Speech recognition could not understand audio
+[2025-11-06 10:14:19] System: Speech recognition could not understand audio
+[2025-11-06 10:14:29] System: Recognized: the president of india
+[2025-11-06 10:14:36] System: Recognized: today's version
+[2025-11-06 10:14:51] System: Recognized: mr majnu
+[2025-11-06 10:14:58] System: Recognized: vice principal
+[2025-11-06 10:15:03] System: Speech recognition could not understand audio
+[2025-11-06 10:15:09] System: Speech recognition could not understand audio
+[2025-11-06 10:15:13] System: Speech recognition could not understand audio
+[2025-11-06 10:15:20] System: Speech recognition could not understand audio
+[2025-11-06 10:15:29] System: Speech recognition could not understand audio
+[2025-11-06 10:15:29] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:15:29] System: Calibrating microphone... Please wait.
+[2025-11-06 10:15:32] System: Microphone calibrated successfully
+[2025-11-06 10:15:35] System: Speech recognition could not understand audio
+[2025-11-06 10:15:41] System: Speech recognition could not understand audio
+[2025-11-06 10:15:50] System: Recognized: identification problem
+[2025-11-06 10:15:55] System: Speech recognition could not understand audio
+[2025-11-06 10:15:58] System: Speech recognition could not understand audio
+[2025-11-06 10:16:02] System: Speech recognition could not understand audio
+[2025-11-06 10:16:07] System: Speech recognition could not understand audio
+[2025-11-06 10:16:14] System: Recognized: what is the reason
+[2025-11-06 10:16:21] System: Recognized: introduction to
+[2025-11-06 10:16:28] System: Recognized: project based learning
+[2025-11-06 10:16:33] System: Speech recognition could not understand audio
+[2025-11-06 10:16:37] System: Speech recognition could not understand audio
+[2025-11-06 10:16:41] System: Speech recognition could not understand audio
+[2025-11-06 10:16:47] System: Speech recognition could not understand audio
+[2025-11-06 10:16:55] System: Speech recognition could not understand audio
+[2025-11-06 10:16:55] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:16:55] System: Calibrating microphone... Please wait.
+[2025-11-06 10:16:58] System: Microphone calibrated successfully
+[2025-11-06 10:17:05] System: Speech recognition could not understand audio
+[2025-11-06 10:17:10] System: Speech recognition could not understand audio
+[2025-11-06 10:17:14] System: Speech recognition could not understand audio
+[2025-11-06 10:17:21] System: Recognized: where can be incorporated
+[2025-11-06 10:17:27] System: Recognized: i didn't have every now
+[2025-11-06 10:17:30] System: Speech recognition could not understand audio
+[2025-11-06 10:20:27] System: Speech recognition could not understand audio
+[2025-11-06 10:20:41] System: Recognized: thank you sir for inspiring message
+[2025-11-06 10:20:49] System: Recognized: to formula
+[2025-11-06 10:21:01] System: Recognized: good morning everyone
+[2025-11-06 10:21:12] System: Speech recognition could not understand audio
+[2025-11-06 10:21:21] System: Speech recognition could not understand audio
+[2025-11-06 10:21:31] System: Speech recognition could not understand audio
+[2025-11-06 10:21:41] System: Speech recognition could not understand audio
+[2025-11-06 10:21:52] System: Recognized: electronics and communication engineering
+[2025-11-06 10:22:05] System: Speech recognition could not understand audio
+[2025-11-06 10:22:15] System: Recognized: projects in automotive surrounding image
+[2025-11-06 10:22:25] System: Speech recognition could not understand audio
+[2025-11-06 10:22:34] System: Speech recognition could not understand audio
+[2025-11-06 10:22:44] System: Speech recognition could not understand audio
+[2025-11-06 10:22:53] System: Recognized: in the field of artificial intelligence
+[2025-11-06 10:23:08] System: Recognized: thank you very much and gratitude
+[2025-11-06 10:23:15] System: Speech recognition could not understand audio
+[2025-11-06 10:23:24] System: Speech recognition could not understand audio
+[2025-11-06 10:23:27] System: Speech recognition could not understand audio
+[2025-11-06 10:23:31] System: Speech recognition could not understand audio
+[2025-11-06 10:23:39] System: Speech recognition could not understand audio
+[2025-11-06 10:23:39] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:23:39] System: Calibrating microphone... Please wait.
+[2025-11-06 10:23:42] System: Microphone calibrated successfully
+[2025-11-06 10:23:47] System: Speech recognition could not understand audio
+[2025-11-06 10:23:54] System: Speech recognition could not understand audio
+[2025-11-06 10:23:57] System: Speech recognition could not understand audio
+[2025-11-06 10:24:12] System: Speech recognition could not understand audio
+[2025-11-06 10:24:16] System: Speech recognition could not understand audio
+[2025-11-06 10:24:16] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:24:16] System: Calibrating microphone... Please wait.
+[2025-11-06 10:24:19] System: Microphone calibrated successfully
+[2025-11-06 10:24:28] System: Speech recognition could not understand audio
+[2025-11-06 10:24:34] System: Speech recognition could not understand audio
+[2025-11-06 10:24:46] System: Speech recognition could not understand audio
+[2025-11-06 10:24:50] System: Speech recognition could not understand audio
+[2025-11-06 10:24:55] System: Speech recognition could not understand audio
+[2025-11-06 10:24:55] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:24:55] System: Calibrating microphone... Please wait.
+[2025-11-06 10:24:58] System: Microphone calibrated successfully
+[2025-11-06 10:25:08] System: Speech recognition could not understand audio
+[2025-11-06 10:25:17] System: Speech recognition could not understand audio
+[2025-11-06 10:25:22] System: Speech recognition could not understand audio
+[2025-11-06 10:25:28] System: Speech recognition could not understand audio
+[2025-11-06 10:25:36] System: Speech recognition could not understand audio
+[2025-11-06 10:25:36] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:25:36] System: Calibrating microphone... Please wait.
+[2025-11-06 10:25:40] System: Microphone calibrated successfully
+[2025-11-06 10:25:50] System: Recognized: you don't have to care for fair
+[2025-11-06 10:26:00] System: Speech recognition could not understand audio
+[2025-11-06 10:26:11] System: Speech recognition could not understand audio
+[2025-11-06 10:26:22] System: Speech recognition could not understand audio
+[2025-11-06 10:26:26] System: Speech recognition could not understand audio
+[2025-11-06 10:26:36] System: Speech recognition could not understand audio
+[2025-11-06 10:26:36] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:26:36] System: Calibrating microphone... Please wait.
+[2025-11-06 10:26:39] System: Microphone calibrated successfully
+[2025-11-06 10:26:46] System: Speech recognition could not understand audio
+[2025-11-06 10:26:56] System: Speech recognition could not understand audio
+[2025-11-06 10:27:01] System: Speech recognition could not understand audio
+[2025-11-06 10:27:08] System: Speech recognition could not understand audio
+[2025-11-06 10:27:19] System: Recognized: i think you definitely i want to inspire you
+[2025-11-06 10:27:30] System: Speech recognition could not understand audio
+[2025-11-06 10:27:39] System: Speech recognition could not understand audio
+[2025-11-06 10:27:51] System: Recognized: what is date
+[2025-11-06 10:28:00] System: Speech recognition could not understand audio
+[2025-11-06 10:28:06] System: Speech recognition could not understand audio
+[2025-11-06 10:28:12] System: Speech recognition could not understand audio
+[2025-11-06 10:28:25] System: Speech recognition could not understand audio
+[2025-11-06 10:28:32] System: Speech recognition could not understand audio
+[2025-11-06 10:28:32] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:28:32] System: Calibrating microphone... Please wait.
+[2025-11-06 10:28:35] System: Microphone calibrated successfully
+[2025-11-06 10:28:39] System: Speech recognition could not understand audio
+[2025-11-06 10:28:48] System: Speech recognition could not understand audio
+[2025-11-06 10:29:06] System: Speech recognition could not understand audio
+[2025-11-06 10:29:15] System: Speech recognition could not understand audio
+[2025-11-06 10:29:24] System: Speech recognition could not understand audio
+[2025-11-06 10:29:24] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:29:24] System: Calibrating microphone... Please wait.
+[2025-11-06 10:29:27] System: Microphone calibrated successfully
+[2025-11-06 10:29:32] System: Speech recognition could not understand audio
+[2025-11-06 10:29:43] System: Speech recognition could not understand audio
+[2025-11-06 10:29:48] System: Recognized: how did white look like
+[2025-11-06 10:29:52] System: Speech recognition could not understand audio
+[2025-11-06 10:29:58] System: Speech recognition could not understand audio
+[2025-11-06 10:30:03] System: Speech recognition could not understand audio
+[2025-11-06 10:30:11] System: Speech recognition could not understand audio
+[2025-11-06 10:30:20] System: Speech recognition could not understand audio
+[2025-11-06 10:30:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:30:20] System: Calibrating microphone... Please wait.
+[2025-11-06 10:30:23] System: Microphone calibrated successfully
+[2025-11-06 10:30:28] System: Speech recognition could not understand audio
+[2025-11-06 10:30:37] System: Speech recognition could not understand audio
+[2025-11-06 10:30:47] System: Speech recognition could not understand audio
+[2025-11-06 10:30:57] System: Speech recognition could not understand audio
+[2025-11-06 10:31:07] System: Speech recognition could not understand audio
+[2025-11-06 10:31:07] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:31:07] System: Calibrating microphone... Please wait.
+[2025-11-06 10:31:10] System: Microphone calibrated successfully
+[2025-11-06 10:31:23] System: Speech recognition could not understand audio
+[2025-11-06 10:31:31] System: Speech recognition could not understand audio
+[2025-11-06 10:31:40] System: Speech recognition could not understand audio
+[2025-11-06 10:31:51] System: Speech recognition could not understand audio
+[2025-11-06 10:31:58] System: Speech recognition could not understand audio
+[2025-11-06 10:31:58] System: Multiple recognition failures, recalibrating microphone
+[2025-11-06 10:31:58] System: Calibrating microphone... Please wait.
+[2025-11-06 10:32:02] System: Microphone calibrated successfully
+[2025-11-06 10:58:36] System: Shutting down
+[2025-11-06 10:58:36] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
