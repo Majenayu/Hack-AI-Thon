@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNDAY - Yoga Wellness Platform</title>
+    <title>SUNDAY- YOGA Wellness Platform</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@2.0.0/dist/pose-detection.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Custom Tailwind Configuration for a dark, calming palette (Now Blue)
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#42A5F5',
-                        'secondary': '#1976D2',
-                        'accent': '#FFEB3B',
-                        'background': '#121212',
-                        'card': '#1E1E1E',
-                        'warning': '#FFC107',
-                        'success': '#10B981',
+                        // Colors adjusted for contrast on a dark background
+                        'primary': '#42A5F5', // Bright Blue (Replaces Bright Green)
+                        'secondary': '#1976D2', // Darker Blue (Replaces Darker Green)
+                        'accent': '#FFEB3B', // Bright Gold/Yellow for alerts/streak
+                        'background': '#121212', // Very Dark Background
+                        'card': '#1E1E1E', // Dark Card Background
+                        'warning': '#FFC107', // Amber/Yellow for warnings/needs attention
+                        'success': '#10B981', // Green for success
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -29,24 +31,32 @@
         }
     </script>
     <style>
+        /* Custom styles for aesthetic and loading spinner */
         body {
-            background-color: #121212;
-            color: #E0E0E0;
+            /* ---------------------------------------------------- */
+            /* BRO FIX: SOLID DARK BACKGROUND */
+            background-color: #121212; 
+            background: #121212; /* Ensure all previous gradients are removed */
+            /* ---------------------------------------------------- */
+            
+            color: #E0E0E0; /* Default text color for dark theme */
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scroll from cursor glow */
         }
         .scrollable-content {
             overflow-y: auto;
+            /* Max height calculation for chat window */
             max-height: calc(100vh - 350px);
-            scrollbar-width: none;
+            scrollbar-width: none; /* Firefox */
         }
         .scrollable-content::-webkit-scrollbar {
-            display: none;
+            display: none; /* Chrome, Safari */
         }
+
         .loading-animation {
             border: 4px solid #333;
-            border-top: 4px solid #42A5F5;
+            border-top: 4px solid #42A5F5; /* Primary Blue for spinner */
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -56,34 +66,42 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* 3D Card Hover Effect CSS */
         .card-effect {
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
             will-change: transform;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            transform-style: preserve-3d; 
+            perspective: 1000px; 
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border for dark cards */
         }
         .card-effect:hover {
-            transform: perspective(1000px) rotateX(1deg) rotateY(1deg) scale(1.03);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            /* Subtle 3D tilt, scale, and deeper shadow */
+            transform: perspective(1000px) rotateX(1deg) rotateY(1deg) scale(1.03); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* Darker shadow */
         }
+
+        /* Cursor Glow Effect CSS (Blue) */
         #cursor-glow {
             position: fixed;
             pointer-events: none;
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: rgba(66, 165, 245, 0.45);
-            filter: blur(90px);
+            /* Primary Blue color with higher opacity for visibility */
+            background: rgba(66, 165, 245, 0.45); 
+            filter: blur(90px); /* Heavy blur */
             transform: translate(-50%, -50%);
-            z-index: -1;
+            z-index: -1; 
             transition: opacity 0.3s ease;
-            opacity: 1.0;
+            opacity: 1.0; 
         }
+
+        /* Styles for the AR/Video Feed */
         #video-container {
             position: relative;
             width: 100%;
-            padding-top: 75%;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
             background-color: #000;
             border-radius: 1rem;
             overflow: hidden;
@@ -96,7 +114,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scaleX(-1);
+            transform: scaleX(-1); /* Mirror the video feed for natural user experience */
         }
         #ar-canvas {
             position: absolute;
@@ -104,51 +122,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transform: scaleX(-1);
         }
-        .feedback-overlay {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 10px;
-            color: white;
-            font-size: 14px;
-            z-index: 10;
-        }
-        #reference-pose-container {
-            position: relative;
-            width: 100%;
-            padding-top: 75%;
-            background-color: #1E1E1E;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-        }
-        #reference-pose-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: #f5f5f5;
-        }
-        .pose-label {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-            z-index: 10;
-            text-align: center;
-        }
+        
     </style>
 </head>
 <body class="flex flex-col items-center pb-20 md:pb-8 bg-background text-gray-200">
@@ -164,1226 +139,202 @@
                 <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-red-500">
                     <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v1.5H15a3 3 0 0 1-3 3h-1.5a3 3 0 0 1-3-3V4.5Z" />
                     <path fill-rule="evenodd" d="M5.25 9A.75.75 0 0 1 6 8.25h.75a.75.75 0 0 1 0 1.5H6A.75.75 0 0 1 5.25 9ZM12 18.75a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1 0-1.5H12ZM18 10.5h.75a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75H18a.75.75 0 0 1-.75-.75v-3a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                    <path d="M12 21a.75.75 0 0 0 0-1.5v-3a.75.75 0 0 0 0 1.5v3Z" />
                 </svg>
                 <span id="mic-status-text">Voice Off</span>
             </button>
-        </header>
+            </header>
 
-        <main id="content" class="bg-card shadow-2xl rounded-3xl p-6 md:p-8 min-h-[60vh] shadow-gray-900"></main>
+        <main id="content" class="bg-card shadow-2xl rounded-3xl p-6 md:p-8 min-h-[60vh] shadow-gray-900">
+            </main>
 
         <nav class="fixed bottom-0 left-0 right-0 bg-card border-t border-gray-700 z-10 shadow-2xl md:relative md:mt-6 md:shadow-none md:border-none">
-            <div id="nav-tabs" class="flex justify-around items-center max-w-4xl mx-auto py-3 md:py-0"></div>
+            <div id="nav-tabs" class="flex justify-around items-center max-w-4xl mx-auto py-3 md:py-0">
+                </div>
         </nav>
     </div>
 
     <script>
+        // --- Firebase and Environment Setup (Required variables for Canvas runtime) ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        // FIX: Corrected variable reference from __initialAuthToken to __initial_auth_token
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // --- Mock Data ---
         const asanaData = [
-            { name: 'Tadasana', sanskrit: '(Mountain Pose)', category: 'Beginner', benefits: 'Improves balance and posture.', precaution: 'Avoid if experiencing headache.', targeted: 'Spine, Core, Legs', image: 'assets/poses/tadasana.jpg' },
-            { name: 'Adho Mukha Svanasana', sanskrit: '(Downward Dog)', category: 'Intermediate', benefits: 'Calms the brain, strengthens arms and legs.', precaution: 'Avoid with wrist injuries.', targeted: 'Shoulders, Hamstrings', image: 'assets/poses/downward-dog.jpg' },
-            { name: 'Virabhadrasana III', sanskrit: '(Warrior III)', category: 'Advanced', benefits: 'Tones abdomen, improves balance.', precaution: 'Avoid if high blood pressure.', targeted: 'Ankles, Legs, Back', image: 'assets/poses/warrior-iii.jpg' },
-            { name: 'Namastey', sanskrit: '(Prayer Pose)', category: 'Beginner', benefits: 'Fosters inner peace and focus.', precaution: 'Keep shoulders relaxed.', targeted: 'Chest, Shoulders', image: 'assets/poses/namaste.png' },
-            { name: 'Natarajasana', sanskrit: '(Lord of the Dance Pose)', category: 'Advanced', benefits: 'Improves balance, opens hips, strengthens legs and core.', precaution: 'Avoid if ankle or knee injuries.', targeted: 'Hips, Legs, Shoulders', image: 'assets/poses/natarajasana.jpg' },
-            { name: 'Vrikshasana', sanskrit: '(Tree Pose)', category: 'Beginner', benefits: 'Enhances balance, strengthens legs, tones abdomen.', precaution: 'Avoid if high blood pressure or vertigo.', targeted: 'Legs, Core, Ankles', image: 'assets/poses/vrikshasana.jpg' },
-            { name: 'Baddha Konasana', sanskrit: '(Bound Angle Pose)', category: 'Beginner', benefits: 'Opens hips, relieves menstrual discomfort, stretches inner thighs.', precaution: 'Avoid if knee or groin injuries.', targeted: 'Hips, Inner Thighs, Groin', image: 'assets/poses/baddha-konasana.jpg' },
+            { name: 'Tadasana', sanskrit: '(Mountain Pose)', category: 'Beginner', benefits: 'Improves balance and posture.', precaution: 'Avoid if experiencing headache.', targeted: 'Spine, Core, Legs' },
+            { name: 'Adho Mukha Svanasana', sanskrit: '(Downward Dog)', category: 'Intermediate', benefits: 'Calms the brain, strengthens arms and legs.', precaution: 'Avoid with wrist injuries.', targeted: 'Shoulders, Hamstrings' },
+            { name: 'Virabhadrasana III', sanskrit: '(Warrior III)', category: 'Advanced', benefits: 'Tones abdomen, improves balance.', precaution: 'Avoid if high blood pressure.', targeted: 'Ankles, Legs, Back' },
+            { name: 'Namastey', sanskrit: '(Prayer Pose)', category: 'Beginner', benefits: 'Fosters inner peace and focus.', precaution: 'Keep shoulders relaxed.', targeted: 'Chest, Shoulders' },
+            { name: 'Natarajasana', sanskrit: '(Lord of the Dance Pose)', category: 'Advanced', benefits: 'Improves balance, opens hips, strengthens legs and core.', precaution: 'Avoid if ankle or knee injuries.', targeted: 'Hips, Legs, Shoulders' },
+            { name: 'Vrikshasana', sanskrit: '(Tree Pose)', category: 'Beginner', benefits: 'Enhances balance, strengthens legs, tones abdomen.', precaution: 'Avoid if high blood pressure or vertigo.', targeted: 'Legs, Core, Ankles' },
+            { name: 'Baddha Konasana', sanskrit: '(Bound Angle Pose)', category: 'Beginner', benefits: 'Opens hips, relieves menstrual discomfort, stretches inner thighs.', precaution: 'Avoid if knee or groin injuries.', targeted: 'Hips, Inner Thighs, Groin' },
         ];
         
+        // --- MoveNet/AR Correction Globals ---
         let videoStream = null;
         let detector = null;
         let animationFrameId = null;
-        let currentPose = null;
+        let currentPose = null; // The pose the user selects
 
+        // Define expected body parts and confidence score threshold
         const keypointIndices = {
             'nose': 0, 'left_eye': 1, 'right_eye': 2, 'left_ear': 3, 'right_ear': 4,
             'left_shoulder': 5, 'right_shoulder': 6, 'left_elbow': 7, 'right_elbow': 8,
             'left_wrist': 9, 'right_wrist': 10, 'left_hip': 11, 'right_hip': 12,
             'left_knee': 13, 'right_knee': 14, 'left_ankle': 15, 'right_ankle': 16
         };
-        const MIN_CONFIDENCE = 0.3;
+        const MIN_CONFIDENCE = 0.3; // Minimum score for a keypoint to be considered valid
 
+        // The correct connections for MoveNet's 17 keypoints (indices 0-16)
         const SKELETON_CONNECTIONS = [
-            [0, 1], [0, 2], [1, 3], [2, 4],
-            [5, 6],
-            [5, 7], [7, 9],
-            [6, 8], [8, 10],
-            [5, 11], [6, 12],
-            [11, 12],
-            [11, 13], [13, 15],
-            [12, 14], [14, 16]
+            [0, 1], [0, 2], [1, 3], [2, 4], // Head/Face
+            [5, 6], // Shoulders
+            [5, 7], [7, 9], // Left arm
+            [6, 8], [8, 10], // Right arm
+            [5, 11], [6, 12], // Torso upper
+            [11, 12], // Torso lower/Hips
+            [11, 13], [13, 15], // Left leg
+            [12, 14], [14, 16] // Right leg
         ];
 
-        function calculateAngle(p1, p2, p3) {
-            const radians = Math.atan2(p3.y - p2.y, p3.x - p2.x) - Math.atan2(p1.y - p2.y, p1.x - p2.x);
-            let angle = Math.abs(radians * 180.0 / Math.PI);
-            if (angle > 180.0) {
-                angle = 360 - angle;
-            }
-            return angle;
-        }
 
-        function getDistance(p1, p2) {
-            return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
-        }
+        // --- API Configuration and Helper (Moved outside app object) ---
+        const GEMINI_MODEL = "gemini-2.5-flash-preview-05-20";
+        const VIRTUAL_ASSISTANT_SYSTEM_PROMPT = "You are SUNDAY, a supportive, knowledgeable, and certified yoga and wellness assistant. Your tone is calming and encouraging. Provide concise, helpful answers. For yoga pose questions, include the Sanskrit name and a brief description of the benefit. You have access to real-time information. Always format your advice clearly using simple markdown (bold, lists).";
 
-        function validateTadasana(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
+        /**
+         * Calls the Gemini API for the Virtual Assistant feature.
+         */
+        async function callGeminiAssistant(prompt, retries = 3) {
+            // Use the key provided by the user if the environment key is not available, to fix the 401 error.
+            const envApiKey = typeof __gemini_api_key !== 'undefined' ? __gemini_api_key : '';
 
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
+            // Use environment key if present, otherwise use the user's fallback key.
+            const apiKey = envApiKey; 
             
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Please ensure your full body is visible in good lighting. Step back from the camera and face it directly. All body points must be clearly visible for accurate analysis.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
+            // Construct API URL: Ensure the key is used if available.
+            let API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+            if (apiKey) {
+                 API_URL += `?key=${apiKey}`;
             }
 
-            if (leftShoulder.score > MIN_CONFIDENCE && leftHip.score > MIN_CONFIDENCE && leftKnee.score > MIN_CONFIDENCE) {
-                const leftSideAngle = calculateAngle(leftShoulder, leftHip, leftKnee);
-                
-                if (leftSideAngle > 165 && leftSideAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ 
-                        text: '✓ Perfect left side alignment', 
-                        detail: 'Your left side is straight and well-aligned. Keep this position.',
-                        type: 'success' 
-                    });
-                } else if (leftSideAngle > 155) {
-                    overallScore += 15;
-                    feedback.push({ 
-                        text: '⚠ Left side needs straightening', 
-                        detail: `Your left side angle is ${leftSideAngle.toFixed(0)}°. Engage your core and stand taller to reach 170-180°. Imagine a string pulling you up from the crown of your head.`,
-                        type: 'warning' 
-                    });
-                } else {
-                    feedback.push({ 
-                        text: '✗ Left side alignment needs work', 
-                        detail: `Current angle: ${leftSideAngle.toFixed(0)}°. Stand up straight with your weight evenly distributed. Roll your shoulders back and down, lift your chest, and lengthen your spine.`,
-                        type: 'error' 
-                    });
-                }
-                checks++;
-            }
-
-            if (rightShoulder.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE && rightKnee.score > MIN_CONFIDENCE) {
-                const rightSideAngle = calculateAngle(rightShoulder, rightHip, rightKnee);
-                
-                if (rightSideAngle > 165 && rightSideAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ 
-                        text: '✓ Perfect right side alignment', 
-                        detail: 'Your right side is straight and well-aligned. Maintain this posture.',
-                        type: 'success' 
-                    });
-                } else if (rightSideAngle > 155) {
-                    overallScore += 15;
-                    feedback.push({ 
-                        text: '⚠ Right side needs straightening', 
-                        detail: `Your right side angle is ${rightSideAngle.toFixed(0)}°. Stand taller and engage your leg muscles. Distribute weight evenly on both feet to reach 170-180°.`,
-                        type: 'warning' 
-                    });
-                } else {
-                    feedback.push({ 
-                        text: '✗ Right side alignment needs work', 
-                        detail: `Current angle: ${rightSideAngle.toFixed(0)}°. Straighten your posture. Keep your knees straight but not locked, and align your ears over shoulders over hips over ankles.`,
-                        type: 'error' 
-                    });
-                }
-                checks++;
-            }
-
-            if (leftAnkle.score > MIN_CONFIDENCE && rightAnkle.score > MIN_CONFIDENCE && 
-                leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const feetDistance = getDistance(leftAnkle, rightAnkle);
-                const hipDistance = getDistance(leftHip, rightHip);
-                const ratio = feetDistance / hipDistance;
-                
-                if (ratio < 1.2) {
-                    overallScore += 25;
-                    feedback.push({ 
-                        text: '✓ Feet positioned correctly', 
-                        detail: 'Your feet are properly together with inner edges touching. Great balance!',
-                        type: 'success' 
-                    });
-                } else if (ratio < 1.5) {
-                    overallScore += 15;
-                    feedback.push({ 
-                        text: '⚠ Feet slightly too far apart', 
-                        detail: 'Bring your feet closer together. The inner edges of your feet should touch or be very close. This creates a strong foundation.',
-                        type: 'warning' 
-                    });
-                } else {
-                    feedback.push({ 
-                        text: '✗ Feet too far apart', 
-                        detail: 'Move your feet together until the inner edges touch. Stand with big toes touching and heels slightly apart. Press all four corners of each foot into the ground.',
-                        type: 'error' 
-                    });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE) {
-                const shoulderLevel = Math.abs(leftShoulder.y - rightShoulder.y);
-                const shoulderWidth = Math.abs(leftShoulder.x - rightShoulder.x);
-                
-                if (shoulderLevel < shoulderWidth * 0.08) {
-                    overallScore += 25;
-                    feedback.push({ 
-                        text: '✓ Shoulders perfectly level', 
-                        detail: 'Your shoulders are evenly balanced. Keep them relaxed and away from your ears.',
-                        type: 'success' 
-                    });
-                } else if (shoulderLevel < shoulderWidth * 0.15) {
-                    overallScore += 15;
-                    feedback.push({ 
-                        text: '⚠ Shoulders slightly uneven', 
-                        detail: 'Level your shoulders by lowering the higher one. Imagine both shoulders being pulled gently down and back. Keep them relaxed, not tense.',
-                        type: 'warning' 
-                    });
-                } else {
-                    feedback.push({ 
-                        text: '✗ Shoulders need leveling', 
-                        detail: 'One shoulder is significantly higher. Roll both shoulders up, back, and down. Relax your neck and keep shoulders away from ears. Check yourself in the mirror.',
-                        type: 'error' 
-                    });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. This should not happen if all body points are detected. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateAdhoMukhaSvanasana(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftWrist = keypoints[9];
-            const rightWrist = keypoints[10];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left wrist', point: leftWrist },
-                { name: 'right wrist', point: rightWrist },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Please ensure your full body (including hands and feet) is visible in good lighting. All body points must be clearly visible for accurate analysis.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            if (leftHip.score > MIN_CONFIDENCE && leftShoulder.score > MIN_CONFIDENCE && leftWrist.score > MIN_CONFIDENCE) {
-                const hipShoulderWristAngle = calculateAngle(leftHip, leftShoulder, leftWrist);
-                
-                if (hipShoulderWristAngle > 60 && hipShoulderWristAngle < 90) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Upper body angle correct', type: 'success' });
-                } else if (hipShoulderWristAngle > 50 && hipShoulderWristAngle < 100) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Adjust hip height', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Form inverted V shape', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftHip.score > MIN_CONFIDENCE && leftKnee.score > MIN_CONFIDENCE && leftAnkle.score > MIN_CONFIDENCE) {
-                const legAngle = calculateAngle(leftHip, leftKnee, leftAnkle);
-                
-                if (legAngle > 160 && legAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Legs straight', type: 'success' });
-                } else if (legAngle > 140) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Straighten legs more', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Legs need more extension', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const hipHeight = (leftHip.y + rightHip.y) / 2;
-                const shoulderHeight = (leftShoulder.y + rightShoulder.y) / 2;
-                
-                if (hipHeight < shoulderHeight) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Hips elevated correctly', type: 'success' });
-                } else {
-                    feedback.push({ text: '✗ Lift hips higher', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftWrist.score > MIN_CONFIDENCE && rightWrist.score > MIN_CONFIDENCE &&
-                leftAnkle.score > MIN_CONFIDENCE && rightAnkle.score > MIN_CONFIDENCE) {
-                const handsDistance = getDistance(leftWrist, rightWrist);
-                const feetDistance = getDistance(leftAnkle, rightAnkle);
-                
-                if (Math.abs(handsDistance - feetDistance) < handsDistance * 0.3) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Hand/feet width balanced', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Adjust hand/feet width', type: 'warning' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateVirabhadrasanaIII(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const nose = keypoints[0];
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. This is a balance pose requiring your full body visible. Please ensure good lighting and that your whole body (including lifted leg) is in frame.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            const leftLegStraight = leftKnee.score > MIN_CONFIDENCE && leftAnkle.score > MIN_CONFIDENCE &&
-                                   Math.abs(leftKnee.y - leftAnkle.y) > Math.abs(leftKnee.y - leftHip.y);
-            const rightLegStraight = rightKnee.score > MIN_CONFIDENCE && rightAnkle.score > MIN_CONFIDENCE &&
-                                    Math.abs(rightKnee.y - rightAnkle.y) > Math.abs(rightKnee.y - rightHip.y);
-
-            const standingLeg = leftLegStraight ? 'left' : 'right';
-            const liftedLeg = leftLegStraight ? 'right' : 'left';
-
-            const standingAnkle = standingLeg === 'left' ? leftAnkle : rightAnkle;
-            const standingKnee = standingLeg === 'left' ? leftKnee : rightKnee;
-            const standingHip = standingLeg === 'left' ? leftHip : rightHip;
-
-            const liftedAnkle = liftedLeg === 'left' ? leftAnkle : rightAnkle;
-            const liftedKnee = liftedLeg === 'left' ? leftKnee : rightKnee;
-            const liftedHip = liftedLeg === 'left' ? leftHip : rightHip;
-
-            if (standingAnkle.score > MIN_CONFIDENCE && standingKnee.score > MIN_CONFIDENCE && standingHip.score > MIN_CONFIDENCE) {
-                const standingLegAngle = calculateAngle(standingAnkle, standingKnee, standingHip);
-                
-                if (standingLegAngle > 165 && standingLegAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Standing leg straight', type: 'success' });
-                } else if (standingLegAngle > 155) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Straighten standing leg', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Standing leg needs work', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE &&
-                leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const shoulderY = (leftShoulder.y + rightShoulder.y) / 2;
-                const hipY = (leftHip.y + rightHip.y) / 2;
-                const bodyHeight = Math.abs(hipY - shoulderY);
-                
-                if (Math.abs(shoulderY - hipY) < bodyHeight * 0.3) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Torso horizontal', type: 'success' });
-                } else if (Math.abs(shoulderY - hipY) < bodyHeight * 0.5) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Lower torso more', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Bring torso parallel to ground', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (liftedHip.score > MIN_CONFIDENCE && liftedKnee.score > MIN_CONFIDENCE && liftedAnkle.score > MIN_CONFIDENCE) {
-                const liftedLegAngle = calculateAngle(liftedHip, liftedKnee, liftedAnkle);
-                
-                if (liftedLegAngle > 160 && liftedLegAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Lifted leg straight', type: 'success' });
-                } else if (liftedLegAngle > 140) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Extend lifted leg', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Straighten lifted leg', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const hipLevel = Math.abs(leftHip.y - rightHip.y);
-                const hipWidth = Math.abs(leftHip.x - rightHip.x);
-                
-                if (hipLevel < hipWidth * 0.15) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Hips level', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Square your hips', type: 'warning' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateNamastey(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const nose = keypoints[0];
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftElbow = keypoints[7];
-            const rightElbow = keypoints[8];
-            const leftWrist = keypoints[9];
-            const rightWrist = keypoints[10];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-
-            const requiredKeypoints = [
-                { name: 'nose', point: nose },
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left elbow', point: leftElbow },
-                { name: 'right elbow', point: rightElbow },
-                { name: 'left wrist', point: leftWrist },
-                { name: 'right wrist', point: rightWrist },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Please ensure your upper body (especially hands and arms) is clearly visible in good lighting. Face the camera directly.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            if (leftWrist.score > MIN_CONFIDENCE && rightWrist.score > MIN_CONFIDENCE && nose.score > MIN_CONFIDENCE) {
-                const handsDistance = getDistance(leftWrist, rightWrist);
-                const centerX = (leftWrist.x + rightWrist.x) / 2;
-                const centerY = (leftWrist.y + rightWrist.y) / 2;
-                
-                const chestY = (leftShoulder.y + rightShoulder.y) / 2 + 
-                              ((leftHip.y + rightHip.y) / 2 - (leftShoulder.y + rightShoulder.y) / 2) * 0.3;
-                
-                if (handsDistance < 80 && Math.abs(centerY - chestY) < 50) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Hands at chest center', type: 'success' });
-                } else if (handsDistance < 120) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Bring hands closer', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Press palms together', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftElbow.score > MIN_CONFIDENCE && leftWrist.score > MIN_CONFIDENCE && leftShoulder.score > MIN_CONFIDENCE) {
-                const leftElbowAngle = calculateAngle(leftShoulder, leftElbow, leftWrist);
-                
-                if (leftElbowAngle > 80 && leftElbowAngle < 110) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Left elbow angle good', type: 'success' });
-                } else if (leftElbowAngle > 60 && leftElbowAngle < 130) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Adjust left elbow', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Left arm position incorrect', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (rightElbow.score > MIN_CONFIDENCE && rightWrist.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE) {
-                const rightElbowAngle = calculateAngle(rightShoulder, rightElbow, rightWrist);
-                
-                if (rightElbowAngle > 80 && rightElbowAngle < 110) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Right elbow angle good', type: 'success' });
-                } else if (rightElbowAngle > 60 && rightElbowAngle < 130) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Adjust right elbow', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Right arm position incorrect', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE) {
-                const shoulderLevel = Math.abs(leftShoulder.y - rightShoulder.y);
-                const shoulderWidth = Math.abs(leftShoulder.x - rightShoulder.x);
-                
-                if (shoulderLevel < shoulderWidth * 0.1) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Shoulders relaxed & level', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Relax and level shoulders', type: 'warning' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateNatarajasana(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftElbow = keypoints[7];
-            const rightElbow = keypoints[8];
-            const leftWrist = keypoints[9];
-            const rightWrist = keypoints[10];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left elbow', point: leftElbow },
-                { name: 'right elbow', point: rightElbow },
-                { name: 'left wrist', point: leftWrist },
-                { name: 'right wrist', point: rightWrist },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Dancer's pose requires full body visibility. Ensure your entire body including the lifted leg and raised arm are in frame with good lighting.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            const leftLegDown = leftAnkle.y > leftKnee.y && leftKnee.y > leftHip.y;
-            const rightLegDown = rightAnkle.y > rightKnee.y && rightKnee.y > rightHip.y;
-            const standingLeg = leftLegDown ? 'left' : 'right';
-            const liftedLeg = leftLegDown ? 'right' : 'left';
-
-            const standingAnkle = standingLeg === 'left' ? leftAnkle : rightAnkle;
-            const standingKnee = standingLeg === 'left' ? leftKnee : rightKnee;
-            const standingHip = standingLeg === 'left' ? leftHip : rightHip;
-
-            const liftedAnkle = liftedLeg === 'left' ? leftAnkle : rightAnkle;
-            const liftedKnee = liftedLeg === 'left' ? leftKnee : rightKnee;
-            const liftedHip = liftedLeg === 'left' ? leftHip : rightHip;
-
-            if (standingAnkle.score > MIN_CONFIDENCE && standingKnee.score > MIN_CONFIDENCE && standingHip.score > MIN_CONFIDENCE) {
-                const standingLegAngle = calculateAngle(standingAnkle, standingKnee, standingHip);
-                
-                if (standingLegAngle > 165 && standingLegAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Standing leg perfectly straight', detail: 'Excellent stability! Keep pressing through your standing foot.', type: 'success' });
-                } else if (standingLegAngle > 155) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Standing leg slightly bent', detail: 'Straighten your standing leg and engage your thigh muscles for better balance.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Standing leg needs straightening', detail: 'Your standing leg should be completely straight. Engage your quadriceps and press firmly into the ground.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (liftedKnee.score > MIN_CONFIDENCE && liftedAnkle.score > MIN_CONFIDENCE) {
-                const liftHeight = Math.abs(liftedKnee.y - standingHip.y);
-                const bodyHeight = Math.abs(standingHip.y - standingKnee.y);
-                
-                if (liftHeight > bodyHeight * 0.5) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Lifted leg elevated well', detail: 'Great lift! Your back leg is at a good height.', type: 'success' });
-                } else if (liftHeight > bodyHeight * 0.3) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Lift leg higher', detail: 'Try to bring your lifted foot closer to your head by bending the knee more.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Lifted leg too low', detail: 'Reach back with your hand to grab your foot and lift your leg higher behind you.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE) {
-                const shoulderLevel = Math.abs(leftShoulder.y - rightShoulder.y);
-                const shoulderWidth = Math.abs(leftShoulder.x - rightShoulder.x);
-                
-                if (shoulderLevel < shoulderWidth * 0.15) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Shoulders balanced', detail: 'Your shoulders are level and balanced. Maintain this alignment.', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Level your shoulders', detail: 'Keep both shoulders at the same height. Draw them back and down.', type: 'warning' });
-                }
-                checks++;
-            }
-
-            if (leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const hipAlignment = Math.abs(leftHip.y - rightHip.y);
-                const hipWidth = Math.abs(leftHip.x - rightHip.x);
-                
-                if (hipAlignment < hipWidth * 0.2) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Hips aligned', detail: 'Perfect hip alignment! Your hips are square and balanced.', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Square your hips', detail: 'Keep your hips facing forward. Avoid rotating them to the side.', type: 'warning' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateVrikshasana(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const nose = keypoints[0];
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftElbow = keypoints[7];
-            const rightElbow = keypoints[8];
-            const leftWrist = keypoints[9];
-            const rightWrist = keypoints[10];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'nose', point: nose },
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left elbow', point: leftElbow },
-                { name: 'right elbow', point: rightElbow },
-                { name: 'left wrist', point: leftWrist },
-                { name: 'right wrist', point: rightWrist },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Tree pose requires your entire body visible. Stand facing the camera with arms raised and one leg bent.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            const leftLegStraight = leftAnkle.y > leftKnee.y && Math.abs(leftKnee.y - leftAnkle.y) > Math.abs(leftKnee.y - leftHip.y);
-            const rightLegStraight = rightAnkle.y > rightKnee.y && Math.abs(rightKnee.y - rightAnkle.y) > Math.abs(rightKnee.y - rightHip.y);
-            const standingLeg = leftLegStraight ? 'left' : 'right';
-            const bentLeg = leftLegStraight ? 'right' : 'left';
-
-            const standingAnkle = standingLeg === 'left' ? leftAnkle : rightAnkle;
-            const standingKnee = standingLeg === 'left' ? leftKnee : rightKnee;
-            const standingHip = standingLeg === 'left' ? leftHip : rightHip;
-
-            const bentKnee = bentLeg === 'left' ? leftKnee : rightKnee;
-            const bentAnkle = bentLeg === 'left' ? leftAnkle : rightAnkle;
-            const bentHip = bentLeg === 'left' ? leftHip : rightHip;
-
-            if (standingAnkle.score > MIN_CONFIDENCE && standingKnee.score > MIN_CONFIDENCE && standingHip.score > MIN_CONFIDENCE) {
-                const standingLegAngle = calculateAngle(standingAnkle, standingKnee, standingHip);
-                
-                if (standingLegAngle > 165 && standingLegAngle < 180) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Standing leg perfectly straight', detail: 'Excellent! Your standing leg is firm and stable.', type: 'success' });
-                } else if (standingLegAngle > 155) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Straighten standing leg more', detail: 'Engage your standing leg muscles to fully straighten. Press firmly into the ground.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Standing leg needs work', detail: 'Your standing leg should be completely straight for proper balance and alignment.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (bentKnee.score > MIN_CONFIDENCE && bentAnkle.score > MIN_CONFIDENCE && bentHip.score > MIN_CONFIDENCE) {
-                const bentLegAngle = calculateAngle(bentHip, bentKnee, bentAnkle);
-                const kneeOut = Math.abs(bentKnee.x - standingKnee.x) > Math.abs(standingKnee.x - standingAnkle.x);
-                
-                if (bentLegAngle < 100 && kneeOut) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Bent leg positioned correctly', detail: 'Perfect! Your foot is placed well on the inner thigh with knee pointing out.', type: 'success' });
-                } else if (bentLegAngle < 120) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Bend knee more outward', detail: 'Open your bent knee more to the side while keeping foot on inner thigh or calf.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Adjust bent leg position', detail: 'Place your foot on inner thigh or calf (not knee) and push knee out to the side.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftWrist.score > MIN_CONFIDENCE && rightWrist.score > MIN_CONFIDENCE && nose.score > MIN_CONFIDENCE) {
-                const wristsAboveHead = leftWrist.y < nose.y && rightWrist.y < nose.y;
-                const handsTogether = getDistance(leftWrist, rightWrist) < 100;
-                
-                if (wristsAboveHead && handsTogether) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Arms raised perfectly', detail: 'Great! Your hands are together above your head in prayer position.', type: 'success' });
-                } else if (wristsAboveHead) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Bring hands together', detail: 'Your arms are up but bring your palms together in prayer position.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Raise arms overhead', detail: 'Lift your arms straight up and bring palms together above your head.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE && leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const torsoAlignment = calculateAngle(standingAnkle, standingHip, leftShoulder);
-                
-                if (torsoAlignment > 165) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Perfect posture', detail: 'Your torso is beautifully aligned and upright. Excellent balance!', type: 'success' });
-                } else if (torsoAlignment > 155) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Stand more upright', detail: 'Lengthen your spine and lift through the crown of your head.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Improve posture', detail: 'Stand tall with your torso vertical. Engage your core for better balance.', type: 'error' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validateBaddhaKonasana(keypoints) {
-            const feedback = [];
-            let overallScore = 0;
-            let checks = 0;
-
-            const nose = keypoints[0];
-            const leftShoulder = keypoints[5];
-            const rightShoulder = keypoints[6];
-            const leftHip = keypoints[11];
-            const rightHip = keypoints[12];
-            const leftKnee = keypoints[13];
-            const rightKnee = keypoints[14];
-            const leftAnkle = keypoints[15];
-            const rightAnkle = keypoints[16];
-
-            const requiredKeypoints = [
-                { name: 'nose', point: nose },
-                { name: 'left shoulder', point: leftShoulder },
-                { name: 'right shoulder', point: rightShoulder },
-                { name: 'left hip', point: leftHip },
-                { name: 'right hip', point: rightHip },
-                { name: 'left knee', point: leftKnee },
-                { name: 'right knee', point: rightKnee },
-                { name: 'left ankle', point: leftAnkle },
-                { name: 'right ankle', point: rightAnkle }
-            ];
-
-            const missingPoints = requiredKeypoints.filter(kp => kp.point.score <= MIN_CONFIDENCE);
-            
-            if (missingPoints.length > 0) {
-                const missingNames = missingPoints.map(kp => kp.name).join(', ');
-                feedback.push({
-                    text: '⚠ Cannot analyze pose - insufficient body point detection',
-                    detail: `The camera cannot detect: ${missingNames}. Butterfly pose is a seated pose. Ensure you're seated facing the camera with your full body visible, especially your knees and feet.`,
-                    type: 'warning'
-                });
-                return { score: null, feedback, checksPerformed: 0, totalChecks: 4, allPointsDetected: false };
-            }
-
-            if (leftAnkle.score > MIN_CONFIDENCE && rightAnkle.score > MIN_CONFIDENCE) {
-                const feetDistance = getDistance(leftAnkle, rightAnkle);
-                const hipToAnkle = getDistance(leftHip, leftAnkle);
-                
-                if (feetDistance < hipToAnkle * 0.4) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Feet together perfectly', detail: 'Excellent! Your feet are touching at the soles as they should be.', type: 'success' });
-                } else if (feetDistance < hipToAnkle * 0.6) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Bring feet closer', detail: 'Draw your feet closer together so the soles touch completely.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Feet too far apart', detail: 'Press the soles of your feet together and bring them toward your body.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftKnee.score > MIN_CONFIDENCE && rightKnee.score > MIN_CONFIDENCE && leftHip.score > MIN_CONFIDENCE && rightHip.score > MIN_CONFIDENCE) {
-                const leftKneeOut = Math.abs(leftKnee.x - leftHip.x);
-                const rightKneeOut = Math.abs(rightKnee.x - rightHip.x);
-                const hipWidth = Math.abs(leftHip.x - rightHip.x);
-                
-                if (leftKneeOut > hipWidth * 0.3 && rightKneeOut > hipWidth * 0.3) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Knees opened well', detail: 'Perfect! Your knees are nicely opened toward the ground.', type: 'success' });
-                } else if (leftKneeOut > hipWidth * 0.2 && rightKneeOut > hipWidth * 0.2) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Open knees more', detail: 'Gently press your knees down toward the floor using your elbows if needed.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Knees need to open', detail: 'Let your knees fall open to the sides. Use your hands to gently press them down.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (nose.score > MIN_CONFIDENCE && leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE && leftHip.score > MIN_CONFIDENCE) {
-                const spineAngle = Math.abs(nose.y - leftShoulder.y);
-                const torsoLength = Math.abs(leftShoulder.y - leftHip.y);
-                
-                if (spineAngle < torsoLength * 0.3) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Spine tall and straight', detail: 'Excellent posture! Your spine is elongated and straight.', type: 'success' });
-                } else if (spineAngle < torsoLength * 0.5) {
-                    overallScore += 15;
-                    feedback.push({ text: '⚠ Sit up taller', detail: 'Lengthen your spine by sitting up straighter. Imagine a string pulling your head up.', type: 'warning' });
-                } else {
-                    feedback.push({ text: '✗ Straighten your back', detail: 'Sit up tall with your back straight. Engage your core to support your spine.', type: 'error' });
-                }
-                checks++;
-            }
-
-            if (leftShoulder.score > MIN_CONFIDENCE && rightShoulder.score > MIN_CONFIDENCE) {
-                const shoulderLevel = Math.abs(leftShoulder.y - rightShoulder.y);
-                const shoulderWidth = Math.abs(leftShoulder.x - rightShoulder.x);
-                
-                if (shoulderLevel < shoulderWidth * 0.1) {
-                    overallScore += 25;
-                    feedback.push({ text: '✓ Shoulders relaxed & level', detail: 'Perfect! Your shoulders are evenly balanced and relaxed.', type: 'success' });
-                } else {
-                    overallScore += 10;
-                    feedback.push({ text: '⚠ Level your shoulders', detail: 'Keep your shoulders at the same height and relaxed away from your ears.', type: 'warning' });
-                }
-                checks++;
-            }
-
-            const totalChecks = 4;
-            const totalPossibleScore = totalChecks * 25;
-            
-            if (checks < totalChecks) {
-                feedback.unshift({ 
-                    text: '⚠ Incomplete pose analysis', 
-                    detail: `Only ${checks} of ${totalChecks} pose aspects could be analyzed. Please adjust your position.`,
-                    type: 'warning' 
-                });
-                return { score: null, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-            }
-            
-            const finalScore = (overallScore / totalPossibleScore) * 100;
-            return { score: finalScore, feedback, checksPerformed: checks, totalChecks: totalChecks, allPointsDetected: true };
-        }
-
-        function validatePose(poseName, keypoints) {
-            switch(poseName) {
-                case 'Tadasana':
-                    return validateTadasana(keypoints);
-                case 'Adho Mukha Svanasana':
-                    return validateAdhoMukhaSvanasana(keypoints);
-                case 'Virabhadrasana III':
-                    return validateVirabhadrasanaIII(keypoints);
-                case 'Namastey':
-                    return validateNamastey(keypoints);
-                case 'Natarajasana':
-                    return validateNatarajasana(keypoints);
-                case 'Vrikshasana':
-                    return validateVrikshasana(keypoints);
-                case 'Baddha Konasana':
-                    return validateBaddhaKonasana(keypoints);
-                default:
-                    return { score: 0, feedback: [] };
-            }
-        }
-
-        function getColorForScore(score) {
-            if (score === null || score === undefined) return '#6B7280';
-            if (score >= 80) return '#10B981';
-            if (score >= 60) return '#84cc16';
-            if (score >= 40) return '#FFC107';
-            if (score >= 20) return '#FB923C';
-            return '#EF4444';
-        }
-
-        async function initializeMoveNet() {
-            try {
-                const detectorConfig = {
-                    modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING
-                };
-                detector = await poseDetection.createDetector(
-                    poseDetection.SupportedModels.MoveNet,
-                    detectorConfig
-                );
-                console.log('MoveNet initialized successfully');
-                return true;
-            } catch (error) {
-                console.error('Error initializing MoveNet:', error);
-                return false;
-            }
-        }
-
-        async function startCamera() {
-            try {
-                videoStream = await navigator.mediaDevices.getUserMedia({
-                    video: { 
-                        width: { ideal: 1280 },
-                        height: { ideal: 720 },
-                        facingMode: 'user',
-                        frameRate: { ideal: 30, max: 60 }
-                    },
-                    audio: false
-                });
-                const videoElement = document.getElementById('video-feed');
-                videoElement.srcObject = videoStream;
-                return true;
-            } catch (error) {
-                console.error('Error accessing camera:', error);
-                alert('Unable to access camera. Please check permissions.');
-                return false;
-            }
-        }
-
-        function stopCamera() {
-            if (videoStream) {
-                videoStream.getTracks().forEach(track => track.stop());
-                videoStream = null;
-            }
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null;
-            }
-        }
-
-        async function detectPoseLoop() {
-            const videoElement = document.getElementById('video-feed');
-            const canvas = document.getElementById('ar-canvas');
-            const ctx = canvas.getContext('2d');
-
-            if (!videoElement || !canvas) return;
-
-            canvas.width = videoElement.videoWidth || 640;
-            canvas.height = videoElement.videoHeight || 480;
-
-            async function detect() {
-                if (!detector || !currentPose) {
-                    animationFrameId = requestAnimationFrame(detect);
-                    return;
-                }
-
+            for (let i = 0; i < retries; i++) {
                 try {
-                    const poses = await detector.estimatePoses(videoElement);
-                    
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                             contents: [{ parts: [{ text: prompt }] }],
+                             tools: [{ "google_search": {} }],
+                             systemInstruction: {
+                                 parts: [{ text: VIRTUAL_ASSISTANT_SYSTEM_PROMPT }]
+                             },
+                        })
+                    });
 
-                    if (poses.length > 0) {
-                        const pose = poses[0];
-                        const keypoints = pose.keypoints;
-
-                        const validation = validatePose(currentPose.name, keypoints);
-                        const color = getColorForScore(validation.score);
-
-                        for (const connection of SKELETON_CONNECTIONS) {
-                            const kp1 = keypoints[connection[0]];
-                            const kp2 = keypoints[connection[1]];
-
-                            if (kp1.score > MIN_CONFIDENCE && kp2.score > MIN_CONFIDENCE) {
-                                ctx.beginPath();
-                                ctx.moveTo(kp1.x, kp1.y);
-                                ctx.lineTo(kp2.x, kp2.y);
-                                ctx.strokeStyle = color;
-                                ctx.lineWidth = 4;
-                                ctx.stroke();
+                    if (!response.ok) {
+                        let errorDetails = `HTTP error! status: ${response.status}`;
+                        let isOverloaded = false;
+                        
+                        try {
+                            const errorBody = await response.json();
+                            if (errorBody && errorBody.error && errorBody.error.message) {
+                                errorDetails = errorBody.error.message;
                             }
+                            // Check for 503 UNAVAILABLE status in the error code
+                            if (response.status === 503 || errorDetails.includes("model is overloaded")) {
+                                isOverloaded = true;
+                                console.error(`API Error Response (503):`, errorBody);
+                            } else {
+                                console.error(`API Error Response (${response.status}):`, errorBody);
+                            }
+                        } catch (e) {
+                            console.error(`API Error Response (${response.status}): Could not parse error body.`);
                         }
 
-                        keypoints.forEach(kp => {
-                            if (kp.score > MIN_CONFIDENCE) {
-                                ctx.beginPath();
-                                ctx.arc(kp.x, kp.y, 6, 0, 2 * Math.PI);
-                                ctx.fillStyle = color;
-                                ctx.fill();
-                                ctx.strokeStyle = '#FFFFFF';
-                                ctx.lineWidth = 2;
-                                ctx.stroke();
-                            }
-                        });
-
-                        const feedbackEl = document.getElementById('pose-feedback');
-                        const detailedFeedbackEl = document.getElementById('detailed-feedback');
-                        
-                        if (feedbackEl) {
-                            const scoreColor = getColorForScore(validation.score);
-                            let feedbackHTML = '';
-                            
-                            if (validation.score === null || validation.score === undefined) {
-                                feedbackHTML = `
-                                    <div class="mb-2">
-                                        <span class="font-bold text-lg" style="color: ${scoreColor}">
-                                            ⏳ Waiting for complete detection...
-                                        </span>
-                                    </div>
-                                    <div class="text-sm space-y-1">
-                                `;
-                            } else {
-                                feedbackHTML = `
-                                    <div class="mb-2">
-                                        <span class="font-bold text-lg">Score: </span>
-                                        <span class="font-bold text-xl" style="color: ${scoreColor}">
-                                            ${Math.round(validation.score)}%
-                                        </span>
-                                    </div>
-                                    <div class="text-sm space-y-1">
-                                `;
-                            }
-                            
-                            validation.feedback.forEach(item => {
-                                const itemColor = item.type === 'success' ? '#10B981' : 
-                                                 item.type === 'warning' ? '#FFC107' : '#EF4444';
-                                feedbackHTML += `<div style="color: ${itemColor}">${item.text}</div>`;
-                            });
-                            
-                            feedbackHTML += '</div>';
-                            feedbackEl.innerHTML = feedbackHTML;
+                        if (isOverloaded) {
+                            throw new Error("Model Unavailable (503). Please wait and try again.");
                         }
                         
-                        if (detailedFeedbackEl) {
-                            let detailedHTML = '';
-                            
-                            if (validation.feedback.length === 0) {
-                                detailedHTML = '<p class="text-gray-400">Position yourself fully in frame to begin pose analysis...</p>';
-                            } else {
-                                validation.feedback.forEach((item, index) => {
-                                    const iconColor = item.type === 'success' ? 'text-green-400' : 
-                                                     item.type === 'warning' ? 'text-yellow-400' : 'text-red-400';
-                                    const bgColor = item.type === 'success' ? 'bg-green-900 bg-opacity-20' : 
-                                                   item.type === 'warning' ? 'bg-yellow-900 bg-opacity-20' : 'bg-red-900 bg-opacity-20';
-                                    
-                                    detailedHTML += `
-                                        <div class="${bgColor} rounded-lg p-3 border-l-4 ${item.type === 'success' ? 'border-green-400' : item.type === 'warning' ? 'border-yellow-400' : 'border-red-400'}">
-                                            <div class="font-semibold ${iconColor} mb-1">${index + 1}. ${item.text}</div>
-                                            <div class="text-gray-300 text-xs leading-relaxed">${item.detail}</div>
-                                        </div>
-                                    `;
-                                });
-                            }
-                            
-                            detailedFeedbackEl.innerHTML = detailedHTML;
-                        }
+                        throw new Error(errorDetails);
                     }
+
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+                    const text = candidate?.content?.parts?.[0]?.text || "Sorry, I couldn't find an answer for that right now. Please try rephrasing.";
+                    
+                    let sources = [];
+                    const groundingMetadata = candidate?.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+                    }
+
+                    return { text, sources };
+
                 } catch (error) {
-                    console.error('Pose detection error:', error);
+                    // Check for 401 error
+                    if (error.message && error.message.includes('401')) {
+                        console.error("Authentication Error. Please ensure the Gemini API key is correctly provided by the environment.");
+                        return { text: "I'm still unable to connect to the AI service. The API key appears to be invalid or unauthorized. Please verify the key's status.", sources: [] };
+                    }
+                    
+                    // Check for 503 error after all retries fail
+                    if (error.message && error.message.includes('503') && i === retries - 1) {
+                         // FIX: Provide a single, clear, user-friendly message upon final 503 failure.
+                        return { text: "The AI service is currently overloaded or undergoing maintenance. This is a temporary issue. Please wait a few moments and try your query again!", sources: [] };
+                    }
+
+                    console.error(`Attempt ${i + 1} failed:`, error);
+                    if (i === retries - 1) {
+                        // Fallback message for other errors after all retries fail
+                        return { text: "My sensors seem to be offline. Could you check your internet connection or try again shortly?", sources: [] };
+                    }
+                    // Exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
                 }
-
-                animationFrameId = requestAnimationFrame(detect);
             }
-
-            detect();
         }
 
+
+        // --- App State and Routing ---
         const app = {
             currentView: 'dashboard',
             views: {
-                dashboard: { name: 'Home', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" /><path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" /></svg>' },
-                asana: { name: 'Asana Library', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" /></svg>' },
-                routine: { name: 'Routine', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" /></svg>' },
-                ar_correction: { name: 'AR Correction', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 9a3.75 3.75 0 100 7.5A3.75 3.75 0 0012 9z" /><path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 015.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 01-3 3h-15a3 3 0 01-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 001.11-.71l.822-1.315a2.942 2.942 0 012.332-1.39zM6.75 12.75a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0zm12-1.5a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" /></svg>' },
-                assistant: { name: 'Assistant', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" /></svg>' },
+                dashboard: { name: 'Home', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6ZM9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25ZM9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z" clip-rule="evenodd" /></svg>' },
+                asana: { name: 'Asana Library', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M11.54 22.351A2.433 2.433 0 0 0 12 22.5c.376 0 .741-.096 1.06-.279l.522-.249 7.55 3.332.002-.001.002-.001a.75.75 0 0 0 .584-.852 16.148 16.148 0 0 0-4.075-8.868 12.396 12.396 0 0 1 2.373-3.084c.645-.632.744-1.638.258-2.479l-.174-.298c-.469-.798-1.547-1.077-2.475-.688l-2.074.887a.75.75 0 0 0-.773-.243l-3.235-4.321C9.654 2.84 8.643 2.5 7.632 2.5a.75.75 0 0 0-.584.852c.321 1.954.249 3.864-.32 5.584l-2.316 4.01a.75.75 0 0 0-.074.786l.635 1.018a.75.75 0 0 0 .866.398l1.378-.475 3.655 1.701Z" clip-rule="evenodd" /></svg>' },
+                routine: { name: 'Routine', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 5.25a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5H8.25a.75.75 0 0 1-.75-.75ZM4.875 6a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM2.25 7.5a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75ZM18 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM19.5 5.25a.75.75 0 0 1-.75-.75h-.75a.75.75 0 0 1 0 1.5h.75a.75.75 0 0 1 .75-.75ZM15 4.5a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-1.5 0V5.25a.75.75 0 0 1 .75-.75ZM12 7.5a4.5 4.5 0 0 1 4.5 4.5v3.75c0 .66.234 1.278.63 1.747a.75.75 0 0 1-1.12.991 7.472 7.472 0 0 0-2.88 1.487.75.75 0 0 1-1.22 0 7.472 7.472 0 0 0-2.88-1.487.75.75 0 0 1-1.12-.991A4.5 4.5 0 0 1 7.5 15.75V12a4.5 4.5 0 0 1 4.5-4.5Z" clip-rule="evenodd" /></svg>' },
+                ar_correction: { name: 'AR Correction', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" /><path fill-rule="evenodd" d="M1.5 12c0-2.485 2.404-4.5 5.488-4.5h11.024c3.084 0 5.488 2.015 5.488 4.5s-2.404 4.5-5.488 4.5H6.988c-3.084 0-5.488-2.015-5.488-4.5ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0Z" clip-rule="evenodd" /></svg>' },
+                assistant: { name: 'Assistant', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.818 4.67a.75.75 0 0 0 1.06-1.06L7.172 2.565a.75.75 0 0 0-1.06 1.06l1.706 1.705ZM18.948 4.67a.75.75 0 0 0 1.06 1.06l1.706 1.705a.75.75 0 0 0 1.06-1.06L18.948 4.67Z" clip-rule="evenodd" /><path d="M12 6.75a5.25 5.25 0 0 1 5.25 5.25v3.375c0 2.223.715 4.363 2.022 6.177a.75.75 0 0 1-.95.832c-2.496-1.44-4.43-2.527-5.747-2.527a4.5 4.5 0 0 0-4.5-4.5h-1.5v3a.75.75 0 0 0 1.5 0v-2.25a.75.75 0 0 0-1.5 0v2.25a.75.75 0 0 0-1.5 0v-2.25H6.75A5.25 5.25 0 0 1 12 6.75Z" /></svg>' },
             },
             
+            // Elements
             contentEl: document.getElementById('content'),
             navTabsEl: document.getElementById('nav-tabs'),
             
+            // Voice Command State
             isListening: false,
             recognitionInstance: null,
             
+            // Methods
             init() {
                 this.renderNav();
                 this.navigate(this.currentView);
-                this.setupVoiceCommands();
-                this.setupCursorGlow();
+                this.setupVoiceCommands(); // Setup the voice command system
             },
 
-            setupCursorGlow() {
-                const glow = document.getElementById('cursor-glow');
-                document.addEventListener('mousemove', (e) => {
-                    glow.style.left = e.clientX + 'px';
-                    glow.style.top = e.clientY + 'px';
-                });
-            },
-
+            // --- Voice Command Integration ---
             setupVoiceCommands() {
                 if (!('webkitSpeechRecognition' in window)) {
                     document.getElementById('mic-status-text').textContent = "Voice N/A";
                     document.getElementById('voice-toggle').disabled = true;
+                    console.warn("Speech Recognition not supported in this browser.");
                     return;
                 }
 
@@ -1409,15 +360,19 @@
                     }
                 };
 
-                this.recognitionInstance.onstart = () => updateMicStatus(true, "Listening...");
+                this.recognitionInstance.onstart = () => {
+                    updateMicStatus(true, "Listening...");
+                };
 
                 this.recognitionInstance.onresult = (event) => {
                     const last = event.results.length - 1;
                     const transcript = event.results[last][0].transcript.toLowerCase().trim();
-                    console.log('Voice Command:', transcript);
+                    console.log('Voice Command Received:', transcript);
 
+                    // Acknowledge the command via UI/Console
                     updateMicStatus(true, `Heard: "${transcript}"`);
 
+                    // Simple command mapping logic to match the Python backend
                     let navigated = false;
                     const commandMap = {
                         'home': 'dashboard',
@@ -1437,15 +392,19 @@
 
                     for (const phrase in commandMap) {
                         if (transcript.includes(phrase)) {
-                            this.recognitionInstance.stop();
+                            const targetView = commandMap[phrase];
+                            // Stop recognition temporarily to allow navigation without conflict
+                            this.recognitionInstance.stop(); 
+                            // Set isListening to false so onend doesn't restart immediately
                             this.isListening = false;
-                            this.navigate(commandMap[phrase]);
+                            this.navigate(targetView);
                             navigated = true;
                             return;
                         }
                     }
 
                     if (!navigated) {
+                        // If nothing matched, revert to listening status after a short delay
                         setTimeout(() => {
                             if(this.isListening) micStatusText.textContent = "Listening...";
                             else micStatusText.textContent = "Voice Off";
@@ -1455,249 +414,1026 @@
 
                 this.recognitionInstance.onerror = (event) => {
                     console.error('Speech Recognition Error:', event.error);
-                    if (event.error === 'not-allowed') {
+                    updateMicStatus(false, "Error: Check Console");
+
+                    // Specific error handling for permission issues
+                    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
                         updateMicStatus(false, "Permission Blocked!");
-                    } else {
-                        updateMicStatus(false, "Error");
+                    } else if (event.error === 'no-speech') {
+                        // Common error when it stops due to no speech, but should restart onend
+                        updateMicStatus(true);
                     }
                 };
-
+                
+                // Restart listening after a pause or processing, unless manually stopped
                 this.recognitionInstance.onend = () => {
                     if (this.isListening) {
-                        try {
-                            this.recognitionInstance.start();
-                        } catch (e) {
-                            console.log('Restart prevented:', e);
-                        }
+                        // Attempt to restart listening only if the flag is still true
+                        // FIX: Add a small delay to prevent browser conflict during rapid restart
+                        setTimeout(() => {
+                            try {
+                                this.recognitionInstance.start(); // Status update handled by onstart
+                            } catch (e) {
+                                console.warn("Recognition restart failed:", e);
+                                updateMicStatus(false);
+                            }
+                        }, 500); // Increased delay to 500ms for better stability
                     } else {
+                        // If listening was manually turned off/navigation occurred, confirm status is 'Voice Off'
                         updateMicStatus(false);
                     }
                 };
             },
 
             toggleVoiceControl() {
+                const micStatusText = document.getElementById('mic-status-text');
                 if (this.isListening) {
-                    this.recognitionInstance.stop();
                     this.isListening = false;
+                    this.recognitionInstance.stop();
+                    micStatusText.textContent = "Voice Off";
                 } else {
+                    this.isListening = true;
                     try {
                         this.recognitionInstance.start();
+                        micStatusText.textContent = "Listening...";
                     } catch (e) {
-                        console.error('Cannot start recognition:', e);
+                        console.error("Speech Recognition Start Error:", e);
+                        micStatusText.textContent = "Error";
                     }
                 }
             },
 
-            renderNav() {
-                this.navTabsEl.innerHTML = Object.keys(this.views).map(key => `
-                    <button onclick="app.navigate('${key}')" 
-                            class="flex flex-col items-center justify-center p-2 md:px-6 md:py-3 transition rounded-lg ${this.currentView === key ? 'text-primary bg-primary bg-opacity-10' : 'text-gray-400 hover:text-primary'}">
-                        ${this.views[key].icon}
-                        <span class="text-xs mt-1 hidden md:block">${this.views[key].name}</span>
-                    </button>
-                `).join('');
-            },
-
-            navigate(view) {
-                if (!this.views[view]) return;
-                this.currentView = view;
-                this.renderNav();
-                this[`render_${view}`]();
-            },
-
-            render_dashboard() {
-                this.contentEl.innerHTML = `
-                    <h2 class="text-3xl font-bold text-primary mb-4">Welcome to SUNDAY</h2>
-                    <p class="text-gray-400 mb-6">Your personal yoga and wellness companion</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="card-effect bg-gray-800 p-6 rounded-xl">
-                            <h3 class="text-xl font-semibold mb-2">Today's Progress</h3>
-                            <div class="text-4xl font-bold text-primary">0</div>
-                            <p class="text-gray-400 text-sm">Minutes practiced</p>
-                        </div>
-                        <div class="card-effect bg-gray-800 p-6 rounded-xl">
-                            <h3 class="text-xl font-semibold mb-2">Current Streak</h3>
-                            <div class="text-4xl font-bold text-accent">0</div>
-                            <p class="text-gray-400 text-sm">Days</p>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <button onclick="app.navigate('ar_correction')" 
-                                class="w-full bg-primary hover:bg-secondary text-white font-bold py-4 px-6 rounded-xl transition">
-                            Start AR Pose Correction
-                        </button>
-                    </div>
-                `;
-            },
-
-            render_asana() {
-                this.contentEl.innerHTML = `
-                    <h2 class="text-3xl font-bold text-primary mb-6">Asana Library</h2>
-                    <div class="space-y-4">
-                        ${asanaData.map(asana => `
-                            <div class="card-effect bg-gray-800 p-4 rounded-xl cursor-pointer hover:bg-gray-700" 
-                                 onclick="app.startARForPose('${asana.name}')">
-                                <h3 class="text-xl font-semibold">${asana.name}</h3>
-                                <p class="text-sm text-gray-400">${asana.sanskrit}</p>
-                                <p class="text-xs text-gray-500 mt-2">${asana.benefits}</p>
-                                <span class="inline-block mt-2 px-3 py-1 text-xs rounded-full ${
-                                    asana.category === 'Beginner' ? 'bg-green-500 bg-opacity-20 text-green-400' :
-                                    asana.category === 'Intermediate' ? 'bg-yellow-500 bg-opacity-20 text-yellow-400' :
-                                    'bg-red-500 bg-opacity-20 text-red-400'
-                                }">${asana.category}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            },
-
-            render_routine() {
-                this.contentEl.innerHTML = `
-                    <h2 class="text-3xl font-bold text-primary mb-6">Your Routine</h2>
-                    <div class="card-effect bg-gray-800 p-6 rounded-xl">
-                        <h3 class="text-xl font-semibold mb-4">Morning Routine</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li>• Tadasana - 5 minutes</li>
-                            <li>• Adho Mukha Svanasana - 5 minutes</li>
-                            <li>• Namastey - 3 minutes</li>
-                        </ul>
-                    </div>
-                `;
-            },
-
-            render_ar_correction() {
-                this.contentEl.innerHTML = `
-                    <h2 class="text-3xl font-bold text-primary mb-4">AR Pose Correction</h2>
-                    <p class="text-gray-400 mb-4">Select a pose to begin real-time correction</p>
-                    
-                    <div id="pose-selector" class="grid grid-cols-2 gap-3 mb-4">
-                        ${asanaData.map(asana => `
-                            <button onclick="app.selectPose('${asana.name}')" 
-                                    class="card-effect bg-gray-800 hover:bg-gray-700 p-4 rounded-xl text-left transition">
-                                <div class="font-semibold">${asana.name}</div>
-                                <div class="text-xs text-gray-400">${asana.sanskrit}</div>
-                            </button>
-                        `).join('')}
-                    </div>
-
-                    <div id="ar-view" class="hidden">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <h3 class="text-lg font-semibold text-primary mb-2">Your Pose</h3>
-                                <div id="video-container">
-                                    <video id="video-feed" autoplay playsinline></video>
-                                    <canvas id="ar-canvas"></canvas>
-                                    <div id="pose-feedback" class="feedback-overlay"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-success mb-2">Reference Pose</h3>
-                                <div id="reference-pose-container">
-                                    <img id="reference-pose-image" src="" alt="Reference Pose">
-                                    <div class="pose-label">
-                                        <div class="font-semibold" id="pose-name-label"></div>
-                                        <div class="text-xs text-gray-300" id="pose-sanskrit-label"></div>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-4 bg-gray-800 rounded-xl p-4 max-h-64 overflow-y-auto">
-                                    <h4 class="text-md font-semibold text-primary mb-3">Correction Guidance</h4>
-                                    <div id="detailed-feedback" class="space-y-2 text-sm">
-                                        <p class="text-gray-400">Position yourself in front of the camera and start the pose...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="app.stopAR()" 
-                                    class="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-xl transition">
-                                Stop Camera
-                            </button>
-                            <button onclick="app.showPoseSelector()" 
-                                    class="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl transition">
-                                Change Pose
-                            </button>
-                        </div>
-                    </div>
-                `;
-            },
-
-            render_assistant() {
-                this.contentEl.innerHTML = `
-                    <h2 class="text-3xl font-bold text-primary mb-6">AI Assistant</h2>
-                    <div class="card-effect bg-gray-800 p-6 rounded-xl">
-                        <p class="text-gray-300">Hello! I'm your SUNDAY AI assistant. I can help you with:</p>
-                        <ul class="mt-4 space-y-2 text-gray-300">
-                            <li>• Yoga pose guidance and corrections</li>
-                            <li>• Personalized routine recommendations</li>
-                            <li>• Wellness tips and meditation techniques</li>
-                            <li>• Answer your yoga-related questions</li>
-                        </ul>
-                        <p class="mt-4 text-sm text-gray-400">Try using voice commands: "Sunday, open pose library" or "Sunday, start posture correction"</p>
-                    </div>
-                `;
-            },
-
-            async selectPose(poseName) {
-                const poseData = asanaData.find(p => p.name === poseName);
-                if (!poseData) return;
-
-                currentPose = poseData;
-                document.getElementById('pose-selector').classList.add('hidden');
-                document.getElementById('ar-view').classList.remove('hidden');
-
-                const referenceImage = document.getElementById('reference-pose-image');
-                const poseNameLabel = document.getElementById('pose-name-label');
-                const poseSanskritLabel = document.getElementById('pose-sanskrit-label');
+            // --- Navigation and Rendering ---
+            navigate(viewKey) {
+                // The following logic block checking for 'music' is now removed.
                 
-                if (referenceImage && poseData.image) {
-                    referenceImage.src = poseData.image;
-                    poseNameLabel.textContent = poseData.name;
-                    poseSanskritLabel.textContent = poseData.sanskrit;
+                // If voice control is active, stop it before navigating to prevent lingering mic use
+                if (this.recognitionInstance && this.isListening) {
+                    this.recognitionInstance.stop();
+                    this.isListening = false;
+                    // Update UI manually since .onend might not fire immediately after .stop()
+                    document.getElementById('mic-status-text').textContent = "Voice Off";
+                    document.getElementById('mic-icon').classList.remove('text-primary', 'animate-pulse');
+                    document.getElementById('mic-icon').classList.add('text-red-500');
+                }
+                
+                this.currentView = viewKey;
+                this.renderNav();
+                this.renderContent();
+
+                // Start camera and ML model only after rendering the AR view
+                if (viewKey === 'ar_correction') {
+                    // Don't start immediately, wait for asana selection
                 }
 
-                if (!detector) {
-                    const initialized = await initializeMoveNet();
-                    if (!initialized) {
-                        alert('Failed to initialize pose detection');
+                // Set up assistant listeners only when the assistant view is active
+                if (viewKey === 'assistant') {
+                    // Timeout ensures the HTML elements are rendered before attaching events
+                    setTimeout(() => this.setupAssistantListeners(), 50);
+                }
+                
+                // Setup music listeners block removed.
+            },
+            
+            // --- AR Correction Utilities (Now methods of app object) ---
+            
+            /**
+             * Select an asana and start the AR session
+             */
+            selectAsanaAndStart(poseName) {
+                this.currentPose = poseName;
+                const poseSelection = document.getElementById('pose-selection');
+                const arSession = document.getElementById('ar-session');
+                
+                if (poseSelection) poseSelection.style.display = 'none';
+                if (arSession) arSession.style.display = 'block';
+                
+                this.startARAssessment();
+            },
+            
+            /**
+             * Calculates the angle formed by three keypoints (A, B, C) where B is the vertex.
+             * Returns the angle in degrees.
+             */
+            calculateAngle(A, B, C) {
+                if (!A || !B || !C) return 180; // Return 180 (straight line) if points are missing for lenient check
+                
+                const AB = Math.sqrt(Math.pow(B.x - A.x, 2) + Math.pow(B.y - A.y, 2));
+                const BC = Math.sqrt(Math.pow(C.x - B.x, 2) + Math.pow(C.y - B.y, 2));
+                const AC = Math.sqrt(Math.pow(C.x - A.x, 2) + Math.pow(C.y - A.y, 2));
+
+                if (AB === 0 || BC === 0) return 180;
+
+                // Law of Cosines
+                const cosAngle = (Math.pow(AB, 2) + Math.pow(BC, 2) - Math.pow(AC, 2)) / (2 * AB * BC);
+                // Clamp the value to the range [-1, 1] to prevent NaN due to floating point inaccuracies
+                const clampedCosAngle = Math.max(-1, Math.min(1, cosAngle));
+                
+                const angleRad = Math.acos(clampedCosAngle);
+                return (angleRad * 180) / Math.PI;
+            },
+            
+            /**
+             * Checks the detected keypoints against the expected form for the current pose.
+             * Returns an array of correction messages.
+             */
+            checkPose(keypoints, poseName) {
+                const getPoint = (name) => {
+                    const kp = keypoints.find(k => k.name === name);
+                    if (!kp || kp.score < this.MIN_CONFIDENCE) return null;
+                    return { x: kp.x, y: kp.y };
+                };
+                
+                const leftHip = getPoint('left_hip');
+                const leftKnee = getPoint('left_knee');
+                const leftAnkle = getPoint('left_ankle');
+                const rightHip = getPoint('right_hip');
+                const rightKnee = getPoint('right_knee');
+                const rightAnkle = getPoint('right_ankle');
+                const leftShoulder = getPoint('left_shoulder');
+                const rightShoulder = getPoint('right_shoulder');
+                const leftElbow = getPoint('left_elbow'); // Needed for arm checks
+                const rightElbow = getPoint('right_elbow'); // Needed for arm checks
+                const nose = getPoint('nose');
+                const leftWrist = getPoint('left_wrist');
+                const rightWrist = getPoint('right_wrist');
+
+                let corrections = [];
+
+                // --- Global Visibility Check ---
+                if (!leftHip || !rightHip || !leftShoulder || !rightShoulder || !nose) {
+                    return [{message: "Ensure your full body, including your face and hips, is visible.", affected: ['nose', 'left_shoulder', 'right_shoulder', 'left_hip', 'right_hip']}];
+                }
+                
+                if (poseName === 'Tadasana') {
+                    // Mountain Pose - Standing Straight
+                    
+                    // 1. Leg Straightness
+                    if (!leftKnee || !leftAnkle) {
+                        corrections.push({message: "Cannot track left leg. Check visibility.", affected: ['left_knee', 'left_ankle']});
+                    } else {
+                        const leftKneeAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        if (leftKneeAngle < 170) corrections.push({message: "Straighten your left leg fully (knee angle below 170°).", affected: ['left_knee', 'left_ankle'], color: 'red'});
+                    }
+
+                    if (!rightKnee || !rightAnkle) {
+                         corrections.push({message: "Cannot track right leg. Check visibility.", affected: ['right_knee', 'right_ankle']});
+                    } else {
+                        const rightKneeAngle = this.calculateAngle(rightHip, rightKnee, rightAnkle);
+                        if (rightKneeAngle < 170) corrections.push({message: "Straighten your right leg fully (knee angle below 170°).", affected: ['right_knee', 'right_ankle'], color: 'red'});
+                    }
+                    
+                    // 2. Hip/Torso Alignment (Simple vertical check)
+                    if (leftHip && rightHip) {
+                        const hipDifference = Math.abs(leftHip.y - rightHip.y);
+                        if (hipDifference > 30) corrections.push({message: "Keep your hips level (side-to-side wobble).", affected: ['left_hip', 'right_hip'], color: 'yellow'});
+                    }
+                    
+                    // 3. Shoulder Alignment (Simple vertical check)
+                    if (leftShoulder && rightShoulder) {
+                        const shoulderDifference = Math.abs(leftShoulder.y - rightShoulder.y);
+                        if (shoulderDifference > 30) corrections.push({message: "Relax your shoulders down and keep them level.", affected: ['left_shoulder', 'right_shoulder'], color: 'yellow'});
+                    }
+
+                    // 4. Arm Straightness (Arms straight down, palms facing forward) - assuming arms are straight down by side
+                    if (leftShoulder && leftElbow && leftWrist) {
+                        const leftArmAngle = this.calculateAngle(leftShoulder, leftElbow, leftWrist);
+                        if (leftArmAngle < 160) corrections.push({message: "Straighten your left arm.", affected: ['left_elbow', 'left_wrist'], color: 'yellow'});
+                    }
+                    
+                } else if (poseName === 'Adho Mukha Svanasana') {
+                    // Downward Dog
+                    
+                    // 1. Torso/Arm Alignment (Arms should be straight, a line from wrist to shoulder)
+                    if (leftShoulder && leftElbow && leftWrist) {
+                        const armAngle = this.calculateAngle(leftShoulder, leftElbow, leftWrist);
+                        if (armAngle < 160) {
+                            corrections.push({message: "Straighten your arms fully. Press through your palms.", affected: ['left_shoulder', 'left_elbow', 'left_wrist'], color: 'red'});
+                        }
+                    }
+
+                    // 2. Leg Straightness (If not straight, provide a correction)
+                    if (leftHip && leftKnee && leftAnkle) {
+                        const legAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        if (legAngle < 160) {
+                            corrections.push({message: "Straighten your legs more. It's okay if your heels don't touch the floor.", affected: ['left_hip', 'left_knee', 'left_ankle'], color: 'yellow'});
+                        }
+                    }
+
+                    // 3. Hips lifted (Simple check: hips should be higher than shoulders)
+                    if (leftHip && leftShoulder) {
+                        if (leftHip.y < leftShoulder.y) {
+                            corrections.push({message: "Lift your hips higher and press your chest toward your thighs.", affected: ['left_hip', 'left_shoulder'], color: 'red'});
+                        }
+                    }
+
+                } else if (poseName === 'Virabhadrasana III') {
+                    // Warrior III
+                    
+                    // 1. Back Leg Straightness (Assume left leg back for balance)
+                    if (leftHip && leftKnee && leftAnkle) {
+                        const legAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        // The knee should be fully straight, close to 180, but relative to the body angle it's a small angle when parallel to the ground.
+                        // Let's check for knee bend in the back leg.
+                        if (legAngle < 170) { 
+                             corrections.push({message: "Fully straighten your back (left) leg.", affected: ['left_knee', 'left_ankle'], color: 'red'});
+                        }
+                    }
+
+                    // 2. Torso Parallel to Ground (hip to shoulder horizontal) - Simple Y-coordinate difference check
+                    if (leftHip && leftShoulder) {
+                        const torsoVerticalDifference = Math.abs(leftShoulder.y - leftHip.y);
+                        // A large difference means the torso is too upright or dipped too low. The torso should be horizontal, meaning Y coordinates are similar.
+                        if (torsoVerticalDifference > 30) { 
+                            corrections.push({message: "Align your torso so it's parallel to the ground.", affected: ['left_shoulder', 'left_hip'], color: 'red'});
+                        }
+                    }
+
+                    // 3. Arms Forward (Shoulder-Elbow-Wrist should be relatively straight)
+                    if (leftShoulder && leftElbow && leftWrist) {
+                        const armAngle = this.calculateAngle(leftShoulder, leftElbow, leftWrist);
+                        if (armAngle < 160) {
+                            corrections.push({message: "Extend your arms fully forward (keep elbows straight).", affected: ['left_shoulder', 'left_elbow', 'left_wrist'], color: 'yellow'});
+                        }
+                    }
+                } else if (poseName === 'Namastey') {
+                    // Namastey (Prayer Pose) - Standing with hands in prayer at heart center
+                    
+                    // 1. Feet together
+                    if (leftAnkle && rightAnkle) {
+                        const feetDistance = Math.abs(leftAnkle.x - rightAnkle.x);
+                        if (feetDistance > 20) {
+                            corrections.push({message: "Bring your feet together at the base.", affected: ['left_ankle', 'right_ankle'], color: 'yellow'});
+                        }
+                    }
+
+                    // 2. Hands pressed together at chest level
+                    if (leftWrist && rightWrist) {
+                        const handsDistance = Math.abs(leftWrist.x - rightWrist.x);
+                        if (handsDistance > 20) {
+                            corrections.push({message: "Press your palms firmly together.", affected: ['left_wrist', 'right_wrist'], color: 'red'});
+                        }
+                        
+                        // Approximate chest level using average shoulder Y
+                        if (leftShoulder && rightShoulder) {
+                            const chestY = (leftShoulder.y + rightShoulder.y) / 2;
+                            const avgHandY = (leftWrist.y + rightWrist.y) / 2;
+                            if (Math.abs(avgHandY - chestY) > 50) {
+                                corrections.push({message: "Position your hands at heart center level.", affected: ['left_wrist', 'right_wrist'], color: 'yellow'});
+                            }
+                        }
+                    }
+
+                    // 3. Straight posture (similar to Tadasana legs and hips)
+                    if (leftHip && leftKnee && leftAnkle) {
+                        const leftKneeAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        if (leftKneeAngle < 170) corrections.push({message: "Straighten your legs for a grounded stance.", affected: ['left_knee', 'left_ankle'], color: 'yellow'});
+                    }
+                    if (rightHip && rightKnee && rightAnkle) {
+                        const rightKneeAngle = this.calculateAngle(rightHip, rightKnee, rightAnkle);
+                        if (rightKneeAngle < 170) corrections.push({message: "Straighten your legs for a grounded stance.", affected: ['right_knee', 'right_ankle'], color: 'yellow'});
+                    }
+                } else if (poseName === 'Natarajasana') {
+                    // Lord of the Dance Pose - Balancing on one leg, grabbing back foot
+                    
+                    // Assume right leg standing, left leg bent back
+                    if (rightHip && rightKnee && rightAnkle) {
+                        const rightKneeAngle = this.calculateAngle(rightHip, rightKnee, rightAnkle);
+                        if (rightKneeAngle < 170) corrections.push({message: "Straighten your standing (right) leg fully.", affected: ['right_knee', 'right_ankle'], color: 'red'});
+                    }
+                    
+                    if (leftHip && leftKnee && leftAnkle) {
+                        // Back leg should be bent, knee angle around 90-120 degrees
+                        const leftKneeAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        if (leftKneeAngle > 140 || leftKneeAngle < 80) corrections.push({message: "Bend your back (left) leg more, aiming for a 90-degree knee bend.", affected: ['left_knee', 'left_ankle'], color: 'yellow'});
+                    }
+                    
+                    // Arms extended
+                    if (rightShoulder && rightElbow && rightWrist) {
+                        const rightArmAngle = this.calculateAngle(rightShoulder, rightElbow, rightWrist);
+                        if (rightArmAngle < 160) corrections.push({message: "Extend your front arm straight forward.", affected: ['right_elbow', 'right_wrist'], color: 'yellow'});
+                    }
+                    
+                    // Hips level for balance
+                    if (leftHip && rightHip) {
+                        const hipDifference = Math.abs(leftHip.y - rightHip.y);
+                        if (hipDifference > 40) corrections.push({message: "Keep hips level to maintain balance.", affected: ['left_hip', 'right_hip'], color: 'red'});
+                    }
+                } else if (poseName === 'Vrikshasana') {
+                    // Tree Pose - Foot on inner thigh, hands in prayer
+                    
+                    // Standing leg straight
+                    if (leftHip && leftKnee && leftAnkle) {
+                        const leftKneeAngle = this.calculateAngle(leftHip, leftKnee, leftAnkle);
+                        if (leftKneeAngle < 170) corrections.push({message: "Straighten your standing (left) leg fully.", affected: ['left_knee', 'left_ankle'], color: 'red'});
+                    }
+                    
+                    // Bent leg foot position - approximate by checking knee alignment
+                    if (rightHip && rightKnee && rightAnkle) {
+                        const rightKneeAngle = this.calculateAngle(rightHip, rightKnee, rightAnkle);
+                        if (rightKneeAngle < 90) corrections.push({message: "Place your right foot higher on the inner left thigh, not on the knee.", affected: ['right_knee', 'right_ankle'], color: 'yellow'});
+                    }
+                    
+                    // Hands in prayer at chest
+                    if (leftWrist && rightWrist) {
+                        const handsDistance = Math.abs(leftWrist.x - rightWrist.x);
+                        if (handsDistance > 20) corrections.push({message: "Press palms together in prayer position.", affected: ['left_wrist', 'right_wrist'], color: 'yellow'});
+                    }
+                    
+                    // Hips forward
+                    if (leftHip && rightHip) {
+                        const hipAngle = Math.abs(leftHip.x - rightHip.x);
+                        if (hipAngle > 50) corrections.push({message: "Square hips forward, avoid twisting.", affected: ['left_hip', 'right_hip'], color: 'yellow'});
+                    }
+                } else if (poseName === 'Baddha Konasana') {
+                    // Bound Angle Pose - Seated, soles together, knees out
+                    
+                    // Knees should be lower than hips
+                    if (leftHip && leftKnee) {
+                        if (leftKnee.y > leftHip.y) corrections.push({message: "Lower your left knee toward the floor.", affected: ['left_knee'], color: 'yellow'});
+                    }
+                    if (rightHip && rightKnee) {
+                        if (rightKnee.y > rightHip.y) corrections.push({message: "Lower your right knee toward the floor.", affected: ['right_knee'], color: 'yellow'});
+                    }
+                    
+                    // Feet close to pelvis - check ankle positions relative to hips
+                    if (leftHip && leftAnkle && rightAnkle) {
+                        const feetDistance = Math.abs(leftAnkle.x - rightAnkle.x);
+                        if (feetDistance > 60) corrections.push({message: "Bring soles of feet closer to your pelvis.", affected: ['left_ankle', 'right_ankle'], color: 'yellow'});
+                    }
+                    
+                    // Back straight - shoulders over hips
+                    if (leftShoulder && rightShoulder && leftHip && rightHip) {
+                        const avgShoulderY = (leftShoulder.y + rightShoulder.y) / 2;
+                        const avgHipY = (leftHip.y + rightHip.y) / 2;
+                        if (avgShoulderY > avgHipY + 20) corrections.push({message: "Lengthen your spine, lift chest forward.", affected: ['left_shoulder', 'right_shoulder'], color: 'yellow'});
+                    }
+                }
+                
+                // If no specific corrections, but all keypoints are visible, provide a positive message.
+                if (corrections.length === 0) {
+                    corrections.push({message: `You are holding ${poseName} well! Focus on your breath.`, color: 'green'});
+                }
+
+                return corrections;
+            },
+            
+            /**
+             * Initializes the camera and TensorFlow MoveNet model.
+             */
+            async startARAssessment() {
+                const video = document.getElementById('video-feed');
+                const canvas = document.getElementById('ar-canvas');
+                const ctx = canvas.getContext('2d');
+                const statusDiv = document.getElementById('camera-status');
+                const statusText = document.getElementById('status-text');
+                const errorText = document.getElementById('error-message');
+                const feedbackText = document.getElementById('current-feedback-text');
+
+                const updateStatus = (message, isError = false) => {
+                    statusText.textContent = message;
+                    if (isError) {
+                        errorText.textContent = message;
+                        errorText.classList.remove('hidden');
+                        statusText.classList.add('hidden');
+                    } else {
+                        errorText.classList.add('hidden');
+                        statusText.classList.remove('hidden');
+                    }
+                    statusDiv.classList.remove('hidden');
+                };
+
+                updateStatus("Loading MoveNet model...");
+                
+                // Clear any running animation frame before starting a new one
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                    this.animationFrameId = null;
+                }
+                
+                // Clean up previous video stream if it exists
+                if (this.videoStream) {
+                    this.videoStream.getTracks().forEach(track => track.stop());
+                }
+
+
+                // 1. Load Model
+                if (!this.detector) {
+                    try {
+                        const model = poseDetection.SupportedModels.MoveNet;
+                        const detectorConfig = {
+                            modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING,
+                            defaultUrl: 'https://tfhub.dev/google/movenet/singlepose/lightning/4',
+                        };
+                        this.detector = await poseDetection.createDetector(model, detectorConfig);
+                        updateStatus("Model loaded. Requesting camera access...");
+                    } catch (e) {
+                        updateStatus(`Failed to load MoveNet model: ${e.message}`, true);
+                        console.error(e);
                         return;
                     }
                 }
 
-                const cameraStarted = await startCamera();
-                if (cameraStarted) {
-                    const videoElement = document.getElementById('video-feed');
-                    videoElement.onloadedmetadata = () => {
-                        detectPoseLoop();
+                // 2. Get Camera Stream
+                navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    this.videoStream = stream;
+                    video.srcObject = stream;
+                    video.onloadedmetadata = () => {
+                        video.play();
+                        
+                        // Set canvas dimensions to match video stream
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        
+                        // Show video container
+                        document.getElementById('video-container').style.display = 'block';
+                        statusDiv.classList.add('hidden');
+                        document.getElementById('feedback-area').style.display = 'block';
+                        feedbackText.textContent = `Starting ${this.currentPose} analysis... Stand in position!`;
+                        
+                        // Start the ML loop, passing video reference
+                        this.poseDetectionFrame(video, ctx, this.detector, feedbackText);
                     };
+                })
+                .catch((err) => {
+                    console.error("Camera access error:", err);
+                    updateStatus("Permission denied or camera is in use. Please enable camera access.", true);
+                });
+            },
+            
+            /**
+             * Main loop for MoveNet pose detection and drawing.
+             */
+            async poseDetectionFrame(video, ctx, detector, feedbackText) {
+                // Request next frame first to allow browser to manage repaint speed
+                this.animationFrameId = requestAnimationFrame(() => this.poseDetectionFrame(video, ctx, detector, feedbackText));
+
+                if (detector && video.readyState === 4) {
+                    const poses = await detector.estimatePoses(video);
+                    
+                    // Clear the canvas
+                    ctx.clearRect(0, 0, video.videoWidth, video.videoHeight);
+
+                    if (poses.length > 0) {
+                        const pose = poses[0];
+                        const keypoints = pose.keypoints;
+
+                        // 1. Correction Logic - Get corrections with affected parts
+                        let affectedKeypoints = new Set(); // Track all affected keypoints for coloring
+                        let corrections = [];
+                        
+                        if (this.currentPose) {
+                            corrections = this.checkPose(keypoints, this.currentPose.split('(')[0].trim());
+                            
+                            // Aggregate affected keypoints for drawing
+                            corrections.forEach(c => {
+                                if (c.affected) {
+                                    c.affected.forEach(kpName => affectedKeypoints.add(kpName));
+                                }
+                            });
+
+                            // Display main feedback message
+                            feedbackText.textContent = corrections[0].message;
+                            
+                            // Update feedback color (optional, based on first message)
+                            if (corrections[0].color === 'red') {
+                                feedbackText.classList.remove('text-green-400', 'text-yellow-400', 'text-gray-400');
+                                feedbackText.classList.add('text-red-400');
+                            } else if (corrections[0].color === 'yellow') {
+                                feedbackText.classList.remove('text-green-400', 'text-red-400', 'text-gray-400');
+                                feedbackText.classList.add('text-yellow-400');
+                            } else {
+                                feedbackText.classList.remove('text-red-400', 'text-yellow-400');
+                                feedbackText.classList.add('text-green-400');
+                            }
+
+                        } else {
+                            feedbackText.textContent = "Select a pose to begin tracking!";
+                        }
+                        
+                        // 2. Drawing Logic
+                        this.drawKeypoints(video, keypoints, ctx, affectedKeypoints, corrections);
+                        this.drawSkeleton(video, keypoints, ctx, affectedKeypoints, corrections);
+
+                    } else {
+                        // No pose detected
+                        feedbackText.textContent = this.currentPose ? `No person detected. Stand further back or adjust lighting.` : 'Select a pose to begin tracking!';
+                    }
                 }
             },
 
-            showPoseSelector() {
-                this.stopAR();
-                document.getElementById('pose-selector').classList.remove('hidden');
-                document.getElementById('ar-view').classList.add('hidden');
-                currentPose = null;
+            /**
+             * Draws circles on the keypoints detected by MoveNet with color coding.
+             */
+            drawKeypoints(video, keypoints, ctx, affectedKeypoints, corrections) {
+                keypoints.forEach((keypoint, index) => {
+                    if (keypoint.score > this.MIN_CONFIDENCE) {
+                        // Coordinates need to be adjusted for the mirrored video feed
+                        const x = video.videoWidth - keypoint.x;
+                        const y = keypoint.y;
+
+                        // Determine color: red for error, yellow for warning, green for good, default blue/white
+                        let fillColor = '#42A5F5'; // Default blue
+                        const keypointName = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === index);
+
+                        if (affectedKeypoints.has(keypointName)) {
+                            // Check if it's marked as error or warning
+                            const corr = corrections.find(c => c.affected && c.affected.includes(keypointName));
+                            if (corr && corr.color === 'red') {
+                                fillColor = '#EF4444'; // Red for error
+                            } else if (corr && corr.color === 'yellow') {
+                                fillColor = '#F59E0B'; // Yellow for warning
+                            } else {
+                                fillColor = '#10B981'; // Green for good if perfect
+                            }
+                        } else if (keypoint.score > 0.8) {
+                            fillColor = 'white'; // High confidence white
+                        }
+
+                        ctx.beginPath();
+                        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = fillColor;
+                        ctx.fill();
+                        
+                        // Add a subtle border for contrast
+                        ctx.strokeStyle = '#FFFFFF';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                });
             },
 
-            stopAR() {
-                stopCamera();
-                const canvas = document.getElementById('ar-canvas');
-                if (canvas) {
-                    const ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+            /**
+             * Draws lines connecting the keypoints detected by MoveNet with color coding.
+             */
+            drawSkeleton(video, keypoints, ctx, affectedKeypoints, corrections) {
+                ctx.lineWidth = 3;
+
+                this.SKELETON_CONNECTIONS.forEach(([i, j]) => {
+                    const kp1 = keypoints.find(k => k.id === i);
+                    const kp2 = keypoints.find(k => k.id === j);
+
+                    if (kp1 && kp2 && kp1.score > this.MIN_CONFIDENCE && kp2.score > this.MIN_CONFIDENCE) {
+                        
+                        const kp1Name = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === i);
+                        const kp2Name = Object.keys(this.keypointIndices).find(name => this.keypointIndices[name] === j);
+
+                        let lineColor = '#1E88E5'; // Default line color (Secondary Blue)
+                        let corrColor = null;
+
+                        // Check if either keypoint in the connection is part of a severe correction (red or yellow)
+                        if (affectedKeypoints.has(kp1Name) || affectedKeypoints.has(kp2Name)) {
+                            const relevantCorrections = corrections.filter(c => 
+                                c.affected && (c.affected.includes(kp1Name) || c.affected.includes(kp2Name))
+                            );
+                            
+                            // Prioritize the worst color (red > yellow > green)
+                            if (relevantCorrections.some(c => c.color === 'red')) {
+                                corrColor = 'red';
+                            } else if (relevantCorrections.some(c => c.color === 'yellow')) {
+                                corrColor = 'yellow';
+                            } else if (relevantCorrections.some(c => c.color === 'green')) {
+                                corrColor = 'green';
+                            }
+                        }
+
+                        if (corrColor === 'red') {
+                            lineColor = '#EF4444'; // Red
+                        } else if (corrColor === 'yellow') {
+                            lineColor = '#F59E0B'; // Yellow
+                        } else if (corrColor === 'green') {
+                            lineColor = '#10B981'; // Green
+                        }
+
+                        ctx.strokeStyle = lineColor;
+                        ctx.beginPath();
+
+                        // Mirror X coordinates for drawing
+                        const p1x = video.videoWidth - kp1.x;
+                        const p1y = kp1.y;
+                        const p2x = video.videoWidth - kp2.x;
+                        const p2y = kp2.y;
+
+                        ctx.moveTo(p1x, p1y);
+                        ctx.lineTo(p2x, p2y);
+                        ctx.stroke();
+                    }
+                });
+            },
+            
+            /**
+             * Stops the AR session and frees resources.
+             */
+            stopARAssessment() {
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                    this.animationFrameId = null;
                 }
+                if (this.videoStream) {
+                    this.videoStream.getTracks().forEach(track => track.stop());
+                    this.videoStream = null;
+                }
+                // Hide the video container and show selection again
+                const videoContainer = document.getElementById('video-container');
+                const poseSelection = document.getElementById('pose-selection');
+                const arSession = document.getElementById('ar-session');
+                const feedbackArea = document.getElementById('feedback-area');
+
+                if (videoContainer) videoContainer.style.display = 'none';
+                if (poseSelection) poseSelection.style.display = 'grid';
+                if (arSession) arSession.style.display = 'block';
+                if (feedbackArea) feedbackArea.style.display = 'none';
+
+                this.currentPose = null;
+                console.log("AR assessment stopped.");
+            },
+            
+            // --- Virtual Assistant Methods ---
+            setupAssistantListeners() {
+                const form = document.getElementById('assistant-form');
+                const input = document.getElementById('user-input');
+                const sendButton = document.getElementById('send-button');
+                
+                if (!form || !input || !sendButton) return; // Exit if elements are not rendered
+
+                // Clear previous listeners to prevent duplicates
+                form.removeEventListener('submit', this.handleAssistantSubmit);
+                
+                // Bind and store the handler to be able to remove it later
+                this.handleAssistantSubmit = (e) => this.processAssistantQuery(e, form, input, sendButton);
+                
+                form.addEventListener('submit', this.handleAssistantSubmit);
+            },
+            
+            async processAssistantQuery(e, form, input, sendButton) {
+                e.preventDefault();
+                const query = input.value.trim();
+                if (!query) return;
+
+                // 1. Display user message
+                this.addMessageToChat(query, 'user');
+                input.value = '';
+                
+                // 2. Show loading state on button
+                this.showLoading(sendButton);
+
+                // 3. Call Gemini API
+                const fullPrompt = `${VIRTUAL_ASSISTANT_SYSTEM_PROMPT} User Query: ${query}`;
+                const response = await callGeminiAssistant(fullPrompt);
+
+                // 4. Display AI response
+                this.addMessageToChat(response.text, 'ai', response.sources);
+                
+                // 5. Hide loading state
+                this.hideLoading(sendButton);
+            },
+            
+            /**
+             * Converts simple markdown (**, *) to HTML for display.
+             */
+            markdownToHtml(text) {
+                // Ensure text is a string
+                if (typeof text !== 'string') return '';
+                
+                let html = text;
+                // Bold: **text** -> <strong>text</strong>
+                html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                // Italic: *text* -> <em>text</em>
+                html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                // Simple Newlines to <br>
+                html = html.replace(/\n/g, '<br>');
+                // List items: - item -> <ul><li>item...
+                // This is a complex conversion and for simple markdown we'll rely on the whitespace-pre-wrap style.
+                // If a full markdown parser is needed, a library should be used.
+                return html;
+            },
+            
+            /**
+             * Adds a message bubble to the chat container.
+             */
+            addMessageToChat(text, sender, sources = []) {
+                const container = document.getElementById('chat-messages');
+                if (!container) return;
+
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+                
+                const bubbleClasses = sender === 'user' 
+                    ? 'bg-secondary text-gray-100 p-3 rounded-xl rounded-br-none max-w-[80%] shadow-lg' 
+                    : 'bg-primary text-gray-900 p-3 rounded-xl rounded-bl-none max-w-[80%] shadow-lg';
+                
+                let sourcesHtml = '';
+                if (sources.length > 0) {
+                    sourcesHtml = '<div class="mt-3 pt-3 border-t border-gray-700 text-xs text-gray-500">';
+                    sourcesHtml += 'Source(s): ';
+                    // Changed hover color to primary (blue)
+                    sources.slice(0, 1).forEach((s) => {
+                        sourcesHtml += `<a href="${s.uri}" target="_blank" class="text-primary hover:text-secondary hover:underline transition font-medium">${s.title}</a>`;
+                    });
+                    sourcesHtml += '</div>';
+                }
+
+                messageDiv.innerHTML = `<div class="${bubbleClasses} whitespace-pre-wrap">${this.markdownToHtml(text)} ${sourcesHtml}</div>`;
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight; // Auto-scroll to bottom
             },
 
-            startARForPose(poseName) {
-                this.navigate('ar_correction');
-                setTimeout(() => this.selectPose(poseName), 100);
-            }
+            showLoading(button) {
+                button.disabled = true;
+                button.innerHTML = '<div class="loading-animation"></div>';
+            },
+
+            hideLoading(button) {
+                button.disabled = false;
+                // Restore the original SVG icon
+                button.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path d="M3.478 2.405a.75.75 0 0 0-.926.94l2.432 7.917a.75.75 0 0 0 .926.096l4.64-4.432 3.483 3.125a.75.75 0 0 0 .926-.096l2.432-7.917a.75.75 0 0 0-.926-.94l-2.432 7.917a.75.75 0 0 0-.926.096l-4.64 4.432-3.483-3.125Z" />
+                    </svg>
+                `;
+            },
+            
+            // --- Rendering Methods ---
+            renderNav() {
+                this.navTabsEl.innerHTML = Object.keys(this.views).map(key => {
+                    const view = this.views[key];
+                    const isActive = this.currentView === key;
+                    
+                    return `
+                        <button onclick="app.navigate('${key}')" 
+                                class="flex flex-col items-center p-2 rounded-xl transition-all ${isActive ? 'text-primary bg-secondary/30' : 'text-gray-500 hover:text-gray-300'}">
+                            ${view.icon}
+                            <span class="text-xs mt-1 md:text-sm">${view.name}</span>
+                        </button>
+                    `;
+                }).join('');
+            },
+
+            renderContent() {
+                this.contentEl.innerHTML = '';
+                const viewKey = this.currentView;
+                let contentHTML = '';
+
+                // FIX: Ensure all rendering methods are accessed via 'this' and are defined.
+                switch (viewKey) {
+                    case 'dashboard':
+                        contentHTML = this.renderDashboard();
+                        break;
+                    case 'asana':
+                        contentHTML = this.renderAsanaLibrary();
+                        break;
+                    case 'routine':
+                        contentHTML = this.renderRoutine();
+                        break;
+                    case 'ar_correction':
+                        contentHTML = this.renderARCorrection();
+                        break;
+                    case 'assistant':
+                        contentHTML = this.renderVirtualAssistant();
+                        break;
+                    default:
+                        contentHTML = '<div class="text-center text-gray-500 py-10">404 | View Not Found</div>';
+                }
+                
+                this.contentEl.innerHTML = `
+                    <h2 class="text-3xl font-extrabold text-gray-100 mb-6 border-b pb-3 border-gray-700">${this.views[viewKey]?.name || 'SUNDAY'}</h2>
+                    ${contentHTML}
+                `;
+            },
+
+            renderDashboard() {
+                // Dashboard Cards with mock data and links to sections
+                const featureCards = [
+                    { key: 'asana', icon: '🧘', title: 'Pose Library', desc: 'Browse over 100 asanas with benefits and guidance.', status: null },
+                    { key: 'ar_correction', icon: '🤳', title: 'Posture Correction', desc: 'Get real-time AR feedback on your poses using your camera.', status: null },
+                    { key: 'routine', icon: '🗓️', title: 'Your Daily Routine', desc: 'Personalized sequences and wellness recommendations.', status: null },
+                    { key: 'assistant', icon: '💬', title: 'Ask the AI', desc: 'Chat with your personal certified yoga assistant, Sunday.', status: null },
+                ];
+
+                return `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${featureCards.map(card => `
+                            <button ${card.key ? `onclick="app.navigate('${card.key}')"` : 'disabled'} class="p-6 bg-secondary/20 card-effect rounded-2xl shadow-lg flex flex-col items-start text-left ${card.status ? 'opacity-70 cursor-not-allowed bg-gray-900 shadow-inner text-gray-500' : 'hover:bg-secondary/40'}">
+                                <span class="text-4xl mb-3">${card.icon}</span>
+                                <h3 class="text-xl font-bold text-gray-100">${card.title}</h3>
+                                <p class="text-gray-400 text-sm mt-1">${card.desc}</p>
+                                ${card.status ? `<span class="mt-2 text-xs font-semibold text-red-400 bg-red-900 px-2 py-1 rounded-full">${card.status}</span>` : ''}
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div class="mt-8 p-6 bg-gray-900 border border-primary/50 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-extrabold text-primary mb-5 border-b pb-3 border-gray-700">Your Progress Snapshot</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+                            <div class="p-4 bg-card rounded-xl shadow-lg border border-gray-700 card-effect">
+                                <p class="text-sm font-medium text-gray-400 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1 text-primary">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 0 0 9-9c0-1.657-.643-3.237-1.802-4.407L14.735 4.5 12 6.75 9.265 4.5l-2.463 2.15C5.643 8.763 5 10.343 5 12a9 9 0 0 0 9 9Z" />
+                                    </svg>
+                                    Posture Score
+                                </p>
+                                <p class="text-4xl font-extrabold text-accent mt-1">88<span class="text-2xl text-gray-400">/100</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3">
+                                    <div class="bg-accent h-2.5 rounded-full" style="width: 88%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">Alignment goal: 90%</p>
+                            </div>
+
+                            <div class="p-4 bg-card rounded-xl shadow-lg border border-gray-700 card-effect">
+                                <p class="text-sm font-medium text-gray-400 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1 text-warning">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 0 12 21 8.252 8.252 0 0 0 8.638 5.214M12 4.2c-1.35 0-2.617.261-3.754.757L8.638 5.214M15.362 5.214l1.116-1.116M8.638 5.214l-1.116-1.116M12 4.2V2.25" />
+                                    </svg>
+                                    Current Streak
+                                </p>
+                                <p class="text-4xl font-extrabold text-primary mt-1">14 <span class="text-2xl text-gray-400">Days</span></p>
+                                <p class="text-xs text-gray-500 mt-3">Keep it up! Longest streak: 21 Days</p>
+                            </div>
+
+                            <div class="p-4 bg-card rounded-xl shadow-lg border border-gray-700 card-effect">
+                                <p class="text-sm font-medium text-gray-400 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1 text-success">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 0 12 21 8.252 8.252 0 0 0 8.638 5.214M12 4.2c-1.35 0-2.617.261-3.754.757L8.638 5.214M15.362 5.214l1.116-1.116M8.638 5.214l-1.116-1.116M12 4.2V2.25" />
+                                    </svg>
+                                    Kcal Burned (Today)
+                                </p>
+                                <p class="text-4xl font-extrabold text-success mt-1">450 <span class="text-2xl text-gray-400">kcal</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">Target: 600 kcal</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-gray-400 pt-4 border-t border-gray-800 text-center">For personalized tracking of sleep, stress, and food, explore the **Routine** section.</p>
+                    </div>
+                `;
+            },
+
+            renderAsanaLibrary() {
+                return `
+                    <div class="space-y-4">
+                        <div class="p-4 bg-accent/20 border-l-4 border-accent rounded-xl shadow-sm">
+                            <p class="text-gray-100 font-medium">✨ Tip: Use the Virtual Assistant for demo videos and detailed guides on any pose!</p>
+                        </div>
+                        ${asanaData.map(asana => `
+                            <div class="p-5 border rounded-xl shadow-lg bg-card card-effect">
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                    <h3 class="text-xl font-extrabold text-gray-100">${asana.name} <span class="text-sm font-medium text-gray-500">${asana.sanskrit}</span></h3>
+                                    <span class="px-3 py-1 text-xs rounded-full font-semibold mt-2 sm:mt-0 ${asana.category === 'Beginner' ? 'bg-primary/40 text-gray-900 border-primary/60' : asana.category === 'Intermediate' ? 'bg-blue-600/50 text-blue-100 border-blue-600' : 'bg-red-600/50 text-red-100 border-red-600'}">${asana.category}</span>
+                                </div>
+                                
+                                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                    <div>
+                                        <p class="font-bold text-primary">Benefits:</p>
+                                        <p class="text-gray-300">${asana.benefits}</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-warning">Precautions:</p>
+                                        <p class="text-gray-300">${asana.precaution}</p>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <p class="font-bold text-gray-400">Targeted Areas: <span class="font-normal">${asana.targeted}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            },
+
+            renderRoutine() {
+                return `
+                    <div class="space-y-6">
+                        <div class="p-4 bg-primary/20 border-l-4 border-primary rounded-xl shadow-sm">
+                            <h4 class="text-lg font-bold text-gray-100 mb-1">🧘 Today's Recommended Routine</h4>
+                            <p class="text-gray-300 text-sm">Based on your low sleep score (6 hours) and medium stress level (3/5).</p>
+                        </div>
+                        
+                        <div class="p-6 bg-card rounded-2xl shadow-xl border border-gray-700">
+                            <h3 class="text-xl font-extrabold text-primary mb-3">Stress Relief Flow (20 Minutes)</h3>
+                            <p class="text-gray-400 mb-4">A gentle sequence to calm the nervous system and release tension in the neck and shoulders.</p>
+                            
+                            <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                                <li><strong>Opening:</strong> 5 mins of Mindful Breathing (Dirga Pranayama)</li>
+                                <li><strong>Flow:</strong> Cat-Cow, Child's Pose, Downward Dog (modified), Seated Twist</li>
+                                <li><strong>Focus Poses:</strong> Supported Bridge Pose (Viparita Karani)</li>
+                                <li><strong>Closing:</strong> 5 mins of Savasana with a guided body scan</li>
+                            </ul>
+                            
+                            <button class="mt-6 w-full py-2 bg-primary text-gray-900 font-bold rounded-xl hover:bg-primary/80 transition">
+                                Start Routine Now
+                            </button>
+                        </div>
+                        
+                        <div class="p-6 bg-card rounded-2xl shadow-xl border border-gray-700">
+                            <h3 class="text-xl font-extrabold text-accent mb-4">Wellness Tracking (Mock Data)</h3>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="p-3 bg-gray-900 rounded-lg">
+                                    <p class="text-gray-400">Sleep Quality</p>
+                                    <p class="text-lg font-bold text-white">6.2 hrs <span class="text-red-500">🔻</span></p>
+                                </div>
+                                <div class="p-3 bg-gray-900 rounded-lg">
+                                    <p class="text-gray-400">Stress Level</p>
+                                    <p class="text-lg font-bold text-white">3/5 <span class="text-yellow-500">🟡</span></p>
+                                </div>
+                                <div class="col-span-2 p-3 bg-gray-900 rounded-lg">
+                                    <p class="text-gray-400">Hydration Goal</p>
+                                    <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">65% Complete (8/12 glasses)</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-xs text-gray-500">Metrics are integrated via mock API. Full functionality requires wearable device sync.</p>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderARCorrection() {
+                // AR Correction View with pose selection and video feed
+                return `
+                    <div class="space-y-6">
+                        <div class="p-4 bg-accent/20 border-l-4 border-accent rounded-xl shadow-sm">
+                            <p class="text-gray-100 font-medium">📷 **Before starting:** Ensure you have enough space and your full body is visible in the frame for best results.</p>
+                        </div>
+
+                        <div id="pose-selection" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            ${asanaData.map(asana => `
+                                <button onclick="app.selectAsanaAndStart('${asana.name}')" class="p-6 bg-secondary/20 card-effect rounded-2xl shadow-lg flex flex-col items-start text-left hover:bg-secondary/40">
+                                    <span class="text-4xl mb-3">🧘</span>
+                                    <h3 class="text-xl font-bold text-gray-100">${asana.name} <span class="text-sm font-medium text-gray-500">${asana.sanskrit}</span></h3>
+                                    <span class="px-2 py-1 text-xs rounded-full font-semibold mt-2 bg-primary/40 text-gray-900">${asana.category}</span>
+                                    <p class="text-gray-400 text-sm mt-2">${asana.benefits}</p>
+                                </button>
+                            `).join('')}
+                        </div>
+
+                        <div id="ar-session" style="display: none;">
+                            <div id="video-container" style="display: none;">
+                                <video id="video-feed" autoplay playsinline class="rounded-xl"></video>
+                                <canvas id="ar-canvas"></canvas>
+                                <div id="camera-status" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900/90 text-gray-400 rounded-xl">
+                                    <div class="loading-animation mb-3"></div>
+                                    <p id="status-text">Loading...</p>
+                                    <p id="error-message" class="text-red-500 mt-2 text-sm hidden"></p>
+                                </div>
+                            </div>
+
+                            <div id="feedback-area" style="display: none;" class="mt-4 p-4 bg-card rounded-xl border border-gray-700 shadow-md">
+                                <p class="text-sm font-bold text-primary mb-1">Real-Time Feedback:</p>
+                                <p id="current-feedback-text" class="text-lg text-gray-400 font-medium transition-colors">Select a pose to begin.</p>
+                                <button onclick="app.stopARAssessment()" class="mt-4 py-2 px-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition">
+                                    Stop AR Tracking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderVirtualAssistant() {
+                // The chat interface HTML
+                return `
+                    <div id="assistant-container" class="flex flex-col h-full">
+                        <div id="chat-messages" class="scrollable-content flex-grow p-4 space-y-4 bg-gray-900 rounded-xl shadow-inner mb-4">
+                            <div class="flex justify-start">
+                                <div class="bg-primary text-gray-900 p-3 rounded-xl rounded-bl-none max-w-[80%] shadow-lg">
+                                    <p class="font-medium">Hello! I am SUNDAY, your personal yoga assistant. Ask me anything about poses, benefits, or request a custom session plan!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="assistant-form" class="flex items-center space-x-3 p-2 bg-card rounded-xl shadow-xl border border-gray-700">
+                            <input type="text" id="user-input" placeholder="e.g., Which pose helps with digestion? Or, 30-min plan for sleep." class="flex-grow p-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                            <button id="send-button" type="submit" class="p-3 bg-primary text-gray-900 rounded-lg hover:bg-primary/80 transition shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path d="M3.478 2.405a.75.75 0 0 0-.926.94l2.432 7.917a.75.75 0 0 0 .926.096l4.64-4.432 3.483 3.125a.75.75 0 0 0 .926-.096l2.432-7.917a.75.75 0 0 0-.926-.94l-2.432 7.917a.75.75 0 0 0-.926.096l-4.64 4.432-3.483-3.125Z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                `;
+            },
+        };
+    
+        // --- Initialization on Window Load ---
+        window.onload = function() {
+            app.init();
+            
+            // Cursor Glow Effect Logic
+            const glow = document.getElementById('cursor-glow');
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
+            });
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            app.init();
-        });
+    
+        
     </script>
 </body>
 </html>
