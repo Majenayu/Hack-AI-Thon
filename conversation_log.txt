@@ -1,0 +1,702 @@
+[2025-11-07 01:23:41] System: TTS configured
+[2025-11-07 01:23:41] System: Sunday AI starting with simple TTS system
+[2025-11-07 01:23:41] System: Calibrating microphone... Please wait.
+[2025-11-07 01:23:44] System: Microphone calibrated successfully
+[2025-11-07 01:23:48] System: Listening for wake word 'Sunday'...
+[2025-11-07 01:23:48] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 01:23:48] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 01:23:56] System: Browser connected to http://127.0.0.1:5000 on attempt 1
+[2025-11-07 01:23:56] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 01:23:57] System: Recognized: please sunday opening sunday
+[2025-11-07 01:23:57] System: Wake word detected: please sunday opening sunday
+[2025-11-07 01:23:57] User: Command: please  opening
+[2025-11-07 01:23:57] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-07 01:24:00] System: Speech recognition could not understand audio
+[2025-11-07 01:24:05] System: Recognized: sunday
+[2025-11-07 01:24:05] System: Wake word detected: sunday
+[2025-11-07 01:24:05] AI: Hello! What shall we work on together?
+[2025-11-07 01:24:15] System: Recognized: ok open the air correction
+[2025-11-07 01:24:19] System: Speech recognition could not understand audio
+[2025-11-07 01:24:24] System: Recognized: sunday
+[2025-11-07 01:24:24] System: Wake word detected: sunday
+[2025-11-07 01:24:24] AI: Yes, I'm listening! What would you like to do?
+[2025-11-07 01:24:27] System: Recognized: open assistant
+[2025-11-07 01:24:36] System: Speech recognition could not understand audio
+[2025-11-07 01:24:44] System: Speech recognition could not understand audio
+[2025-11-07 01:24:47] System: Speech recognition could not understand audio
+[2025-11-07 01:24:51] System: KeyboardInterrupt received
+[2025-11-07 01:24:51] System: Speech recognition could not understand audio
+[2025-11-07 01:25:03] System: Sunday AI stopped
+[2025-11-07 01:29:22] System: TTS configured
+[2025-11-07 01:29:22] System: Sunday AI starting with simple TTS system
+[2025-11-07 01:29:23] System: Calibrating microphone... Please wait.
+[2025-11-07 01:29:26] System: Microphone calibrated successfully
+[2025-11-07 01:29:26] System: Browser open failed (attempt 1): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:29:28] System: Browser open failed (attempt 2): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:29:29] System: Listening for wake word 'Sunday'...
+[2025-11-07 01:29:29] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 01:29:29] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 01:29:30] System: Browser open failed (attempt 3): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:29:32] AI: Sorry, couldn't connect to the web app. Make sure the server is running.
+[2025-11-07 01:29:48] System: KeyboardInterrupt received
+[2025-11-07 01:29:48] System: Sunday AI stopped
+[2025-11-07 01:29:53] System: TTS configured
+[2025-11-07 01:29:53] System: Sunday AI starting with simple TTS system
+[2025-11-07 01:29:53] System: Calibrating microphone... Please wait.
+[2025-11-07 01:29:56] System: Microphone calibrated successfully
+[2025-11-07 01:29:56] System: Browser open failed (attempt 1): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:29:58] System: Browser open failed (attempt 2): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:29:59] System: Listening for wake word 'Sunday'...
+[2025-11-07 01:29:59] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 01:29:59] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 01:30:00] System: Browser open failed (attempt 3): Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+[2025-11-07 01:30:02] AI: Sorry, couldn't connect to the web app. Make sure the server is running.
+[2025-11-07 01:30:19] AI: Having trouble hearing you. Speak louder or closer to the mic.
+[2025-11-07 01:30:43] AI: Having trouble hearing you. Speak louder or closer to the mic.
+[2025-11-07 01:31:09] AI: Having trouble hearing you. Speak louder or closer to the mic.
+[2025-11-07 01:31:28] AI: Having trouble hearing you. Speak louder or closer to the mic.
+[2025-11-07 01:32:07] System: KeyboardInterrupt received
+[2025-11-07 01:32:07] System: Sunday AI stopped
+[2025-11-07 01:32:09] System: TTS configured
+[2025-11-07 01:32:09] System: Sunday AI starting with simple TTS system
+[2025-11-07 01:32:09] System: Calibrating microphone... Please wait.
+[2025-11-07 01:32:12] System: Microphone calibrated successfully
+[2025-11-07 01:32:15] System: Listening for wake word 'Sunday'...
+[2025-11-07 01:32:15] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 01:32:15] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 01:32:19] System: Browser connected to http://127.0.0.1:5000
+[2025-11-07 01:32:19] AI: Perfect! I'm all connected and ready to help you.
+[2025-11-07 01:32:33] System: Recalibrating due to failures
+[2025-11-07 01:32:33] System: Calibrating microphone... Please wait.
+[2025-11-07 01:32:36] System: Microphone calibrated successfully
+[2025-11-07 01:32:53] System: Recalibrating due to failures
+[2025-11-07 01:32:53] System: Calibrating microphone... Please wait.
+[2025-11-07 01:32:56] System: Microphone calibrated successfully
+[2025-11-07 01:33:18] System: Recalibrating due to failures
+[2025-11-07 01:33:18] System: Calibrating microphone... Please wait.
+[2025-11-07 01:33:21] System: Microphone calibrated successfully
+[2025-11-07 01:33:33] System: Recalibrating due to failures
+[2025-11-07 01:33:33] System: Calibrating microphone... Please wait.
+[2025-11-07 01:33:36] System: Microphone calibrated successfully
+[2025-11-07 01:33:58] System: Recalibrating due to failures
+[2025-11-07 01:33:58] System: Calibrating microphone... Please wait.
+[2025-11-07 01:34:01] System: Microphone calibrated successfully
+[2025-11-07 01:34:18] System: Recalibrating due to failures
+[2025-11-07 01:34:18] System: Calibrating microphone... Please wait.
+[2025-11-07 01:34:21] System: Microphone calibrated successfully
+[2025-11-07 01:34:37] System: Recalibrating due to failures
+[2025-11-07 01:34:37] System: Calibrating microphone... Please wait.
+[2025-11-07 01:34:41] System: Microphone calibrated successfully
+[2025-11-07 01:35:01] System: Recalibrating due to failures
+[2025-11-07 01:35:01] System: Calibrating microphone... Please wait.
+[2025-11-07 01:35:04] System: Microphone calibrated successfully
+[2025-11-07 01:35:21] System: Recalibrating due to failures
+[2025-11-07 01:35:21] System: Calibrating microphone... Please wait.
+[2025-11-07 01:35:24] System: Microphone calibrated successfully
+[2025-11-07 01:35:51] System: Recalibrating due to failures
+[2025-11-07 01:35:51] System: Calibrating microphone... Please wait.
+[2025-11-07 01:35:54] System: Microphone calibrated successfully
+[2025-11-07 01:36:16] System: Recalibrating due to failures
+[2025-11-07 01:36:16] System: Calibrating microphone... Please wait.
+[2025-11-07 01:36:19] System: Microphone calibrated successfully
+[2025-11-07 01:36:35] System: Recalibrating due to failures
+[2025-11-07 01:36:35] System: Calibrating microphone... Please wait.
+[2025-11-07 01:36:38] System: Microphone calibrated successfully
+[2025-11-07 01:36:58] System: Recalibrating due to failures
+[2025-11-07 01:36:58] System: Calibrating microphone... Please wait.
+[2025-11-07 01:37:01] System: Microphone calibrated successfully
+[2025-11-07 01:37:19] System: Recalibrating due to failures
+[2025-11-07 01:37:19] System: Calibrating microphone... Please wait.
+[2025-11-07 01:37:22] System: Microphone calibrated successfully
+[2025-11-07 01:37:38] System: Recalibrating due to failures
+[2025-11-07 01:37:38] System: Calibrating microphone... Please wait.
+[2025-11-07 01:37:41] System: Microphone calibrated successfully
+[2025-11-07 01:38:05] System: TTS configured
+[2025-11-07 01:38:05] System: Sunday AI starting
+[2025-11-07 01:38:05] System: Calibrating microphone...
+[2025-11-07 01:38:08] System: Microphone calibrated
+[2025-11-07 01:38:14] System: Browser opened at http://127.0.0.1:5000
+[2025-11-07 01:38:14] AI: Browser opened! Ready for yoga.
+[2025-11-07 01:38:14] AI: Hello! I'm Sunday, your yoga assistant. Server is running—say 'Sunday' to start!
+[2025-11-07 01:38:14] System: Listening for 'Sunday'...
+[2025-11-07 01:38:28] System: Wake: sunday
+[2025-11-07 01:38:28] AI: Yes, listening! What next?
+[2025-11-07 01:38:32] AI: Try 'open pose library' or 'start AR correction'.
+[2025-11-07 01:38:43] System: Calibrating microphone...
+[2025-11-07 01:38:46] System: Microphone calibrated
+[2025-11-07 01:39:04] System: Calibrating microphone...
+[2025-11-07 01:39:07] System: Microphone calibrated
+[2025-11-07 01:39:23] System: Calibrating microphone...
+[2025-11-07 01:39:26] System: Microphone calibrated
+[2025-11-07 01:39:49] System: Calibrating microphone...
+[2025-11-07 01:39:53] System: Microphone calibrated
+[2025-11-07 01:40:08] System: Calibrating microphone...
+[2025-11-07 01:40:11] System: Microphone calibrated
+[2025-11-07 01:40:34] System: Calibrating microphone...
+[2025-11-07 01:40:38] System: Microphone calibrated
+[2025-11-07 01:40:55] System: Calibrating microphone...
+[2025-11-07 01:40:58] System: Microphone calibrated
+[2025-11-07 01:41:15] System: Calibrating microphone...
+[2025-11-07 01:41:18] System: Microphone calibrated
+[2025-11-07 01:41:31] System: Calibrating microphone...
+[2025-11-07 01:41:34] System: Microphone calibrated
+[2025-11-07 01:41:47] System: Calibrating microphone...
+[2025-11-07 01:41:50] System: Microphone calibrated
+[2025-11-07 01:42:09] System: Calibrating microphone...
+[2025-11-07 01:42:12] System: Microphone calibrated
+[2025-11-07 01:42:23] System: Calibrating microphone...
+[2025-11-07 01:42:26] System: Microphone calibrated
+[2025-11-07 01:42:43] System: Calibrating microphone...
+[2025-11-07 01:42:46] System: Microphone calibrated
+[2025-11-07 01:43:03] System: Calibrating microphone...
+[2025-11-07 01:43:06] System: Microphone calibrated
+[2025-11-07 01:43:17] System: Calibrating microphone...
+[2025-11-07 01:43:20] System: Microphone calibrated
+[2025-11-07 01:43:38] System: Calibrating microphone...
+[2025-11-07 01:43:41] System: Microphone calibrated
+[2025-11-07 01:44:00] System: Calibrating microphone...
+[2025-11-07 01:44:03] System: Microphone calibrated
+[2025-11-07 01:44:21] System: Calibrating microphone...
+[2025-11-07 01:44:24] System: Microphone calibrated
+[2025-11-07 01:44:40] System: Calibrating microphone...
+[2025-11-07 01:44:44] System: Microphone calibrated
+[2025-11-07 01:44:57] System: Calibrating microphone...
+[2025-11-07 01:45:00] System: Microphone calibrated
+[2025-11-07 01:45:45] System: Calibrating microphone...
+[2025-11-07 01:45:48] System: Microphone calibrated
+[2025-11-07 01:46:17] System: TTS configured
+[2025-11-07 01:46:17] System: Sunday AI starting
+[2025-11-07 01:46:17] System: Calibrating mic...
+[2025-11-07 01:46:19] System: Mic calibrated
+[2025-11-07 01:46:25] System: Browser opened at http://127.0.0.1:5000
+[2025-11-07 01:46:25] AI: Browser up—yoga time!
+[2025-11-07 01:46:28] AI: Hello boss! Sunday's ready—say 'Sunday [command]' to roll.
+[2025-11-07 01:46:28] System: Listening for 'Sunday'...
+[2025-11-07 01:46:40] System: Calibrating mic...
+[2025-11-07 01:46:42] System: Mic calibrated
+[2025-11-07 01:47:05] System: Calibrating mic...
+[2025-11-07 01:47:07] System: Mic calibrated
+[2025-11-07 01:47:20] System: Calibrating mic...
+[2025-11-07 01:47:22] System: Mic calibrated
+[2025-11-07 01:47:39] System: Calibrating mic...
+[2025-11-07 01:47:41] System: Mic calibrated
+[2025-11-07 01:48:00] System: Calibrating mic...
+[2025-11-07 01:48:02] System: Mic calibrated
+[2025-11-07 01:48:08] System: Recognized: australia
+[2025-11-07 01:48:25] System: Calibrating mic...
+[2025-11-07 01:48:27] System: Mic calibrated
+[2025-11-07 01:48:38] System: Calibrating mic...
+[2025-11-07 01:48:41] System: Mic calibrated
+[2025-11-07 01:48:59] System: Calibrating mic...
+[2025-11-07 01:49:01] System: Mic calibrated
+[2025-11-07 01:49:16] System: Calibrating mic...
+[2025-11-07 01:49:18] System: Mic calibrated
+[2025-11-07 01:49:33] System: Calibrating mic...
+[2025-11-07 01:49:36] System: Mic calibrated
+[2025-11-07 01:49:51] System: Calibrating mic...
+[2025-11-07 01:49:53] System: Mic calibrated
+[2025-11-07 01:50:06] System: Calibrating mic...
+[2025-11-07 01:50:08] System: Mic calibrated
+[2025-11-07 01:50:26] System: Calibrating mic...
+[2025-11-07 01:50:28] System: Mic calibrated
+[2025-11-07 01:50:49] System: Calibrating mic...
+[2025-11-07 01:50:51] System: Mic calibrated
+[2025-11-07 01:50:57] System: TTS configured
+[2025-11-07 01:50:57] System: Sunday AI starting
+[2025-11-07 01:50:57] System: Calibrating mic...
+[2025-11-07 01:51:01] System: Mic calibrated
+[2025-11-07 01:51:06] System: Browser opened at http://127.0.0.1:5000
+[2025-11-07 01:51:06] AI: Browser up—yoga time!
+[2025-11-07 01:51:06] AI: Hello boss! Sunday's ready—say 'Sunday' to wake me, then give your command.
+[2025-11-07 01:51:06] System: Listening for 'Sunday'...
+[2025-11-07 01:51:15] System: Speech recognition could not understand audio
+[2025-11-07 01:51:23] System: Speech recognition could not understand audio
+[2025-11-07 01:51:28] System: Speech recognition could not understand audio
+[2025-11-07 01:51:33] System: Speech recognition could not understand audio
+[2025-11-07 01:51:33] System: Calibrating mic...
+[2025-11-07 01:51:36] System: Mic calibrated
+[2025-11-07 01:51:42] System: Speech recognition could not understand audio
+[2025-11-07 01:51:47] System: Recognized: my car automatic
+[2025-11-07 01:51:54] System: Recognized: my car automatic
+[2025-11-07 01:52:01] System: Speech recognition could not understand audio
+[2025-11-07 01:52:07] System: Calibrating mic...
+[2025-11-07 01:52:11] System: Mic calibrated
+[2025-11-07 01:52:14] System: Speech recognition could not understand audio
+[2025-11-07 01:52:19] System: Speech recognition could not understand audio
+[2025-11-07 01:52:25] System: Speech recognition could not understand audio
+[2025-11-07 01:52:31] System: Speech recognition could not understand audio
+[2025-11-07 01:52:39] System: Recognized: animals
+[2025-11-07 01:52:44] System: Speech recognition could not understand audio
+[2025-11-07 01:52:45] System: Calibrating mic...
+[2025-11-07 01:52:48] System: Mic calibrated
+[2025-11-07 01:52:56] System: Google API error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 01:53:04] System: Recognized: satta result
+[2025-11-07 01:53:08] System: Speech recognition could not understand audio
+[2025-11-07 01:53:11] System: Speech recognition could not understand audio
+[2025-11-07 01:53:19] System: Speech recognition could not understand audio
+[2025-11-07 01:53:20] System: Calibrating mic...
+[2025-11-07 01:53:23] System: Mic calibrated
+[2025-11-07 01:53:26] System: Speech recognition could not understand audio
+[2025-11-07 01:53:29] System: Speech recognition could not understand audio
+[2025-11-07 01:53:34] System: Speech recognition could not understand audio
+[2025-11-07 01:53:39] System: Speech recognition could not understand audio
+[2025-11-07 01:53:43] System: Speech recognition could not understand audio
+[2025-11-07 01:53:43] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:53:43] System: Calibrating mic...
+[2025-11-07 01:53:46] System: Mic calibrated
+[2025-11-07 01:53:56] System: Speech recognition could not understand audio
+[2025-11-07 01:54:01] System: Speech recognition could not understand audio
+[2025-11-07 01:54:06] System: Speech recognition could not understand audio
+[2025-11-07 01:54:10] System: Speech recognition could not understand audio
+[2025-11-07 01:54:10] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:54:10] System: Calibrating mic...
+[2025-11-07 01:54:13] System: Mic calibrated
+[2025-11-07 01:54:23] System: Speech recognition could not understand audio
+[2025-11-07 01:54:29] System: Recognized: repeat another
+[2025-11-07 01:54:37] System: Speech recognition could not understand audio
+[2025-11-07 01:54:45] System: Speech recognition could not understand audio
+[2025-11-07 01:54:45] System: Calibrating mic...
+[2025-11-07 01:54:49] System: Mic calibrated
+[2025-11-07 01:54:55] System: Speech recognition could not understand audio
+[2025-11-07 01:55:03] System: Speech recognition could not understand audio
+[2025-11-07 01:55:13] System: TTS engine configured successfully
+[2025-11-07 01:55:13] System: Sunday AI starting with simple TTS system
+[2025-11-07 01:55:13] System: Calibrating microphone... Please wait.
+[2025-11-07 01:55:17] System: Microphone calibrated successfully
+[2025-11-07 01:55:20] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 01:55:20] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 01:55:23] System: Browser ready on attempt 1
+[2025-11-07 01:55:23] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 01:55:24] System: Speech recognition could not understand audio
+[2025-11-07 01:55:30] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-07 01:55:32] System: Speech recognition could not understand audio
+[2025-11-07 01:55:36] System: Recognized: sunday
+[2025-11-07 01:55:36] System: Wake word detected: sunday
+[2025-11-07 01:55:36] AI: Yes, tell me how I can help!
+[2025-11-07 01:55:41] System: Recognized: open air correction
+[2025-11-07 01:55:41] User: Command: open air correction
+[2025-11-07 01:55:41] System: Navigation to ar_correction: success_button_click
+[2025-11-07 01:55:43] AI: Absolutely! Starting the AR posture correction. Make sure you're standing about 6 feet from your camera for the best tracking!
+[2025-11-07 01:55:51] System: Speech recognition could not understand audio
+[2025-11-07 01:55:56] System: Recognized: sunday
+[2025-11-07 01:55:56] System: Wake word detected: sunday
+[2025-11-07 01:55:56] AI: Yes, tell me how I can help!
+[2025-11-07 01:56:00] System: Recognized: open hassan library
+[2025-11-07 01:56:00] User: Command: open hassan library
+[2025-11-07 01:56:00] System: Navigation to pose_library: no_navigation_method_found
+[2025-11-07 01:56:00] System: Clicked button: 🧘
+tadasana (mountain pose)
+beginner
+improves balance and posture.
+[2025-11-07 01:56:02] AI: Okay, let's do that! Opening our yoga pose library. You'll find detailed instructions for Tadasana, Downward Dog, Warrior poses, and many more!
+[2025-11-07 01:56:22] System: Speech recognition error: recognition request failed: Connection refused
+[2025-11-07 01:56:31] System: Speech recognition could not understand audio
+[2025-11-07 01:56:35] System: Recognized: sunday
+[2025-11-07 01:56:35] System: Wake word detected: sunday
+[2025-11-07 01:56:35] AI: Hello! What shall we work on together?
+[2025-11-07 01:56:39] System: Speech recognition could not understand audio
+[2025-11-07 01:56:39] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-07 01:56:45] System: Speech recognition could not understand audio
+[2025-11-07 01:56:50] System: Recognized: solar company
+[2025-11-07 01:56:55] System: Recognized: assistant
+[2025-11-07 01:56:55] AI: Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.
+[2025-11-07 01:56:59] System: Speech recognition could not understand audio
+[2025-11-07 01:57:03] System: Speech recognition could not understand audio
+[2025-11-07 01:57:07] System: Speech recognition could not understand audio
+[2025-11-07 01:57:07] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:57:07] System: Calibrating microphone... Please wait.
+[2025-11-07 01:57:10] System: Microphone calibrated successfully
+[2025-11-07 01:57:20] System: Speech recognition could not understand audio
+[2025-11-07 01:57:28] System: Speech recognition could not understand audio
+[2025-11-07 01:57:36] System: Recognized: come on come on your 1st year
+[2025-11-07 01:57:40] System: Speech recognition could not understand audio
+[2025-11-07 01:57:48] System: Speech recognition could not understand audio
+[2025-11-07 01:57:55] System: Recognized: what is
+[2025-11-07 01:58:01] System: Speech recognition could not understand audio
+[2025-11-07 01:58:06] System: Recognized: sunday
+[2025-11-07 01:58:06] System: Wake word detected: sunday
+[2025-11-07 01:58:06] AI: Hello! What shall we work on together?
+[2025-11-07 01:58:10] System: Recognized: open assistant
+[2025-11-07 01:58:10] User: Command: open assistant
+[2025-11-07 01:58:10] System: Navigation to assistant: success_button_click
+[2025-11-07 01:58:12] AI: Okay, let's do that! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-07 01:58:16] System: Speech recognition could not understand audio
+[2025-11-07 01:58:24] System: Speech recognition could not understand audio
+[2025-11-07 01:58:32] System: Speech recognition could not understand audio
+[2025-11-07 01:58:32] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:58:32] System: Calibrating microphone... Please wait.
+[2025-11-07 01:58:35] System: Microphone calibrated successfully
+[2025-11-07 01:58:43] System: Speech recognition could not understand audio
+[2025-11-07 01:58:50] System: Speech recognition could not understand audio
+[2025-11-07 01:58:58] System: Speech recognition could not understand audio
+[2025-11-07 01:58:58] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:58:58] System: Calibrating microphone... Please wait.
+[2025-11-07 01:59:01] System: Microphone calibrated successfully
+[2025-11-07 01:59:10] System: Speech recognition could not understand audio
+[2025-11-07 01:59:18] System: Speech recognition could not understand audio
+[2025-11-07 01:59:26] System: Speech recognition could not understand audio
+[2025-11-07 01:59:26] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:59:26] System: Calibrating microphone... Please wait.
+[2025-11-07 01:59:29] System: Microphone calibrated successfully
+[2025-11-07 01:59:36] System: Speech recognition could not understand audio
+[2025-11-07 01:59:44] System: Speech recognition could not understand audio
+[2025-11-07 01:59:49] System: Speech recognition could not understand audio
+[2025-11-07 01:59:49] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 01:59:49] System: Calibrating microphone... Please wait.
+[2025-11-07 01:59:52] System: Microphone calibrated successfully
+[2025-11-07 01:59:59] System: Speech recognition could not understand audio
+[2025-11-07 02:00:07] System: Speech recognition could not understand audio
+[2025-11-07 02:00:15] System: Speech recognition could not understand audio
+[2025-11-07 02:00:15] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:00:15] System: Calibrating microphone... Please wait.
+[2025-11-07 02:00:18] System: Microphone calibrated successfully
+[2025-11-07 02:00:26] System: Speech recognition could not understand audio
+[2025-11-07 02:00:35] System: Speech recognition could not understand audio
+[2025-11-07 02:00:43] System: Speech recognition could not understand audio
+[2025-11-07 02:00:43] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:00:43] System: Calibrating microphone... Please wait.
+[2025-11-07 02:00:46] System: Microphone calibrated successfully
+[2025-11-07 02:00:54] System: Speech recognition could not understand audio
+[2025-11-07 02:01:02] System: Speech recognition could not understand audio
+[2025-11-07 02:01:10] System: Speech recognition could not understand audio
+[2025-11-07 02:01:10] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:01:10] System: Calibrating microphone... Please wait.
+[2025-11-07 02:01:13] System: Microphone calibrated successfully
+[2025-11-07 02:01:17] System: Speech recognition could not understand audio
+[2025-11-07 02:01:24] System: Recognized: jarvis bata
+[2025-11-07 02:01:32] System: Recognized: jarvis same other friday sunday
+[2025-11-07 02:01:32] System: Wake word detected: jarvis same other friday sunday
+[2025-11-07 02:01:32] AI: Hello! What shall we work on together?
+[2025-11-07 02:01:41] System: Speech recognition could not understand audio
+[2025-11-07 02:01:41] AI: I didn't catch that clearly. Feel free to try again when you're ready.
+[2025-11-07 02:01:47] System: Speech recognition could not understand audio
+[2025-11-07 02:01:50] System: Speech recognition could not understand audio
+[2025-11-07 02:01:50] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:01:50] System: Calibrating microphone... Please wait.
+[2025-11-07 02:01:53] System: Microphone calibrated successfully
+[2025-11-07 02:02:01] System: Speech recognition could not understand audio
+[2025-11-07 02:02:09] System: Speech recognition could not understand audio
+[2025-11-07 02:02:18] System: Speech recognition could not understand audio
+[2025-11-07 02:02:18] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:02:18] System: Calibrating microphone... Please wait.
+[2025-11-07 02:02:21] System: Microphone calibrated successfully
+[2025-11-07 02:02:26] System: Speech recognition could not understand audio
+[2025-11-07 02:02:29] System: Speech recognition could not understand audio
+[2025-11-07 02:02:34] System: Speech recognition could not understand audio
+[2025-11-07 02:02:34] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:02:34] System: Calibrating microphone... Please wait.
+[2025-11-07 02:02:38] System: Microphone calibrated successfully
+[2025-11-07 02:02:46] System: Speech recognition could not understand audio
+[2025-11-07 02:02:53] System: Speech recognition could not understand audio
+[2025-11-07 02:03:01] System: Speech recognition could not understand audio
+[2025-11-07 02:03:01] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:03:01] System: Calibrating microphone... Please wait.
+[2025-11-07 02:03:05] System: Microphone calibrated successfully
+[2025-11-07 02:03:13] System: Speech recognition could not understand audio
+[2025-11-07 02:03:21] System: Recognized: karnataka
+[2025-11-07 02:03:29] System: Recognized: mysore to bangalore
+[2025-11-07 02:03:37] System: Speech recognition could not understand audio
+[2025-11-07 02:03:44] System: Speech recognition could not understand audio
+[2025-11-07 02:03:52] System: Speech recognition could not understand audio
+[2025-11-07 02:03:52] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:03:52] System: Calibrating microphone... Please wait.
+[2025-11-07 02:03:55] System: Microphone calibrated successfully
+[2025-11-07 02:04:00] System: Speech recognition could not understand audio
+[2025-11-07 02:04:08] System: Recognized: college time
+[2025-11-07 02:04:16] System: Speech recognition could not understand audio
+[2025-11-07 02:04:20] System: Speech recognition could not understand audio
+[2025-11-07 02:04:28] System: Speech recognition could not understand audio
+[2025-11-07 02:04:28] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:04:28] System: Calibrating microphone... Please wait.
+[2025-11-07 02:04:31] System: Microphone calibrated successfully
+[2025-11-07 02:04:39] System: Speech recognition could not understand audio
+[2025-11-07 02:04:47] System: Speech recognition could not understand audio
+[2025-11-07 02:04:56] System: Speech recognition could not understand audio
+[2025-11-07 02:04:56] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:04:56] System: Calibrating microphone... Please wait.
+[2025-11-07 02:04:59] System: Microphone calibrated successfully
+[2025-11-07 02:05:07] System: Speech recognition could not understand audio
+[2025-11-07 02:05:15] System: Speech recognition could not understand audio
+[2025-11-07 02:05:20] System: Speech recognition could not understand audio
+[2025-11-07 02:05:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:05:20] System: Calibrating microphone... Please wait.
+[2025-11-07 02:05:23] System: Microphone calibrated successfully
+[2025-11-07 02:05:31] System: Speech recognition could not understand audio
+[2025-11-07 02:05:35] System: Speech recognition could not understand audio
+[2025-11-07 02:05:41] System: Speech recognition could not understand audio
+[2025-11-07 02:05:41] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:05:41] System: Calibrating microphone... Please wait.
+[2025-11-07 02:05:44] System: Microphone calibrated successfully
+[2025-11-07 02:05:49] System: Speech recognition could not understand audio
+[2025-11-07 02:05:57] System: Speech recognition could not understand audio
+[2025-11-07 02:06:05] System: Speech recognition could not understand audio
+[2025-11-07 02:06:05] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:06:05] System: Calibrating microphone... Please wait.
+[2025-11-07 02:06:09] System: Microphone calibrated successfully
+[2025-11-07 02:06:15] System: Speech recognition could not understand audio
+[2025-11-07 02:06:23] System: Speech recognition could not understand audio
+[2025-11-07 02:06:31] System: Speech recognition could not understand audio
+[2025-11-07 02:06:31] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:06:31] System: Calibrating microphone... Please wait.
+[2025-11-07 02:06:35] System: Microphone calibrated successfully
+[2025-11-07 02:06:42] System: Speech recognition could not understand audio
+[2025-11-07 02:06:50] System: Speech recognition could not understand audio
+[2025-11-07 02:06:57] System: Shutting down
+[2025-11-07 02:06:58] System: Speech recognition could not understand audio
+[2025-11-07 02:06:58] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:06:58] System: Calibrating microphone... Please wait.
+[2025-11-07 02:07:01] System: Microphone calibrated successfully
+[2025-11-07 02:07:09] System: TTS engine configured successfully
+[2025-11-07 02:07:09] System: Sunday AI starting with simple TTS system
+[2025-11-07 02:07:09] System: Calibrating microphone... Please wait.
+[2025-11-07 02:07:12] System: Microphone calibrated successfully
+[2025-11-07 02:07:15] System: Listening for 'Sunday'...
+[2025-11-07 02:07:15] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 02:07:15] System: Listening for 'Sunday'...
+[2025-11-07 02:07:43] System: Browser opened at http://127.0.0.1:5000
+[2025-11-07 02:07:43] AI: Browser up—yoga time!
+[2025-11-07 02:07:52] System: TTS engine configured successfully
+[2025-11-07 02:07:52] System: Sunday AI starting with simple TTS system
+[2025-11-07 02:07:52] System: Calibrating microphone... Please wait.
+[2025-11-07 02:07:55] System: Microphone calibrated successfully
+[2025-11-07 02:07:58] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 02:07:58] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 02:08:01] System: Browser ready on attempt 1
+[2025-11-07 02:08:01] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 02:08:06] System: Speech recognition could not understand audio
+[2025-11-07 02:08:11] System: System TTS failed: (-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147201018), None)
+[2025-11-07 02:08:14] System: Speech recognition could not understand audio
+[2025-11-07 02:08:22] System: Recognized: camera
+[2025-11-07 02:08:31] System: Speech recognition could not understand audio
+[2025-11-07 02:08:39] System: Speech recognition could not understand audio
+[2025-11-07 02:08:47] System: Speech recognition could not understand audio
+[2025-11-07 02:08:47] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:08:47] System: Calibrating microphone... Please wait.
+[2025-11-07 02:08:50] System: Microphone calibrated successfully
+[2025-11-07 02:08:59] System: Speech recognition could not understand audio
+[2025-11-07 02:09:05] System: Recognized: customer
+[2025-11-07 02:09:14] System: Speech recognition could not understand audio
+[2025-11-07 02:09:20] System: Speech recognition could not understand audio
+[2025-11-07 02:09:25] System: Speech recognition could not understand audio
+[2025-11-07 02:09:25] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 02:09:25] System: Calibrating microphone... Please wait.
+[2025-11-07 02:09:28] System: Microphone calibrated successfully
+[2025-11-07 02:09:37] System: Speech recognition could not understand audio
+[2025-11-07 02:09:45] System: Speech recognition could not understand audio
+[2025-11-07 02:09:54] System: Recognized: airport
+[2025-11-07 02:10:00] System: Speech recognition could not understand audio
+[2025-11-07 10:00:03] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 10:00:55] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:00:55] System: Calibrating microphone... Please wait.
+[2025-11-07 10:00:58] System: Microphone calibrated successfully
+[2025-11-07 10:01:03] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 10:01:09] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 10:01:11] System: Shutting down
+[2025-11-07 10:02:51] System: TTS engine configured successfully
+[2025-11-07 10:02:51] System: Sunday AI starting with simple TTS system
+[2025-11-07 10:02:51] System: Calibrating microphone... Please wait.
+[2025-11-07 10:02:54] System: Microphone calibrated successfully
+[2025-11-07 10:02:57] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 10:02:57] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 10:03:01] System: Browser ready on attempt 1
+[2025-11-07 10:03:01] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 10:03:02] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 10:04:23] System: TTS engine configured successfully
+[2025-11-07 10:04:23] System: Sunday AI starting with simple TTS system
+[2025-11-07 10:04:23] System: Calibrating microphone... Please wait.
+[2025-11-07 10:04:27] System: Microphone calibrated successfully
+[2025-11-07 10:04:30] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 10:04:30] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 10:04:35] System: Speech recognition could not understand audio
+[2025-11-07 10:04:42] System: Speech recognition could not understand audio
+[2025-11-07 10:04:43] System: Browser ready on attempt 1
+[2025-11-07 10:04:43] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 10:04:47] System: Speech recognition could not understand audio
+[2025-11-07 10:04:47] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:04:47] System: Calibrating microphone... Please wait.
+[2025-11-07 10:04:50] System: Microphone calibrated successfully
+[2025-11-07 10:04:54] System: Speech recognition could not understand audio
+[2025-11-07 10:05:02] System: Speech recognition could not understand audio
+[2025-11-07 10:05:11] System: Recognized: headphone
+[2025-11-07 10:05:15] System: Recognized: headphones
+[2025-11-07 10:05:21] System: Recognized: sunday
+[2025-11-07 10:05:21] System: Wake word detected: sunday
+[2025-11-07 10:05:21] AI: Yes, I'm listening! What would you like to do?
+[2025-11-07 10:05:34] System: Recognized: open assistant
+[2025-11-07 10:05:34] User: Command: open assistant
+[2025-11-07 10:05:34] System: Navigation to assistant: success_button_click
+[2025-11-07 10:05:36] AI: I'm on it! I'm here to help! Ask me anything about yoga poses, meditation techniques, or request a custom session. What would you like to know?
+[2025-11-07 10:06:10] System: Speech recognition could not understand audio
+[2025-11-07 10:06:23] System: Speech recognition could not understand audio
+[2025-11-07 10:06:35] System: Speech recognition could not understand audio
+[2025-11-07 10:06:35] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:06:35] System: Calibrating microphone... Please wait.
+[2025-11-07 10:06:39] System: Microphone calibrated successfully
+[2025-11-07 10:06:51] System: Recognized: home screen
+[2025-11-07 10:07:01] System: Speech recognition could not understand audio
+[2025-11-07 10:07:11] System: Speech recognition could not understand audio
+[2025-11-07 10:07:20] System: Speech recognition could not understand audio
+[2025-11-07 10:07:20] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:07:20] System: Calibrating microphone... Please wait.
+[2025-11-07 10:07:23] System: Microphone calibrated successfully
+[2025-11-07 10:07:33] System: Recognized: so it is true about
+[2025-11-07 10:07:43] System: Speech recognition could not understand audio
+[2025-11-07 10:08:01] System: Speech recognition could not understand audio
+[2025-11-07 10:08:07] System: Speech recognition could not understand audio
+[2025-11-07 10:08:07] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:08:07] System: Calibrating microphone... Please wait.
+[2025-11-07 10:08:10] System: Microphone calibrated successfully
+[2025-11-07 10:08:20] System: Recognized: guide
+[2025-11-07 10:08:28] System: Speech recognition could not understand audio
+[2025-11-07 10:08:35] System: Speech recognition could not understand audio
+[2025-11-07 10:08:41] System: Speech recognition could not understand audio
+[2025-11-07 10:08:41] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:08:41] System: Calibrating microphone... Please wait.
+[2025-11-07 10:08:44] System: Microphone calibrated successfully
+[2025-11-07 10:08:53] System: Recognized: you will get certificate
+[2025-11-07 10:08:57] System: Speech recognition could not understand audio
+[2025-11-07 10:09:03] System: Speech recognition could not understand audio
+[2025-11-07 10:09:09] System: Speech recognition could not understand audio
+[2025-11-07 10:09:09] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 10:09:09] System: Calibrating microphone... Please wait.
+[2025-11-07 10:09:12] System: Microphone calibrated successfully
+[2025-11-07 10:09:21] System: Speech recognition could not understand audio
+[2025-11-07 10:09:27] System: Speech recognition could not understand audio
+[2025-11-07 11:19:47] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 11:19:48] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:19:48] System: Calibrating microphone... Please wait.
+[2025-11-07 11:21:43] System: Microphone calibrated successfully
+[2025-11-07 11:21:49] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 11:21:56] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 11:24:00] System: TTS engine configured successfully
+[2025-11-07 11:24:00] System: Sunday AI starting with simple TTS system
+[2025-11-07 11:24:00] System: Calibrating microphone... Please wait.
+[2025-11-07 11:24:04] System: Microphone calibrated successfully
+[2025-11-07 11:24:07] AI: I'm listening for you. Just say 'Sunday' when you need me!
+[2025-11-07 11:24:07] AI: Hello! I'm Sunday, your yoga assistant. I'm here and ready to help you with your wellness journey. Just say 'Sunday' followed by what you'd like to do!
+[2025-11-07 11:24:11] System: Speech recognition could not understand audio
+[2025-11-07 11:24:14] System: Speech recognition could not understand audio
+[2025-11-07 11:24:22] System: Speech recognition could not understand audio
+[2025-11-07 11:24:22] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:24:22] System: Calibrating microphone... Please wait.
+[2025-11-07 11:24:25] System: Browser ready on attempt 1
+[2025-11-07 11:24:25] AI: Perfect! I'm all connected and ready to help you with your yoga practice.
+[2025-11-07 11:24:25] System: Microphone calibrated successfully
+[2025-11-07 11:24:34] System: Speech recognition could not understand audio
+[2025-11-07 11:24:41] System: Speech recognition could not understand audio
+[2025-11-07 11:24:50] System: Speech recognition could not understand audio
+[2025-11-07 11:24:50] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:24:50] System: Calibrating microphone... Please wait.
+[2025-11-07 11:24:53] System: Microphone calibrated successfully
+[2025-11-07 11:25:02] System: Speech recognition could not understand audio
+[2025-11-07 11:25:10] System: Speech recognition could not understand audio
+[2025-11-07 11:25:19] System: Speech recognition could not understand audio
+[2025-11-07 11:25:19] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:25:19] System: Calibrating microphone... Please wait.
+[2025-11-07 11:25:22] System: Microphone calibrated successfully
+[2025-11-07 11:25:27] System: Speech recognition could not understand audio
+[2025-11-07 11:25:33] System: Speech recognition could not understand audio
+[2025-11-07 11:25:42] System: Speech recognition could not understand audio
+[2025-11-07 11:25:42] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:25:42] System: Calibrating microphone... Please wait.
+[2025-11-07 11:25:45] System: Microphone calibrated successfully
+[2025-11-07 11:25:51] System: Speech recognition could not understand audio
+[2025-11-07 11:26:00] System: Speech recognition could not understand audio
+[2025-11-07 11:26:09] System: Speech recognition could not understand audio
+[2025-11-07 11:26:09] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:26:09] System: Calibrating microphone... Please wait.
+[2025-11-07 11:26:12] System: Microphone calibrated successfully
+[2025-11-07 11:26:27] System: Speech recognition could not understand audio
+[2025-11-07 11:26:36] System: Recognized: certification of milestones for example
+[2025-11-07 11:26:46] System: Recognized: certification
+[2025-11-07 11:26:52] System: Recognized: at present
+[2025-11-07 11:26:56] System: Speech recognition could not understand audio
+[2025-11-07 11:27:00] System: Speech recognition could not understand audio
+[2025-11-07 11:27:09] System: Speech recognition could not understand audio
+[2025-11-07 11:27:09] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:27:09] System: Calibrating microphone... Please wait.
+[2025-11-07 11:27:12] System: Microphone calibrated successfully
+[2025-11-07 11:27:20] System: Speech recognition could not understand audio
+[2025-11-07 11:27:27] System: Recognized: mit
+[2025-11-07 11:27:33] System: Speech recognition could not understand audio
+[2025-11-07 11:27:41] System: Speech recognition could not understand audio
+[2025-11-07 11:27:52] System: Speech recognition could not understand audio
+[2025-11-07 11:27:52] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:27:52] System: Calibrating microphone... Please wait.
+[2025-11-07 11:27:55] System: Microphone calibrated successfully
+[2025-11-07 11:28:04] System: Speech recognition could not understand audio
+[2025-11-07 11:28:13] System: Speech recognition could not understand audio
+[2025-11-07 11:28:21] System: Speech recognition could not understand audio
+[2025-11-07 11:28:21] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:28:21] System: Calibrating microphone... Please wait.
+[2025-11-07 11:28:25] System: Microphone calibrated successfully
+[2025-11-07 11:28:34] System: Speech recognition could not understand audio
+[2025-11-07 11:28:42] System: Speech recognition could not understand audio
+[2025-11-07 11:28:50] System: Speech recognition could not understand audio
+[2025-11-07 11:28:50] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:28:50] System: Calibrating microphone... Please wait.
+[2025-11-07 11:28:54] System: Microphone calibrated successfully
+[2025-11-07 11:29:02] System: Speech recognition could not understand audio
+[2025-11-07 11:29:11] System: Speech recognition could not understand audio
+[2025-11-07 11:29:19] System: Speech recognition could not understand audio
+[2025-11-07 11:29:19] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:29:19] System: Calibrating microphone... Please wait.
+[2025-11-07 11:29:22] System: Microphone calibrated successfully
+[2025-11-07 11:29:31] System: Speech recognition could not understand audio
+[2025-11-07 11:29:40] System: Recognized: which of the following statements on business pain points
+[2025-11-07 11:29:49] System: Recognized: so these are the main points of the business so that's why their ex
+[2025-11-07 11:29:58] System: Speech recognition could not understand audio
+[2025-11-07 11:30:07] System: Recognized: certifications on every
+[2025-11-07 11:30:16] System: Speech recognition could not understand audio
+[2025-11-07 11:30:25] System: Recognized: certification
+[2025-11-07 11:30:33] System: Speech recognition could not understand audio
+[2025-11-07 11:30:39] System: Speech recognition could not understand audio
+[2025-11-07 11:30:48] System: Speech recognition could not understand audio
+[2025-11-07 11:30:48] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:30:48] System: Calibrating microphone... Please wait.
+[2025-11-07 11:30:52] System: Microphone calibrated successfully
+[2025-11-07 11:31:01] System: Speech recognition could not understand audio
+[2025-11-07 11:31:10] System: Speech recognition could not understand audio
+[2025-11-07 11:31:19] System: Speech recognition could not understand audio
+[2025-11-07 11:31:19] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:31:19] System: Calibrating microphone... Please wait.
+[2025-11-07 11:31:22] System: Microphone calibrated successfully
+[2025-11-07 11:31:30] System: Speech recognition could not understand audio
+[2025-11-07 11:31:39] System: Speech recognition could not understand audio
+[2025-11-07 11:31:48] System: Speech recognition could not understand audio
+[2025-11-07 11:31:48] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:31:48] System: Calibrating microphone... Please wait.
+[2025-11-07 11:31:51] System: Microphone calibrated successfully
+[2025-11-07 11:32:00] System: Speech recognition could not understand audio
+[2025-11-07 11:32:09] System: Speech recognition could not understand audio
+[2025-11-07 11:32:18] System: Speech recognition could not understand audio
+[2025-11-07 11:32:18] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:32:18] System: Calibrating microphone... Please wait.
+[2025-11-07 11:32:21] System: Microphone calibrated successfully
+[2025-11-07 11:32:29] System: Speech recognition could not understand audio
+[2025-11-07 11:32:40] System: Recognized: student
+[2025-11-07 11:32:50] System: Recognized: multiple streams of
+[2025-11-07 11:32:59] System: Speech recognition could not understand audio
+[2025-11-07 11:33:11] System: Recognized: training data analysis
+[2025-11-07 11:33:22] System: Recognized: reproduction next general audiences international
+[2025-11-07 11:33:30] System: Speech recognition could not understand audio
+[2025-11-07 11:33:39] System: Speech recognition could not understand audio
+[2025-11-07 11:33:45] System: Speech recognition could not understand audio
+[2025-11-07 11:33:45] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 11:33:45] System: Calibrating microphone... Please wait.
+[2025-11-07 11:33:49] System: Microphone calibrated successfully
+[2025-11-07 11:33:53] System: Speech recognition could not understand audio
+[2025-11-07 11:34:02] System: Speech recognition could not understand audio
+[2025-11-07 13:03:04] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 13:03:05] System: Multiple recognition failures, recalibrating microphone
+[2025-11-07 13:03:05] System: Calibrating microphone... Please wait.
+[2025-11-07 13:03:08] System: Microphone calibrated successfully
+[2025-11-07 13:03:16] System: Speech recognition error: recognition connection failed: [Errno 11001] getaddrinfo failed
+[2025-11-07 13:03:16] System: Shutting down
+[2025-11-07 13:03:32] System: Shutdown complete

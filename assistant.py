@@ -4,14 +4,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import time
 import os
 import threading
 import json
 import pyttsx3
 import random
-import subprocess
-import sys
+
+# Set to your ChromeDriver path if not in PATH; '' if in PATH
+CHROMEDRIVER_PATH = ''  # e.g., r'./chromedriver/chromedriver.exe' for Windows
 
 class AIVoiceAssistant:
     def __init__(self):
@@ -19,7 +21,8 @@ class AIVoiceAssistant:
         self.conv_log_file = "conversation_log.txt"
         self.listening = True
         self.wake_word = "sunday"
-        self.failed_recognitions = 0
+        self.consecutive_failures = 0
+        self.max_failures = 5  # Recalibrate after this many misses
         
         self.setup_tts()
         self.log_conversation("System", "Sunday AI starting with simple TTS system")
@@ -27,7 +30,7 @@ class AIVoiceAssistant:
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
         
-        self.recognizer.energy_threshold = 3000
+        self.recognizer.energy_threshold = 3000  # Adjust lower (2000) if noisy
         self.recognizer.pause_threshold = 1.0
         self.recognizer.dynamic_energy_threshold = True
         
@@ -65,6 +68,10 @@ class AIVoiceAssistant:
             self.log_conversation("System", f"TTS setup error: {e}")
             self.tts_engine = None
 
+    def _system_tts(self, text):
+        """Fallback TTS: Just print (works everywhere)"""
+        print(f"🔊 AI: {text}")
+
     def speak(self, text):
         if not text or not self.listening:
             return False
@@ -76,24 +83,25 @@ class AIVoiceAssistant:
             if self.tts_engine:
                 def speak_thread():
                     try:
-                        engine = pyttsx3.init()
+                        engine = pyttsx3.init()  # Re-init to avoid segfaults
                         engine.setProperty('rate', 150)
                         engine.setProperty('volume', 1.0)
                         engine.say(text)
                         engine.runAndWait()
                     except Exception as e:
                         print(f"TTS Error: {e}")
+                        self._system_tts(text)
                 
                 thread = threading.Thread(target=speak_thread, daemon=True)
                 thread.start()
                 return True
             else:
-                print(f"🔊 AI: {text}")
-                return False
+                self._system_tts(text)
+                return True
                 
         except Exception as e:
             self.log_conversation("System", f"Speak error: {e}")
-            print(f"🔊 AI: {text}")
+            self._system_tts(text)
             return False
 
     def calibrate_microphone(self):
@@ -102,6 +110,7 @@ class AIVoiceAssistant:
             with self.microphone as source:
                 self.recognizer.adjust_for_ambient_noise(source, duration=3)
             self.log_conversation("System", "Microphone calibrated successfully")
+            self.consecutive_failures = 0
         except Exception as e:
             self.log_conversation("System", f"Microphone calibration failed: {e}")
 
@@ -127,13 +136,7 @@ class AIVoiceAssistant:
 
     def get_acknowledgement(self):
         acknowledgements = [
-            "Sure thing!",
-            "I'm on it!",
-            "Right away!",
-            "Absolutely!",
-            "Got it!",
-            "Okay!",
-            "No problem!",
+            "Sure thing!", "I'm on it!", "Right away!", "Absolutely!", "Got it!", "Okay!", "No problem!"
         ]
         return random.choice(acknowledgements)
 
@@ -143,7 +146,12 @@ class AIVoiceAssistant:
         
         for attempt in range(max_retries):
             try:
-                self.driver = webdriver.Chrome(options=self.chrome_options)
+                if CHROMEDRIVER_PATH:
+                    from selenium.webdriver.chrome.service import Service
+                    service = Service(CHROMEDRIVER_PATH)
+                    self.driver = webdriver.Chrome(service=service, options=self.chrome_options)
+                else:
+                    self.driver = webdriver.Chrome(options=self.chrome_options)
                 self.driver.get(server_url)
                 
                 WebDriverWait(self.driver, 15).until(
@@ -151,20 +159,48 @@ class AIVoiceAssistant:
                 )
                 
                 time.sleep(4)
-                
-                self.log_conversation("System", f"Browser connected to {server_url} on attempt {attempt + 1}")
-                self.speak("Perfect! I'm all connected and ready to help you with your yoga practice.")
+                self.log_conversation("System", f"Browser connected to {server_url}")
+                self.speak("Perfect! I'm all connected and ready to help you.")
                 return
-                
             except Exception as e:
-                self.log_conversation("System", f"Browser error attempt {attempt + 1}: {e}")
-                if attempt < max_retries - 1:
-                    self.log_conversation("System", f"Retrying connection to server at {server_url}...")
-                    time.sleep(2)
-                else:
-                    self.speak("Having trouble connecting to the yoga platform. Please make sure the server is running on port 5000.")
+                self.log_conversation("System", f"Browser open failed (attempt {attempt + 1}): {e}")
+                if self.driver:
+                    self.driver.quit()
+                    self.driver = None
+                time.sleep(2)
+        
+        self.speak("Sorry, couldn't connect to the web app. Make sure the server is running on port 5000.")
 
-    def listen_for_speech(self, timeout=8, phrase_time_limit=10):
+    def navigate_section(self, section):
+        if not self.driver:
+            return False
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.ID, "app"))  # Wait for JS app
+            )
+            
+            button_texts = {
+                'pose_library': 'Pose Library',
+                'ar_correction': 'AR Correction',
+                'routine': 'Routine',
+                'assistant': 'Assistant'
+            }
+            if section in button_texts:
+                btn = self.driver.find_element(By.XPATH, f"//button[contains(text(), '{button_texts[section]}')]")
+                btn.click()
+                time.sleep(2)
+                return True
+            
+            # Fallback: JS execution (assumes app.showSection in index.html)
+            self.driver.execute_script(f"if (typeof app !== 'undefined') {{ app.showSection('{section}'); }}")
+            time.sleep(2)
+            return True
+            
+        except (TimeoutException, NoSuchElementException) as e:
+            self.log_conversation("System", f"Navigation failed for {section}: {e}")
+            return False
+
+    def listen_for_speech(self, timeout=5, phrase_time_limit=6):
         try:
             with self.microphone as source:
                 self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
@@ -177,163 +213,63 @@ class AIVoiceAssistant:
             return None
 
     def recognize_audio(self, audio):
-        if not audio:
-            return None
-            
         try:
-            text = self.recognizer.recognize_google(audio, language="en-US").lower().strip()
-            if len(text) > 1:
-                self.log_conversation("System", f"Recognized: {text}")
-                self.failed_recognitions = 0
-                return text
-            return None
+            text = self.recognizer.recognize_google(audio).lower()
+            return text
         except sr.UnknownValueError:
-            self.log_conversation("System", "Speech recognition could not understand audio")
-            self.failed_recognitions += 1
-            if self.failed_recognitions >= 5:
-                self.log_conversation("System", "Multiple recognition failures, recalibrating microphone")
-                self.calibrate_microphone()
-                self.failed_recognitions = 0
+            self.consecutive_failures += 1
             return None
         except sr.RequestError as e:
-            self.log_conversation("System", f"Speech recognition error: {e}")
-            return None
-        except Exception as e:
             self.log_conversation("System", f"Recognition error: {e}")
             return None
 
-    def navigate_section(self, section):
-        if not self.driver:
-            self.log_conversation("System", "No browser for navigation")
-            return False
-            
-        try:
-            result = self.driver.execute_script(f"""
-                try {{
-                    if (window.app && window.app.navigate) {{
-                        window.app.navigate('{section}');
-                        return 'success';
-                    }}
-                    return 'no_app';
-                }} catch(e) {{
-                    return 'error: ' + e.message;
-                }}
-            """)
-            
-            self.log_conversation("System", f"Navigation to {section}: {result}")
-            
-            if 'success' in str(result):
-                time.sleep(2)
-                return True
-                
-            return False
-            
-        except Exception as e:
-            self.log_conversation("System", f"Navigation failed: {e}")
-            return False
-
     def process_command(self, command):
-        if not command:
-            return
-
-        self.log_conversation("User", f"Command: {command}")
-        self.write_status('processing', command, '')
-
-        command = command.lower()
-        
-        command_replacements = {
-            "hassan": "asana",
-            "hasan": "asana", 
-            "assist": "assistant",
-            "vr": "ar",
-            "posture": "ar correction",
-            "camera": "ar correction",
-            "yoga poses": "asana",
-            "pose library": "asana",
-        }
-        
-        for wrong, correct in command_replacements.items():
-            command = command.replace(wrong, correct)
-
         acknowledgement = self.get_acknowledgement()
         
-        if any(word in command for word in ['home', 'dashboard', 'main']):
-            success = self.navigate_section('dashboard')
-            if success:
-                self.speak(f"{acknowledgement} Taking you to the home screen where you can see your progress and daily insights.")
-            else:
-                self.speak("Navigating to home...")
-
-        elif any(word in command for word in ['asana', 'pose', 'library', 'poses']):
-            success = self.navigate_section('asana')
-            if success:
-                self.speak(f"{acknowledgement} Opening the yoga pose library. You can explore different poses and their benefits.")
-            else:
-                self.speak("Opening pose library...")
+        if any(word in command for word in ['open pose library', 'poses', 'asanas']):
+            success = self.navigate_section('pose_library')
+            self.speak(f"{acknowledgement} Opening the yoga pose library." if success else "Opening pose library...")
 
         elif any(word in command for word in ['ar', 'correction', 'camera', 'tracking', 'posture']):
             success = self.navigate_section('ar_correction')
-            if success:
-                self.speak(f"{acknowledgement} Starting AR posture correction. Stand about 6 feet from your camera for best results!")
-            else:
-                self.speak("Setting up camera correction...")
+            self.speak(f"{acknowledgement} Starting AR posture correction. Stand 6 feet from your camera!" if success else "Setting up camera...")
 
         elif any(word in command for word in ['routine', 'plan', 'workout', 'schedule']):
             success = self.navigate_section('routine')
-            if success:
-                self.speak(f"{acknowledgement} Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.")
-            else:
-                self.speak("Loading your routine...")
+            self.speak(f"{acknowledgement} Opening your personalized routine." if success else "Loading your routine...")
 
         elif any(word in command for word in ['assistant', 'chat', 'help', 'ai', 'virtual assistant']):
             success = self.navigate_section('assistant')
-            if success:
-                self.speak(f"{acknowledgement} I'm here to help! What would you like to know about yoga and wellness?")
-            else:
-                self.speak("Opening chat interface...")
+            self.speak(f"{acknowledgement} Opening chat. What would you like to know?" if success else "Opening chat...")
 
         elif any(word in command for word in ['tadasana', 'mountain']):
-            self.speak(f"{acknowledgement} Starting Tadasana pose correction.")
+            self.speak(f"{acknowledgement} Starting Tadasana.")
             self.navigate_section('ar_correction')
 
-        elif any(word in command for word in ['downward', 'dog']):
-            self.speak(f"{acknowledgement} Starting Downward Dog pose correction.")
-            self.navigate_section('ar_correction')
-
-        elif any(word in command for word in ['warrior']):
-            self.speak(f"{acknowledgement} Starting Warrior III pose correction.")
+        elif any(word in command for word in ['vrikshasana', 'tree']):
+            self.speak(f"{acknowledgement} Starting Tree Pose.")
             self.navigate_section('ar_correction')
 
         elif any(word in command for word in ['namastey', 'prayer']):
-            self.speak(f"{acknowledgement} Starting Namastey pose correction.")
+            self.speak(f"{acknowledgement} Starting Namastey.")
             self.navigate_section('ar_correction')
 
-        elif any(word in command for word in ['test', 'working', 'status']):
-            self.speak("I'm here and ready! Try saying 'Sunday open pose library' or 'Sunday start posture correction'.")
+        elif any(word in command for word in ['test', 'status']):
+            self.speak("I'm ready! Try 'open pose library' or 'start AR correction'.")
 
         elif any(word in command for word in ['thank', 'thanks']):
-            self.speak("You're welcome! Happy to help with your yoga practice.")
+            self.speak("You're welcome! Namaste.")
 
         elif any(word in command for word in ['hello', 'hi', 'hey']):
-            self.speak("Hello! I'm Sunday, your yoga assistant. How can I help you today?")
+            self.speak("Hello! How can I help today?")
 
-        elif any(word in command for word in ['read', 'tell', 'show']):
-            if 'routine' in command:
-                success = self.navigate_section('routine')
-                if success:
-                    self.speak(f"{acknowledgement} Opening your personalized routine. I'll show you today's recommended yoga sequence and meal suggestions based on your wellness data.")
-            else:
-                self.speak("I didn't catch that clearly. Feel free to try again when you're ready.")
-
-        elif any(word in command for word in ['stop', 'quit', 'exit', 'shutdown', 'goodbye', 'deactivate']):
-            self.speak("Thank you for your practice today! Namaste!")
-            self.log_conversation("System", "Shutting down")
+        elif any(word in command for word in ['stop', 'quit', 'exit', 'shutdown', 'goodbye']):
+            self.speak("Thank you for your practice! Namaste!")
             time.sleep(2)
-            self.log_conversation("System", "Shutdown complete")
             self.stop()
 
         else:
-            self.speak("I didn't catch that clearly. Feel free to try again when you're ready.")
+            self.speak("I didn't catch that. Try again, like 'open pose library'.")
 
     def listen_loop(self):
         self.log_conversation("System", "Listening for wake word 'Sunday'...")
@@ -349,20 +285,36 @@ class AIVoiceAssistant:
         
         while self.listening:
             try:
-                audio = self.listen_for_speech()
+                audio = self.listen_for_speech(timeout=5, phrase_time_limit=6)
                 if audio:
                     text = self.recognize_audio(audio)
                     if text:
-                        if self.wake_word in text:
+                        self.consecutive_failures = 0  # Reset on success
+                        
+                        if self.wake_word in text.lower():
                             self.log_conversation("System", f"Wake word detected: {text}")
-                            command = text.replace(self.wake_word, '').strip()
-                            if command:
-                                self.process_command(command)
-                            else:
-                                self.speak(random.choice(wake_responses))
-                        elif any(word in text for word in similar_words):
-                            self.speak("Did you call me? I heard something similar to Sunday. If you need me, just say 'Sunday' clearly.")
+                            self.speak(random.choice(wake_responses))
                             
+                            # Separate listen for command (key fix!)
+                            audio_cmd = self.listen_for_speech(timeout=10, phrase_time_limit=15)
+                            if audio_cmd:
+                                command = self.recognize_audio(audio_cmd)
+                                if command:
+                                    self.process_command(command.lower())
+                                else:
+                                    self.speak("I didn't catch the command. Try again after 'Sunday'.")
+                            else:
+                                self.speak("I'm ready when you are.")
+                        elif any(word in text for word in similar_words):
+                            self.speak("Did you mean Sunday? Say it clearly if you need me.")
+                            
+                self.consecutive_failures += 1
+                if self.consecutive_failures >= self.max_failures:
+                    self.log_conversation("System", "Recalibrating due to failures")
+                    self.calibrate_microphone()
+                
+                time.sleep(0.5)
+                
             except Exception as e:
                 self.log_conversation("System", f"Listen loop error: {e}")
                 time.sleep(1)
@@ -375,20 +327,13 @@ class AIVoiceAssistant:
             except:
                 pass
         self.log_conversation("System", "Sunday AI stopped")
-        sys.exit(0)
-
-    def run(self):
-        try:
-            while self.listening:
-                time.sleep(1)
-        except KeyboardInterrupt:
-            self.log_conversation("System", "KeyboardInterrupt received")
-            self.stop()
+        os._exit(0)
 
 if __name__ == "__main__":
     try:
         assistant = AIVoiceAssistant()
-        assistant.run()
+        while assistant.listening:
+            time.sleep(1)
     except KeyboardInterrupt:
         print("\nShutting down...")
         if 'assistant' in locals():
