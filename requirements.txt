@@ -1,0 +1,4 @@
+selenium
+SpeechRecognition
+pyttsx3
+pyaudio
