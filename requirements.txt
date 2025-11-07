@@ -1,4 +1,6 @@
 selenium
 SpeechRecognition
 pyttsx3
+sounddevice
+soundfile
 
